@@ -3,6 +3,7 @@ import ExampleReactComponent from "./scripts/ExampleReactComponent"
 import React from "react"
 import ReactDOM from "react-dom/client"
 import Navbar from "./scripts/Navbar"
+import FooterCRE from "./scripts/FooterCRE"
 
 const person1 = new Person("Brad")
 if (document.querySelector("#render-react-example-here")) {
@@ -14,3 +15,5 @@ if (document.querySelector("#render-react-example-here")) {
 if (document.querySelector("#ajs-navbar")) {
   ReactDOM.createRoot(document.querySelector("#ajs-navbar")).render(<Navbar />)
 }
+
+ReactDOM.createRoot(document.querySelector("#render-footer")).render(<FooterCRE />)
