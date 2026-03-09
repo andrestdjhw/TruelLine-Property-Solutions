@@ -2,6 +2,948 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/scripts/ContactCRE.js"
+/*!***********************************!*\
+  !*** ./src/scripts/ContactCRE.js ***!
+  \***********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function ContactCRE() {
+  // ─── DATOS — edita aquí ──────────────────────────────────────────────────
+  const contact = {
+    phone: "(800) 555-0100",
+    phoneHref: "tel:+18005550100",
+    email: "info@creconstruction.com",
+    emailHref: "mailto:info@creconstruction.com",
+    address: "1234 Builder Ave, Suite 100",
+    city: "Los Angeles, CA 90001",
+    // Reemplaza con tu embed real de Google Maps
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27405069536!2d-118.69192!3d34.02016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fefa34c8f2cbc!2sLos+Angeles%2C+CA!5e0!3m2!1sen!2sus!4v1234567890",
+    // Reemplaza con tu shortcode real de Contact Form 7
+    cf7Shortcode: "[contact-form-7 id=\"YOUR_FORM_ID\" title=\"Contact CRE\"]"
+  };
+  const hours = [{
+    day: "Monday – Friday",
+    time: "7:00 AM – 5:00 PM"
+  }, {
+    day: "Saturday",
+    time: "8:00 AM – 2:00 PM"
+  }, {
+    day: "Sunday",
+    time: "Closed"
+  }];
+  const services = ["Structural Framing", "Heavy Timber Construction", "Exterior Envelope & Siding", "Interior Finishes & Drywall", "Residential Remodel", "Commercial (Selective)", "Not sure yet"];
+  const faqs = [{
+    q: "How do I request a bid as a General Contractor?",
+    a: "Fill out the form on this page selecting your project type, or visit our For GCs page to download our pre-qualification packet. We typically respond within 1 business day."
+  }, {
+    q: "What is your service area?",
+    a: "We primarily serve the Greater Los Angeles area and surrounding counties. For larger commercial projects, we may be able to accommodate other regions — contact us to discuss."
+  }, {
+    q: "How long does it take to receive a quote?",
+    a: "For standard residential projects, we typically turn around quotes within 2–3 business days after an initial site visit or plan review. Larger commercial scopes may take 5–7 days."
+  }, {
+    q: "Are you licensed and insured?",
+    a: "Yes. CRE Construction Group Inc. is fully licensed in the state of California and carries comprehensive general liability and workers' compensation insurance. Certificates available upon request."
+  }, {
+    q: "Do you work as a subcontractor?",
+    a: "Absolutely. We partner with general contractors across all our service lines. Visit our For GCs page for pre-qualification information and capabilities documentation."
+  }];
+  // ────────────────────────────────────────────────────────────────────────
+
+  const [openFaq, setOpenFaq] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [formState, setFormState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: ""
+  });
+  const [submitted, setSubmitted] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+
+  // Intersection Observer para animaciones scroll
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const observer = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("cre-c-in");
+    }), {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    });
+    document.querySelectorAll(".cre-c-reveal").forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  const handleChange = e => setFormState(p => ({
+    ...p,
+    [e.target.name]: e.target.value
+  }));
+
+  // Si usas CF7, este handler no aplica — el form lo maneja CF7 vía shortcode PHP
+  // Este handler es solo para la versión React pura (fallback)
+  const handleSubmit = e => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+      children: `
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600&display=swap');
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .cre-c-page { font-family: 'Barlow', sans-serif; background: #f5f3ef; }
+
+        /* ── SCROLL REVEAL ── */
+        .cre-c-reveal {
+          opacity: 0; transform: translateY(24px);
+          transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+        }
+        .cre-c-reveal.cre-c-in { opacity: 1; transform: none; }
+        .cre-c-reveal:nth-child(2) { transition-delay: 0.08s; }
+        .cre-c-reveal:nth-child(3) { transition-delay: 0.16s; }
+        .cre-c-reveal:nth-child(4) { transition-delay: 0.24s; }
+
+        /* ══ PAGE HEADER ══ */
+        .cre-c-header {
+          background: linear-gradient(160deg, #080c18 0%, #0d1525 60%, #0b1020 100%);
+          padding: 72px 32px 80px; text-align: center;
+          position: relative; overflow: hidden;
+        }
+        .cre-c-header::before {
+          content: ''; position: absolute; inset: 0; pointer-events: none;
+          background:
+            radial-gradient(ellipse 60% 70% at 50% 60%, rgba(230,100,20,0.08) 0%, transparent 65%),
+            repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
+            repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
+        }
+        /* Watermark */
+        .cre-c-header-wm {
+          position: absolute; inset: 0; pointer-events: none; z-index: 0;
+          display: flex; align-items: center; justify-content: space-between; padding: 0 6%;
+        }
+        .cre-c-header-wm svg { width: min(220px, 25%); opacity: 0.035; filter: brightness(100) grayscale(1); }
+
+        .cre-c-header-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .cre-c-header-label {
+          display: inline-flex; align-items: center; gap: 7px;
+          background: rgba(230,100,20,0.1); border: 1px solid rgba(230,100,20,0.25);
+          color: #e88040; font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em;
+          text-transform: uppercase; padding: 5px 14px; border-radius: 3px; margin-bottom: 22px;
+        }
+        .cre-c-label-dot { width: 5px; height: 5px; background: #e66414; border-radius: 50%; animation: crcPulse 2s infinite; }
+        @keyframes crcPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        .cre-c-header h1 {
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+          font-size: clamp(40px, 7vw, 72px); line-height: 0.95;
+          letter-spacing: 0.02em; text-transform: uppercase; color: #e8e0d5; margin-bottom: 16px;
+        }
+        .cre-c-header h1 span { color: #e66414; }
+        .cre-c-header p { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.7; }
+
+        /* Wave */
+        .cre-c-wave { line-height: 0; background: linear-gradient(160deg, #080c18, #0b1020); }
+        .cre-c-wave svg { display: block; width: 100%; }
+
+        /* ══ MAIN LAYOUT ══ */
+        .cre-c-main { max-width: 1280px; margin: 0 auto; padding: 72px 32px 88px; }
+
+        /* ── INFO CARDS ROW ── */
+        .cre-c-info-row {
+          display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 72px;
+        }
+        .cre-c-info-card {
+          background: #fff; border-radius: 6px; padding: 28px 24px;
+          box-shadow: 0 2px 16px rgba(26,20,16,0.08);
+          border-top: 3px solid #e66414;
+          transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .cre-c-info-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(26,20,16,0.13); }
+        .cre-c-info-icon {
+          width: 44px; height: 44px; background: rgba(230,100,20,0.08);
+          border: 1px solid rgba(230,100,20,0.18); border-radius: 6px;
+          display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+        }
+        .cre-c-info-card-title {
+          font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
+          letter-spacing: 0.18em; text-transform: uppercase; color: #e66414; margin-bottom: 8px;
+        }
+        .cre-c-info-card-val {
+          font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700;
+          color: #1a1410; line-height: 1.3; margin-bottom: 4px;
+        }
+        .cre-c-info-card-sub { font-size: 12.5px; color: #9a8f86; line-height: 1.5; }
+        .cre-c-info-link { text-decoration: none; color: inherit; display: block; }
+        .cre-c-info-link:hover .cre-c-info-card-val { color: #e66414; }
+
+        /* ── FORM + SIDEBAR GRID ── */
+        .cre-c-body-grid {
+          display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start;
+        }
+
+        /* ── CONTACT FORM ── */
+        .cre-c-form-wrap {
+          background: #fff; border-radius: 8px; padding: 48px;
+          box-shadow: 0 2px 24px rgba(26,20,16,0.09);
+        }
+        .cre-c-form-title {
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+          font-size: 28px; letter-spacing: 0.04em; text-transform: uppercase;
+          color: #1a1410; margin-bottom: 6px;
+        }
+        .cre-c-form-title span { color: #e66414; }
+        .cre-c-form-sub { color: #9a8f86; font-size: 14px; line-height: 1.6; margin-bottom: 36px; }
+        .cre-c-form-rule { width: 40px; height: 3px; background: #e66414; border-radius: 2px; margin-bottom: 36px; }
+
+        /* CF7 override styles — aplican cuando WordPress renderiza el shortcode */
+        .cre-c-form-wrap .wpcf7-form,
+        .cre-c-form-wrap form {
+          display: flex; flex-direction: column; gap: 0;
+        }
+        .cre-c-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .cre-c-form-row.full { grid-template-columns: 1fr; }
+        .cre-c-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+        .cre-c-label {
+          font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 700;
+          letter-spacing: 0.1em; text-transform: uppercase; color: #6b6560;
+        }
+        .cre-c-label span { color: #e66414; }
+        .cre-c-input,
+        .cre-c-select,
+        .cre-c-textarea,
+        .cre-c-form-wrap input[type="text"],
+        .cre-c-form-wrap input[type="email"],
+        .cre-c-form-wrap input[type="tel"],
+        .cre-c-form-wrap select,
+        .cre-c-form-wrap textarea {
+          width: 100%; padding: 12px 16px;
+          background: #faf8f5; border: 1.5px solid #e8e2dc;
+          border-radius: 4px; font-family: 'Barlow', sans-serif;
+          font-size: 14px; color: #1a1410;
+          transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+          appearance: none; -webkit-appearance: none;
+        }
+        .cre-c-input:focus,
+        .cre-c-select:focus,
+        .cre-c-textarea:focus,
+        .cre-c-form-wrap input:focus,
+        .cre-c-form-wrap select:focus,
+        .cre-c-form-wrap textarea:focus {
+          border-color: #e66414; box-shadow: 0 0 0 3px rgba(230,100,20,0.1);
+          background: #fff;
+        }
+        .cre-c-textarea,
+        .cre-c-form-wrap textarea { resize: vertical; min-height: 130px; }
+        .cre-c-select,
+        .cre-c-form-wrap select {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e66414' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+          background-repeat: no-repeat; background-position: right 14px center;
+          padding-right: 40px; cursor: pointer;
+        }
+        .cre-c-submit,
+        .cre-c-form-wrap input[type="submit"],
+        .cre-c-form-wrap .wpcf7-submit {
+          display: flex; align-items: center; justify-content: center; gap: 9px;
+          padding: 15px 32px; background: #e66414; color: white;
+          border: none; border-radius: 4px; cursor: pointer;
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+          font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase;
+          box-shadow: 0 4px 18px rgba(230,100,20,0.38);
+          transition: transform 0.2s, box-shadow 0.2s;
+          width: 100%; margin-top: 8px;
+        }
+        .cre-c-submit:hover,
+        .cre-c-form-wrap input[type="submit"]:hover,
+        .cre-c-form-wrap .wpcf7-submit:hover {
+          transform: translateY(-2px); box-shadow: 0 8px 26px rgba(230,100,20,0.5);
+        }
+        .cre-c-success {
+          text-align: center; padding: 40px 20px;
+        }
+        .cre-c-success-icon {
+          width: 60px; height: 60px; background: rgba(230,100,20,0.1);
+          border: 2px solid rgba(230,100,20,0.3); border-radius: 50%;
+          display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+        }
+        .cre-c-success h3 {
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px;
+          letter-spacing: 0.04em; text-transform: uppercase; color: #1a1410; margin-bottom: 10px;
+        }
+        .cre-c-success p { color: #9a8f86; font-size: 14px; line-height: 1.6; }
+
+        /* ── SIDEBAR ── */
+        .cre-c-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+        /* Hours card */
+        .cre-c-side-card {
+          background: #fff; border-radius: 6px; padding: 28px;
+          box-shadow: 0 2px 16px rgba(26,20,16,0.08);
+        }
+        .cre-c-side-card-title {
+          font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+          letter-spacing: 0.16em; text-transform: uppercase; color: #e66414;
+          margin-bottom: 18px; padding-bottom: 12px;
+          border-bottom: 1px solid rgba(230,100,20,0.15);
+          display: flex; align-items: center; gap: 8px;
+        }
+        .cre-c-hours-row {
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 9px 0; border-bottom: 1px solid #f0ece7; font-size: 13.5px;
+        }
+        .cre-c-hours-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .cre-c-hours-day { color: #6b6560; font-weight: 500; }
+        .cre-c-hours-time { color: #1a1410; font-weight: 600; }
+        .cre-c-hours-closed { color: #c0b8b0; font-weight: 500; }
+        .cre-c-emergency {
+          margin-top: 16px; display: flex; align-items: center; gap: 8px;
+          background: rgba(230,100,20,0.06); border: 1px solid rgba(230,100,20,0.18);
+          border-radius: 4px; padding: 10px 14px;
+          font-size: 12.5px; font-weight: 600; color: #e66414; letter-spacing: 0.04em;
+        }
+        .cre-c-emerg-dot { width: 6px; height: 6px; background: #e66414; border-radius: 50%; animation: crcPulse 2s infinite; flex-shrink: 0; }
+
+        /* GC promo card */
+        .cre-c-gc-card {
+          background: linear-gradient(135deg, #0d1525 0%, #162040 100%);
+          border-radius: 6px; padding: 28px;
+          border: 1px solid rgba(230,100,20,0.2);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .cre-c-gc-label {
+          font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+          text-transform: uppercase; color: #e88040; margin-bottom: 10px;
+        }
+        .cre-c-gc-title {
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px;
+          letter-spacing: 0.04em; text-transform: uppercase; color: #e8e0d5;
+          margin-bottom: 10px; line-height: 1.1;
+        }
+        .cre-c-gc-title span { color: #e66414; }
+        .cre-c-gc-desc { color: rgba(200,215,240,0.45); font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+        .cre-c-gc-btn {
+          display: flex; align-items: center; justify-content: center; gap: 7px;
+          width: 100%; padding: 12px; background: #e66414; color: white;
+          border: none; border-radius: 4px; cursor: pointer;
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+          font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+          text-decoration: none; transition: background 0.2s, transform 0.2s;
+          box-shadow: 0 4px 14px rgba(230,100,20,0.4);
+        }
+        .cre-c-gc-btn:hover { background: #f07020; transform: translateY(-2px); }
+
+        /* ── MAP ── */
+        .cre-c-map-section { margin-top: 72px; }
+        .cre-c-section-head { margin-bottom: 32px; }
+        .cre-c-section-label {
+          font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em;
+          text-transform: uppercase; color: #e66414; display: block; margin-bottom: 8px;
+        }
+        .cre-c-section-title {
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+          font-size: clamp(24px, 3.5vw, 38px); letter-spacing: 0.02em; text-transform: uppercase;
+          color: #1a1410;
+        }
+        .cre-c-section-title span { color: #e66414; }
+        .cre-c-section-rule { width: 40px; height: 3px; background: #e66414; border-radius: 2px; margin-top: 14px; }
+        .cre-c-map-wrap {
+          border-radius: 8px; overflow: hidden;
+          box-shadow: 0 4px 30px rgba(26,20,16,0.12);
+        }
+        .cre-c-map-wrap iframe { display: block; }
+
+        /* ── FAQ ── */
+        .cre-c-faq-section { margin-top: 72px; }
+        .cre-c-faq-grid { display: flex; flex-direction: column; gap: 12px; }
+        .cre-c-faq-item {
+          background: #fff; border-radius: 6px; overflow: hidden;
+          box-shadow: 0 1px 12px rgba(26,20,16,0.07);
+          border-left: 3px solid transparent; transition: border-color 0.2s;
+        }
+        .cre-c-faq-item.open { border-left-color: #e66414; }
+        .cre-c-faq-btn {
+          width: 100%; display: flex; align-items: center; justify-content: space-between;
+          padding: 20px 24px; background: none; border: none; cursor: pointer;
+          text-align: left; gap: 16px;
+        }
+        .cre-c-faq-q {
+          font-family: 'Barlow', sans-serif; font-size: 15px; font-weight: 600;
+          color: #1a1410; line-height: 1.4;
+        }
+        .cre-c-faq-item.open .cre-c-faq-q { color: #e66414; }
+        .cre-c-faq-icon {
+          width: 28px; height: 28px; background: rgba(230,100,20,0.08);
+          border: 1px solid rgba(230,100,20,0.18); border-radius: 4px;
+          display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+          transition: background 0.2s, transform 0.3s;
+        }
+        .cre-c-faq-item.open .cre-c-faq-icon { background: rgba(230,100,20,0.18); transform: rotate(45deg); }
+        .cre-c-faq-body {
+          padding: 0 24px; max-height: 0; overflow: hidden;
+          transition: max-height 0.35s cubic-bezier(0.16,1,0.3,1), padding 0.35s;
+        }
+        .cre-c-faq-item.open .cre-c-faq-body { max-height: 200px; padding-bottom: 20px; }
+        .cre-c-faq-a { color: #6b6560; font-size: 14px; line-height: 1.7; }
+
+        @media (max-width: 1024px) {
+          .cre-c-body-grid { grid-template-columns: 1fr; }
+          .cre-c-sidebar { flex-direction: row; flex-wrap: wrap; }
+          .cre-c-side-card, .cre-c-gc-card { flex: 1; min-width: 280px; }
+          .cre-c-info-row { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+          .cre-c-main { padding: 48px 20px 64px; }
+          .cre-c-form-wrap { padding: 28px 20px; }
+          .cre-c-form-row { grid-template-columns: 1fr; }
+          .cre-c-info-row { grid-template-columns: 1fr; }
+          .cre-c-header { padding: 56px 20px 64px; }
+          .cre-c-sidebar { flex-direction: column; }
+        }
+      `
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "cre-c-page",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "cre-c-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "cre-c-header-wm",
+          "aria-hidden": "true",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+            viewBox: "0 0 46 50",
+            fill: "white",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M23 2L42 10V26C42 36 34 44 23 48C12 44 4 36 4 26V10L23 2Z"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M10 19L23 12L36 19",
+              stroke: "white",
+              strokeWidth: "2",
+              fill: "none"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M10 19L10 30L23 24L36 30L36 19",
+              fill: "rgba(255,255,255,0.3)"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M19 24H27V33H19z",
+              fill: "rgba(255,255,255,0.4)"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+            viewBox: "0 0 46 50",
+            fill: "white",
+            style: {
+              transform: "scaleX(-1)"
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M23 2L42 10V26C42 36 34 44 23 48C12 44 4 36 4 26V10L23 2Z"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M10 19L23 12L36 19",
+              stroke: "white",
+              strokeWidth: "2",
+              fill: "none"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M10 19L10 30L23 24L36 30L36 19",
+              fill: "rgba(255,255,255,0.3)"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M19 24H27V33H19z",
+              fill: "rgba(255,255,255,0.4)"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "cre-c-header-inner",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "cre-c-header-label",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "cre-c-label-dot"
+            }), "We'd love to hear from you"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h1", {
+            children: ["Get in ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              children: "Touch"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "Ready to start your project or need more information? Fill out the form and our team will get back to you within 1 business day."
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "cre-c-wave",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+          viewBox: "0 0 1440 80",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg",
+          preserveAspectRatio: "none",
+          style: {
+            height: "clamp(32px,5vw,60px)"
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M0 0L60 6C120 12 240 24 360 28C480 32 600 28 720 24C840 20 960 20 1080 24C1200 28 1320 34 1380 37L1440 40V80H0V0Z",
+            fill: "#f5f3ef"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "cre-c-main",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "cre-c-info-row",
+          children: [{
+            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+              width: "20",
+              height: "20",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "#e66414",
+              strokeWidth: "2",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+              })
+            }),
+            label: "Phone",
+            val: contact.phone,
+            sub: "Mon–Sat, business hours",
+            href: contact.phoneHref
+          }, {
+            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+              width: "20",
+              height: "20",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "#e66414",
+              strokeWidth: "2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+                points: "22,6 12,13 2,6"
+              })]
+            }),
+            label: "Email",
+            val: contact.email,
+            sub: "We reply within 1 business day",
+            href: contact.emailHref
+          }, {
+            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+              width: "20",
+              height: "20",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "#e66414",
+              strokeWidth: "2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                cx: "12",
+                cy: "10",
+                r: "3"
+              })]
+            }),
+            label: "Address",
+            val: contact.address,
+            sub: contact.city,
+            href: null
+          }, {
+            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+              width: "20",
+              height: "20",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "#e66414",
+              strokeWidth: "2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+                x: "3",
+                y: "4",
+                width: "18",
+                height: "18",
+                rx: "2"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                x1: "16",
+                y1: "2",
+                x2: "16",
+                y2: "6"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                x1: "8",
+                y1: "2",
+                x2: "8",
+                y2: "6"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                x1: "3",
+                y1: "10",
+                x2: "21",
+                y2: "10"
+              })]
+            }),
+            label: "Response Time",
+            val: "Within 24 hrs",
+            sub: "On all project inquiries",
+            href: null
+          }].map((card, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "cre-c-reveal",
+            children: card.href ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: card.href,
+              className: "cre-c-info-link",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-info-card",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "cre-c-info-icon",
+                  children: card.icon
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "cre-c-info-card-title",
+                  children: card.label
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "cre-c-info-card-val",
+                  children: card.val
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "cre-c-info-card-sub",
+                  children: card.sub
+                })]
+              })
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "cre-c-info-card",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "cre-c-info-icon",
+                children: card.icon
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "cre-c-info-card-title",
+                children: card.label
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "cre-c-info-card-val",
+                children: card.val
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "cre-c-info-card-sub",
+                children: card.sub
+              })]
+            })
+          }, i))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "cre-c-body-grid",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "cre-c-form-wrap cre-c-reveal",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
+              className: "cre-c-form-title",
+              children: ["Request a ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Quote"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              className: "cre-c-form-sub",
+              children: "Tell us about your project and we'll prepare a competitive proposal tailored to your needs."
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "cre-c-form-rule"
+            }), submitted ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "cre-c-success",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "cre-c-success-icon",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                  width: "26",
+                  height: "26",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "#e66414",
+                  strokeWidth: "2.5",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+                    points: "20 6 9 17 4 12"
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+                children: ["Message ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  style: {
+                    color: "#e66414"
+                  },
+                  children: "Sent!"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                children: "Thank you for reaching out. Our team will review your project details and get back to you within 1 business day."
+              })]
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+              onSubmit: handleSubmit,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                  className: "cre-c-field",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+                    className: "cre-c-label",
+                    children: ["Full Name ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                      children: "*"
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                    className: "cre-c-input",
+                    type: "text",
+                    name: "name",
+                    placeholder: "John Smith",
+                    required: true,
+                    value: formState.name,
+                    onChange: handleChange
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                  className: "cre-c-field",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+                    className: "cre-c-label",
+                    children: ["Email ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                      children: "*"
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                    className: "cre-c-input",
+                    type: "email",
+                    name: "email",
+                    placeholder: "john@company.com",
+                    required: true,
+                    value: formState.email,
+                    onChange: handleChange
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-form-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                  className: "cre-c-field",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                    className: "cre-c-label",
+                    children: "Phone"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                    className: "cre-c-input",
+                    type: "tel",
+                    name: "phone",
+                    placeholder: "(555) 000-0000",
+                    value: formState.phone,
+                    onChange: handleChange
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                  className: "cre-c-field",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                    className: "cre-c-label",
+                    children: "Company / GC Name"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                    className: "cre-c-input",
+                    type: "text",
+                    name: "company",
+                    placeholder: "Your company (optional)",
+                    value: formState.company,
+                    onChange: handleChange
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-field",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+                  className: "cre-c-label",
+                  children: ["Service Needed ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+                  className: "cre-c-select",
+                  name: "service",
+                  required: true,
+                  value: formState.service,
+                  onChange: handleChange,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    value: "",
+                    children: "\u2014 Select a service \u2014"
+                  }), services.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    value: s,
+                    children: s
+                  }, s))]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-field",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+                  className: "cre-c-label",
+                  children: ["Project Description ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("textarea", {
+                  className: "cre-c-textarea",
+                  name: "message",
+                  placeholder: "Describe your project \u2014 location, scope, timeline, budget range...",
+                  required: true,
+                  value: formState.message,
+                  onChange: handleChange
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+                type: "submit",
+                className: "cre-c-submit",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                  width: "15",
+                  height: "15",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2.5",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                    x1: "22",
+                    y1: "2",
+                    x2: "11",
+                    y2: "13"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
+                    points: "22 2 15 22 11 13 2 9 22 2"
+                  })]
+                }), "Send Message"]
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "cre-c-sidebar",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "cre-c-side-card cre-c-reveal",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-side-card-title",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                  width: "14",
+                  height: "14",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2.5",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                    cx: "12",
+                    cy: "12",
+                    r: "10"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+                    points: "12 6 12 12 16 14"
+                  })]
+                }), "Office Hours"]
+              }), hours.map((h, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-hours-row",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  className: "cre-c-hours-day",
+                  children: h.day
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  className: h.time === "Closed" ? "cre-c-hours-closed" : "cre-c-hours-time",
+                  children: h.time
+                })]
+              }, i)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-emergency",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "cre-c-emerg-dot"
+                }), "Emergency line available 24/7"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "cre-c-gc-card cre-c-reveal",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "cre-c-gc-label",
+                children: "General Contractors"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "cre-c-gc-title",
+                children: ["Need a ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  children: "Sub?"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                className: "cre-c-gc-desc",
+                children: "Download our capabilities sheet, review our pre-qual docs, and add us to your approved vendor list."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                href: "/for-gcs",
+                className: "cre-c-gc-btn",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                  width: "13",
+                  height: "13",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "currentColor",
+                  strokeWidth: "2.5",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                    d: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                    cx: "9",
+                    cy: "7",
+                    r: "4"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                    d: "M23 21v-2a4 4 0 00-3-3.87"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                    d: "M16 3.13a4 4 0 010 7.75"
+                  })]
+                }), "GC Portal"]
+              })]
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "cre-c-map-section",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "cre-c-section-head cre-c-reveal",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "cre-c-section-label",
+              children: "Find Us"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
+              className: "cre-c-section-title",
+              children: ["Our ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Location"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "cre-c-section-rule"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "cre-c-map-wrap cre-c-reveal",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("iframe", {
+              src: contact.mapSrc,
+              width: "100%",
+              height: "460",
+              style: {
+                border: 0
+              },
+              allowFullScreen: "",
+              loading: "lazy",
+              referrerPolicy: "no-referrer-when-downgrade",
+              title: "CRE Construction Group Location"
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "cre-c-faq-section",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "cre-c-section-head cre-c-reveal",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "cre-c-section-label",
+              children: "Common Questions"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
+              className: "cre-c-section-title",
+              children: ["FAQ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "s"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "cre-c-section-rule"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "cre-c-faq-grid",
+            children: faqs.map((faq, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: `cre-c-faq-item cre-c-reveal ${openFaq === i ? "open" : ""}`,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+                className: "cre-c-faq-btn",
+                onClick: () => setOpenFaq(openFaq === i ? null : i),
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  className: "cre-c-faq-q",
+                  children: faq.q
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "cre-c-faq-icon",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                    width: "12",
+                    height: "12",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "#e66414",
+                    strokeWidth: "2.5",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                      x1: "12",
+                      y1: "5",
+                      x2: "12",
+                      y2: "19"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                      x1: "5",
+                      y1: "12",
+                      x2: "19",
+                      y2: "12"
+                    })]
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                className: "cre-c-faq-body",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                  className: "cre-c-faq-a",
+                  children: faq.a
+                })
+              })]
+            }, i))
+          })]
+        })]
+      })]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContactCRE);
+
+/***/ },
+
 /***/ "./src/scripts/FooterCRE.js"
 /*!**********************************!*\
   !*** ./src/scripts/FooterCRE.js ***!
@@ -2216,8 +3158,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scripts_NavbarCRE__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/NavbarCRE */ "./src/scripts/NavbarCRE.js");
 /* harmony import */ var _scripts_FooterCRE__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/FooterCRE */ "./src/scripts/FooterCRE.js");
 /* harmony import */ var _scripts_HeroCRE__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/HeroCRE */ "./src/scripts/HeroCRE.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _scripts_ContactCRE__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scripts/ContactCRE */ "./src/scripts/ContactCRE.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
@@ -2227,19 +3171,20 @@ __webpack_require__.r(__webpack_exports__);
 // ─── NAVBAR — aparece en TODAS las páginas ───────────────────────────────
 
 if (document.querySelector("#cre-navbar")) {
-  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#cre-navbar")).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_scripts_NavbarCRE__WEBPACK_IMPORTED_MODULE_2__["default"], {}));
+  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#cre-navbar")).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_NavbarCRE__WEBPACK_IMPORTED_MODULE_2__["default"], {}));
 }
 
 // ─── FOOTER — aparece en TODAS las páginas ───────────────────────────────
 if (document.querySelector("#cre-footer")) {
-  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#cre-footer")).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_scripts_FooterCRE__WEBPACK_IMPORTED_MODULE_3__["default"], {}));
+  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#cre-footer")).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_FooterCRE__WEBPACK_IMPORTED_MODULE_3__["default"], {}));
 }
 
 // ─── HERO — aparece SOLO en la página de inicio ──────────────────────────
 // El div #cre-hero solo existe en inicio-template.php
 if (document.querySelector("#cre-hero")) {
-  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#cre-hero")).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_scripts_HeroCRE__WEBPACK_IMPORTED_MODULE_4__["default"], {}));
+  react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#cre-hero")).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_HeroCRE__WEBPACK_IMPORTED_MODULE_4__["default"], {}));
 }
+if (document.querySelector("#cre-contact")) react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#cre-contact")).render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_ContactCRE__WEBPACK_IMPORTED_MODULE_5__["default"], {}));
 })();
 
 /******/ })()

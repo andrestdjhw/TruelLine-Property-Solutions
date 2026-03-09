@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client"
 import Navbar from "./scripts/NavbarCRE"
 import FooterCRE from "./scripts/FooterCRE"
 import HeroCRE from "./scripts/HeroCRE"
+import ContactCRE from "./scripts/ContactCRE"
 
 // ─── NAVBAR — aparece en TODAS las páginas ───────────────────────────────
 if (document.querySelector("#cre-navbar")) {
@@ -19,3 +20,6 @@ if (document.querySelector("#cre-footer")) {
 if (document.querySelector("#cre-hero")) {
   ReactDOM.createRoot(document.querySelector("#cre-hero")).render(<HeroCRE />)
 }
+
+if (document.querySelector("#cre-contact"))
+  ReactDOM.createRoot(document.querySelector("#cre-contact")).render(<ContactCRE />)
