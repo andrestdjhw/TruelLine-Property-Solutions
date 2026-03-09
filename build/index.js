@@ -1287,11 +1287,11 @@ function FooterCRE() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "cre-footer-cta-text",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
-              children: ["Ready to ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                children: "Build"
-              }), "?"]
+              children: ["Ready to run a project without surprises? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Let's talk."
+              })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-              children: "Get a free quote from our team. We partner with general contractors and homeowners across the region."
+              children: "Serving Jackson, Teton Village, Wilson, and select projects throughout Teton County, WY."
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "cre-footer-cta-btns",
@@ -1308,7 +1308,7 @@ function FooterCRE() {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                   d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
                 })
-              }), "Get a Quote"]
+              }), "Request a Project Consultation"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: "/projects",
               className: "cre-footer-btn-ghost",
@@ -1340,7 +1340,7 @@ function FooterCRE() {
                   width: "7",
                   height: "7"
                 })]
-              }), "View Projects"]
+              }), "View Our Work"]
             })]
           })]
         })
@@ -1524,16 +1524,16 @@ function HeroCRE() {
   // ─── DATOS — edita aquí ───────────────────────────────────────────────
   const heroData = {
     eyebrow: "NAICS 23813 · 23839 · Licensed General Contractor",
-    headline: ["Built to", "Perform.", "Built to Last."],
+    headline: ["Jackson's Most Complex Projects ", "Demand More", "Than a Framer."],
     headlineAccent: 1,
     // índice de la línea que va en naranja
-    subheadline: "Structural framing, heavy timber, exterior envelope, and interior finishes — delivered with precision from foundation to finish.",
+    subheadline: "CRE Construction Group delivers integrated structural execution — framing, heavy timber, exterior systems, and precision finishes — for premium residential and resort projects across Teton County.",
     cta1: {
-      label: "Request a Quote",
+      label: "Request a Proyect Consultation",
       href: "/contact"
     },
     cta2: {
-      label: "Our Services",
+      label: "View our Work",
       href: "#services"
     }
   };
@@ -1553,45 +1553,45 @@ function HeroCRE() {
   const services = [{
     href: "/services/structural-framing",
     title: "Structural Framing",
-    desc: "Precision wood and steel framing for residential and commercial builds, from foundations to roof.",
+    desc: "Snow-load compliant, inspection-ready structural framing for custom homes and resort projects.",
     icon: "framing"
   }, {
     href: "/services/heavy-timber",
     title: "Heavy Timber Construction",
-    desc: "Exposed timber structures built with craftsmanship — ideal for commercial, hospitality, and custom homes.",
+    desc: "Precision heavy timber fabrication and installation. The signature element in Jackson Hole architecture.",
     icon: "timber"
   }, {
     href: "/services/exterior-envelope",
-    title: "Exterior Envelope & Siding",
-    desc: "Weather-tight building envelopes with fiber cement, composite, and specialty siding systems.",
+    title: "Exterior Envelope",
+    desc: "Moisture-barrier systems, fire-rated assemblies, and premium siding for mountain climates.",
     icon: "envelope"
   }, {
     href: "/services/interior-finishes",
-    title: "Interior Finishes & Drywall",
-    desc: "Complete interior finishing from drywall and taping to flooring, trim, and paint-ready surfaces.",
+    title: "Finish Carpentry & Interiors",
+    desc: "Drywall, flooring, trim, doors, paneling, and stairs executed to architectural specification.",
     icon: "interior"
   }, {
     href: "/services/residential-remodel",
     title: "Residential Remodel",
-    desc: "Full-scope home renovations: kitchen, bath, additions, and whole-home transformations.",
+    desc: "Disciplined remodel process with pre-demo inspection, discovery protocols, and documented change orders.",
     icon: "remodel"
   }, {
     href: "/services/commercial",
     title: "Commercial (Selective)",
-    desc: "Selective commercial tenant improvements and light commercial builds for the right partners.",
+    desc: "Hospitality, resort-adjacent, and high-value commercial — on selected projects only.",
     icon: "commercial"
   }];
   const whyItems = [{
-    title: "Licensed & Insured",
+    title: "Integration",
     desc: "Fully licensed in all jurisdictions we operate. Comprehensive liability and workers' comp coverage on every job."
   }, {
-    title: "GC-Ready",
+    title: "Craftsmanship",
     desc: "We understand GC workflows. Pre-qualified, documented, and ready to integrate into your project schedule."
   }, {
-    title: "On-Time Delivery",
+    title: "Multi-functional Crews",
     desc: "We track milestones rigorously and communicate proactively — no surprises on your critical path."
   }, {
-    title: "Quality Guarantee",
+    title: "Relationship-based GC Trust",
     desc: "Every project is backed by our workmanship warranty. We stand behind what we build."
   }];
   // ─────────────────────────────────────────────────────────────────────
@@ -1800,7 +1800,7 @@ function HeroCRE() {
         @keyframes crePulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
         .cre-hero h1 {
-          font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
           font-size: clamp(52px, 9vw, 110px); line-height: 0.92;
           letter-spacing: 0.01em; text-transform: uppercase;
           color: #e8e0d5; margin-bottom: 28px;
@@ -2184,7 +2184,7 @@ function HeroCRE() {
               className: "cre-section-head cre-reveal",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
                 className: "cre-section-label",
-                children: "What We Build"
+                children: "What We Do"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
                 className: "cre-section-title",
                 children: ["Our ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
@@ -2192,7 +2192,7 @@ function HeroCRE() {
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
                 className: "cre-section-desc",
-                children: "From structural framing to interior finishes \u2014 complete construction capabilities under one reliable partner."
+                children: "Integrated Execution Across the Entire Structural Envelope"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                 className: "cre-section-rule"
               })]
@@ -2246,15 +2246,15 @@ function HeroCRE() {
                 style: {
                   color: "#e8ddd0"
                 },
-                children: ["Built on ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  children: "Trust"
+                children: ["What Our Clients Actually ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  children: "Buy"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
                 className: "cre-section-desc",
                 style: {
                   color: "rgba(200,215,240,0.45)"
                 },
-                children: "We don't just build structures \u2014 we build partnerships with general contractors and homeowners who demand more."
+                children: "They think they're buying: Framing. Siding. Timber. Floors. \u2014 What they're actually buying: Uninterrupted schedules. Clean inspections. Predictable budgets. Protection of their professional reputation."
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                 className: "cre-section-rule"
               })]
@@ -2867,7 +2867,7 @@ function Navbar() {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                 d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
               })
-            }), "Get a Quote"]
+            }), "Request a Project Consultation"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
             className: `cre-ham ${menuOpen ? "open" : ""}`,
             onClick: () => setMenuOpen(true),
@@ -2998,7 +2998,7 @@ function Navbar() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
               d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
             })
-          }), "Get a Quote"]
+          }), "Request a Project Consultation"]
         })
       })]
     })]

@@ -266,17 +266,17 @@ function FooterCRE() {
         <div className="cre-footer-cta-band">
           <div className="cre-footer-cta-inner">
             <div className="cre-footer-cta-text">
-              <h2>Ready to <span>Build</span>?</h2>
-              <p>Get a free quote from our team. We partner with general contractors and homeowners across the region.</p>
+              <h2>Ready to run a project without surprises? <span>Let's talk.</span></h2>
+              <p>Serving Jackson, Teton Village, Wilson, and select projects throughout Teton County, WY.</p>
             </div>
             <div className="cre-footer-cta-btns">
               <a href="/contact" className="cre-footer-btn-primary">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Get a Quote
+                Request a Project Consultation
               </a>
               <a href="/projects" className="cre-footer-btn-ghost">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                View Projects
+                View Our Work
               </a>
             </div>
           </div>
