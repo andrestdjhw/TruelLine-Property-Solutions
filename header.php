@@ -6,4 +6,8 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <div id="ajs-navbar"></div>
+
+    <!-- Navbar React — aparece en TODAS las páginas -->
+    <div id="cre-navbar"></div>
+
+    <!-- El hero (#cre-hero) se monta SOLO en inicio-template.php -->

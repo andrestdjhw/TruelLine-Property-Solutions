@@ -1,19 +1,21 @@
-import Person from "./scripts/Person"
-import ExampleReactComponent from "./scripts/ExampleReactComponent"
 import React from "react"
 import ReactDOM from "react-dom/client"
-import Navbar from "./scripts/Navbar"
+import Navbar from "./scripts/NavbarCRE"
 import FooterCRE from "./scripts/FooterCRE"
+import HeroCRE from "./scripts/HeroCRE"
 
-const person1 = new Person("Brad")
-if (document.querySelector("#render-react-example-here")) {
-  const root = ReactDOM.createRoot(document.querySelector("#render-react-example-here"))
-  root.render(<ExampleReactComponent />)
+// ─── NAVBAR — aparece en TODAS las páginas ───────────────────────────────
+if (document.querySelector("#cre-navbar")) {
+  ReactDOM.createRoot(document.querySelector("#cre-navbar")).render(<Navbar />)
 }
 
-
-if (document.querySelector("#ajs-navbar")) {
-  ReactDOM.createRoot(document.querySelector("#ajs-navbar")).render(<Navbar />)
+// ─── FOOTER — aparece en TODAS las páginas ───────────────────────────────
+if (document.querySelector("#cre-footer")) {
+  ReactDOM.createRoot(document.querySelector("#cre-footer")).render(<FooterCRE />)
 }
 
-ReactDOM.createRoot(document.querySelector("#render-footer")).render(<FooterCRE />)
+// ─── HERO — aparece SOLO en la página de inicio ──────────────────────────
+// El div #cre-hero solo existe en inicio-template.php
+if (document.querySelector("#cre-hero")) {
+  ReactDOM.createRoot(document.querySelector("#cre-hero")).render(<HeroCRE />)
+}
