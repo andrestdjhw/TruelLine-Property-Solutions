@@ -6,7 +6,7 @@
  * Estructura:
  *   header.php  →  monta #cre-navbar    (sticky, todas las páginas)
  *   #cre-hero   →  HeroCRE.jsx          (solo el hero + wave)
- *   <sections>  →  PHP/HTML estático    (services, why, CTA, map)
+ *   <sections>  →  PHP/HTML estático    (services, why, how, areas, CTA, map)
  *   footer.php  →  monta #cre-footer    (todas las páginas)
  */
 
@@ -17,42 +17,41 @@ get_header(); ?>
 
 <?php
 // ─── DATOS ────────────────────────────────────────────────────────────────
-// Edita estos arrays para actualizar el contenido sin tocar el HTML.
 
 $services = [
   [
     'title' => 'Landscaping',
-    'desc'  => 'Full-service lawn care and landscape design tailored to your property. Seasonal maintenance, planting, and curb appeal upgrades.',
+    'desc'  => 'Design, installation, and seasonal maintenance to keep your property looking its best year-round.',
     'href'  => '/services/landscaping',
     'icon'  => '<path d="M12 2a10 10 0 000 20" stroke-linecap="round"/><path d="M12 2c2.5 5 4 10 4 10s-4 2-8 0c0 0 1.5-5 4-10z"/><line x1="12" y1="12" x2="12" y2="22"/>',
   ],
   [
     'title' => 'Hardscape & Concrete',
-    'desc'  => 'Patios, walkways, retaining walls, and driveways built to last. Clean lines, solid foundations, lasting results.',
+    'desc'  => 'Patios, retaining walls, walkways, parking areas, and driveways built for durability and curb appeal.',
     'href'  => '/services/hardscape-concrete',
     'icon'  => '<rect x="3" y="12" width="18" height="9" rx="1"/><path d="M3 12l4-7h10l4 7"/><line x1="3" y1="16" x2="21" y2="16"/>',
   ],
   [
     'title' => 'Drainage & Erosion Control',
-    'desc'  => 'French drains, grading, and erosion solutions to protect your property from water damage before it becomes a problem.',
+    'desc'  => 'French drains, drainage solutions, and erosion management that protect your land and investment.',
     'href'  => '/services/drainage-erosion-control',
     'icon'  => '<path d="M12 2v6M8 6l4 4 4-4"/><path d="M3 14s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/><path d="M3 18s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/>',
   ],
   [
     'title' => 'Tree Services',
-    'desc'  => 'Tree trimming, pruning, removal, and stump grinding. We keep your trees healthy and your property safe.',
+    'desc'  => 'Expert tree trimming, removal, storm cleanup, and risk mitigation for overgrown or hazardous trees.',
     'href'  => '/services/tree-services',
     'icon'  => '<path d="M12 22V12"/><path d="M5 12H2l10-10 10 10h-3"/><path d="M5 17H2l10-10 10 10h-3"/>',
   ],
   [
     'title' => 'Exterior Cleaning',
-    'desc'  => 'Pressure washing for driveways, siding, decks, and fences. Restore your property\'s appearance without the damage.',
+    'desc'  => 'Roof cleaning, gutter care, pressure washing, and deck maintenance to protect and refresh every surface.',
     'href'  => '/services/exterior-cleaning',
     'icon'  => '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/><circle cx="18" cy="20" r="3"/><path d="M18 17v-4m-2 5l4-2"/>',
   ],
   [
     'title' => 'Property Preparation',
-    'desc'  => 'Land clearing, grading, site prep, and debris removal. Ready for construction, sale, or a seasonal refresh.',
+    'desc'  => 'Full interior and exterior preparation for homeowners, investors, and realtors getting a property market-ready.',
     'href'  => '/services/property-preparation',
     'icon'  => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>',
   ],
@@ -60,24 +59,47 @@ $services = [
 
 $why_items = [
   [
-    'title' => 'Reliable Scheduling',
-    'desc'  => 'We show up when we say we will. No chasing, no excuses — just dependable service on your timeline.',
+    'title' => 'The Right Materials. Every Time.',
+    'desc'  => 'We work with trusted local suppliers and stay current on materials, techniques, and industry standards so our work holds up long after the project is done.',
     'icon'  => '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
   ],
   [
-    'title' => 'Transparent Pricing',
-    'desc'  => 'Free detailed estimates with no hidden fees. You know exactly what you\'re paying for before any work begins.',
+    'title' => 'Complete Accountability.',
+    'desc'  => 'We own the result — start to finish. One point of contact, full responsibility, no excuses.',
     'icon'  => '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>',
   ],
   [
-    'title' => 'Licensed & Insured',
-    'desc'  => 'Fully licensed and insured across all our service lines. Your property and your peace of mind are protected.',
+    'title' => 'Precision and Detail.',
+    'desc'  => 'We are meticulous by nature. If something does not meet our standard, we fix it before you ever have to ask.',
     'icon'  => '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
   ],
   [
-    'title' => 'Local Expertise',
-    'desc'  => 'We know the Triangle — the soil, the climate, the neighborhoods. That local knowledge shows in every job.',
+    'title' => 'Respect for Your Property.',
+    'desc'  => 'We treat every property as if it were our own — protecting your landscaping, your surfaces, and the natural environment throughout every project.',
     'icon'  => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>',
+  ],
+];
+
+$steps = [
+  [
+    'num'   => '01',
+    'title' => 'Property Assessment',
+    'desc'  => 'We visit your property, evaluate the scope, and listen to your goals before recommending any solution.',
+  ],
+  [
+    'num'   => '02',
+    'title' => 'Tailored Proposal',
+    'desc'  => 'You receive a clear, itemized proposal — no vague quotes, no hidden costs. You know exactly what you\'re getting.',
+  ],
+  [
+    'num'   => '03',
+    'title' => 'Expert Execution',
+    'desc'  => 'Our trained team arrives on time, uses the right materials, and works efficiently without cutting corners.',
+  ],
+  [
+    'num'   => '04',
+    'title' => 'Final Walkthrough',
+    'desc'  => 'We don\'t leave until the work meets our standard and yours. Every project closes with a walkthrough and your full satisfaction.',
   ],
 ];
 
@@ -85,7 +107,7 @@ $service_areas = [
   'Holly Springs', 'Cary', 'Chapel Hill', 'Raleigh', 'Durham', 'Hillsborough', 'Orange County',
 ];
 
-// Reemplaza con el embed real de Google Maps para tu área de servicio
+// Reemplaza con el embed real de Google Maps
 $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-79.0!3d35.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac5a2f9f51e0f7%3A0x6b0f3e3e3e3e3e3e!2sHolly+Springs%2C+NC!5e0!3m2!1sen!2sus!4v1234567890';
 ?>
 
@@ -97,11 +119,11 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
 
   /* ── TOKENS ── */
   .tl-home {
-    --accent: #4aa050;
-    --accent-soft: rgba(74,160,80,0.08);
+    --accent:        #4aa050;
+    --accent-soft:   rgba(74,160,80,0.08);
     --accent-border: rgba(74,160,80,0.18);
-    --dark: #1a1410;
-    --muted: #6b6560;
+    --dark:          #1a1410;
+    --muted:         #6b6560;
   }
 
   /* ── SCROLL REVEAL ── */
@@ -135,9 +157,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
 
   /* ══ SERVICES ══ */
   .tl-services-section { padding: 88px 0; background: #f5f3ef; }
-  .tl-services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  }
+  .tl-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .tl-service-card {
     background: #fff; border-radius: 6px;
     box-shadow: 0 2px 20px rgba(26,20,16,0.08);
@@ -166,8 +186,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   .tl-service-link {
     display: inline-flex; align-items: center; gap: 6px;
     color: var(--accent); font-size: 12.5px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
-    transition: gap 0.2s;
+    letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: gap 0.2s;
   }
   .tl-service-link:hover { gap: 10px; }
   .tl-service-link svg { transition: transform 0.2s; }
@@ -190,14 +209,12 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   .tl-why-section .tl-desc { color: rgba(200,215,240,0.45); }
   .tl-why-section .tl-label { color: rgba(100,200,110,0.85); }
   .tl-why-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-    position: relative; z-index: 1;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; position: relative; z-index: 1;
   }
   .tl-why-card {
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
     border-left: 3px solid var(--accent); border-radius: 4px; padding: 28px;
-    display: flex; gap: 18px; align-items: flex-start;
-    transition: background 0.2s;
+    display: flex; gap: 18px; align-items: flex-start; transition: background 0.2s;
   }
   .tl-why-card:hover { background: rgba(74,160,80,0.06); }
   .tl-why-icon {
@@ -210,6 +227,112 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
     letter-spacing: 0.05em; text-transform: uppercase; color: #e8ddd0; margin-bottom: 8px;
   }
   .tl-why-card-desc { color: rgba(200,215,240,0.45); font-size: 14px; line-height: 1.65; }
+
+  /* ══ HOW WE WORK ══ */
+  .tl-how-section { padding: 88px 0; background: #f5f3ef; }
+  .tl-how-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative;
+  }
+  .tl-how-grid::before {
+    content: ''; position: absolute;
+    top: 36px; left: calc(12.5% + 20px); right: calc(12.5% + 20px);
+    height: 2px; background: linear-gradient(90deg, var(--accent), rgba(74,160,80,0.2));
+    z-index: 0;
+  }
+  .tl-how-step {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; padding: 0 20px; position: relative; z-index: 1;
+  }
+  .tl-how-number-wrap {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: #fff; border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px; flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(74,160,80,0.15);
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  .tl-how-step:hover .tl-how-number-wrap {
+    background: var(--accent); box-shadow: 0 8px 28px rgba(74,160,80,0.35);
+  }
+  .tl-how-number {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+    font-size: 22px; letter-spacing: 0.04em; color: var(--accent);
+    line-height: 1; transition: color 0.3s;
+  }
+  .tl-how-step:hover .tl-how-number { color: #fff; }
+  .tl-how-step-title {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--dark); margin-bottom: 10px; line-height: 1.1;
+  }
+  .tl-how-step-desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+  /* ══ TESTIMONIALS ══ */
+  .tl-testimonials-section {
+    padding: 88px 0;
+    background: linear-gradient(160deg, #0d1a10 0%, #0f2015 100%);
+    position: relative; overflow: hidden;
+  }
+  .tl-testimonials-section::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 50% at 80% 50%, rgba(74,160,80,0.07) 0%, transparent 65%),
+      repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
+      repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
+  }
+  .tl-testimonials-section .tl-title { color: #e8e0d5; }
+  .tl-testimonials-section .tl-label { color: rgba(100,200,110,0.85); }
+  .tl-testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    position: relative; z-index: 1;
+  }
+  .tl-testimonial-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-top: 3px solid var(--accent); border-radius: 6px; padding: 32px 28px;
+    display: flex; flex-direction: column; gap: 20px;
+    transition: background 0.25s, transform 0.25s;
+  }
+  .tl-testimonial-card:hover { background: rgba(74,160,80,0.07); transform: translateY(-4px); }
+  .tl-stars { display: flex; gap: 3px; }
+  .tl-star {
+    width: 16px; height: 16px; fill: var(--accent);
+  }
+  .tl-testimonial-quote {
+    font-family: 'Barlow', sans-serif; font-size: 15px; font-style: italic;
+    color: rgba(200,215,240,0.75); line-height: 1.75; flex: 1;
+  }
+  .tl-testimonial-quote::before { content: '\201C'; }
+  .tl-testimonial-quote::after  { content: '\201D'; }
+  .tl-testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .tl-testimonial-avatar {
+    width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(74,160,80,0.15); border: 1px solid rgba(74,160,80,0.3);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tl-testimonial-name {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: #e8ddd0; line-height: 1;
+  }
+  .tl-testimonial-city {
+    font-size: 12px; color: rgba(200,215,240,0.35);
+    margin-top: 3px; letter-spacing: 0.04em;
+  }
+  /* DEV NOTE: Google Reviews badge placeholder */
+  .tl-reviews-badge {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 48px; position: relative; z-index: 1;
+  }
+  .tl-reviews-badge-inner {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(74,160,80,0.2);
+    border-radius: 4px; padding: 10px 20px;
+    font-size: 13px; color: rgba(200,215,240,0.5); font-weight: 500;
+  }
+  .tl-reviews-badge-inner strong { color: rgba(100,200,110,0.8); font-weight: 700; }
 
   /* ══ SERVICE AREAS BAND ══ */
   .tl-areas-band {
@@ -233,8 +356,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
     font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600;
     letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
     text-decoration: none; padding: 4px 14px;
-    border-right: 1px solid rgba(26,20,16,0.1);
-    transition: color 0.2s;
+    border-right: 1px solid rgba(26,20,16,0.1); transition: color 0.2s;
   }
   .tl-area-item:last-child { border-right: none; }
   .tl-area-item:hover { color: var(--accent); }
@@ -298,15 +420,20 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   @media (max-width: 1024px) {
     .tl-services-grid { grid-template-columns: repeat(2, 1fr); }
     .tl-why-grid { grid-template-columns: 1fr; }
+    .tl-how-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
+    .tl-how-grid::before { display: none; }
+    .tl-testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
     .tl-services-grid { grid-template-columns: 1fr; }
-    .tl-services-section, .tl-why-section, .tl-cta-section { padding: 56px 0; }
+    .tl-services-section, .tl-why-section, .tl-how-section, .tl-testimonials-section, .tl-cta-section { padding: 56px 0; }
     .tl-container { padding: 0 20px; }
     .tl-cta-box { padding: 40px 24px; }
     .tl-areas-band { padding: 22px 20px; }
     .tl-area-item { padding: 4px 10px; font-size: 12px; }
     .tl-why-card { flex-direction: column; gap: 12px; }
+    .tl-how-grid { grid-template-columns: 1fr; gap: 32px; }
+    .tl-testimonials-grid { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -319,7 +446,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
       <div class="tl-section-head tl-reveal">
         <span class="tl-label">What We Do</span>
         <h2 class="tl-title">Our <span>Services</span></h2>
-        <p class="tl-desc">Full-service exterior property care — from the ground up.</p>
+        <p class="tl-desc">Everything Your Property Needs — One Team You Can Trust.</p>
         <div class="tl-rule"></div>
       </div>
 
@@ -356,8 +483,8 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
 
       <div class="tl-section-head tl-reveal" style="position:relative;z-index:1">
         <span class="tl-label">Why Choose Us</span>
-        <h2 class="tl-title" style="color:#e8e0d5">The <span>True Line</span> Difference</h2>
-        <p class="tl-desc" style="color:rgba(200,215,240,0.45)">Property care you can count on — every visit, every season.</p>
+        <h2 class="tl-title" style="color:#e8e0d5">A Standard<span> Built on Results, </span>Not Promises.</h2>
+        <!-- <p class="tl-desc" style="color:rgba(200,215,240,0.45)">Property care you can count on — every visit, every season.</p> -->
         <div class="tl-rule"></div>
       </div>
 
@@ -376,6 +503,108 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
             </div>
           </div>
         <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ HOW WE WORK ══ -->
+  <section class="tl-how-section">
+    <div class="tl-container">
+
+      <div class="tl-section-head tl-reveal">
+        <span class="tl-label">How We Work</span>
+        <h2 class="tl-title">A Clear Process from First Call<br>to <span>Final Result.</span></h2>
+        <div class="tl-rule"></div>
+      </div>
+
+      <div class="tl-how-grid">
+        <?php foreach ( $steps as $i => $step ) : ?>
+          <div class="tl-how-step tl-reveal" data-delay="<?php echo $i + 1; ?>">
+            <div class="tl-how-number-wrap">
+              <span class="tl-how-number"><?php echo esc_html( $step['num'] ); ?></span>
+            </div>
+            <div class="tl-how-step-title"><?php echo esc_html( $step['title'] ); ?></div>
+            <p class="tl-how-step-desc"><?php echo esc_html( $step['desc'] ); ?></p>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="tl-testimonials-section">
+    <div class="tl-container">
+
+      <div class="tl-section-head tl-reveal" style="position:relative;z-index:1">
+        <span class="tl-label">Client Reviews</span>
+        <h2 class="tl-title" style="color:#e8e0d5">What Our <span>Clients Say</span></h2>
+        <div class="tl-rule"></div>
+      </div>
+
+      <?php
+      // DEV NOTE: Replace these placeholders with real Google Reviews.
+      // Recommended: use a Google Reviews plugin (e.g. Widgets for Google Reviews)
+      // or pull via Google Places API and render dynamically.
+      $testimonials = [
+        [
+          'quote'  => 'They did exactly what they said they would — on time, clean, and professional.',
+          'name'   => 'Homeowner',
+          'city'   => 'Holly Springs, NC',
+          'stars'  => 5,
+        ],
+        [
+          'quote'  => 'Best contractor we\'ve hired. Our patio and retaining wall look incredible.',
+          'name'   => 'Homeowner',
+          'city'   => 'Cary, NC',
+          'stars'  => 5,
+        ],
+        [
+          'quote'  => 'They prepared our home for sale in record time. Our realtor was impressed.',
+          'name'   => 'Homeowner',
+          'city'   => 'Chapel Hill, NC',
+          'stars'  => 5,
+        ],
+      ];
+      ?>
+
+      <div class="tl-testimonials-grid">
+        <?php foreach ( $testimonials as $i => $t ) : ?>
+          <div class="tl-testimonial-card tl-reveal" data-delay="<?php echo $i + 1; ?>">
+
+            <div class="tl-stars">
+              <?php for ( $s = 0; $s < $t['stars']; $s++ ) : ?>
+                <svg class="tl-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              <?php endfor; ?>
+            </div>
+
+            <p class="tl-testimonial-quote"><?php echo esc_html( $t['quote'] ); ?></p>
+
+            <div class="tl-testimonial-author">
+              <div class="tl-testimonial-avatar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4aa050" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <div>
+                <div class="tl-testimonial-name"><?php echo esc_html( $t['name'] ); ?></div>
+                <div class="tl-testimonial-city"><?php echo esc_html( $t['city'] ); ?></div>
+              </div>
+            </div>
+
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+      <!-- DEV NOTE: Replace with actual Google rating when live reviews are connected -->
+      <div class="tl-reviews-badge">
+        <div class="tl-reviews-badge-inner">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#4aa050"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <strong>5.0</strong> rated on Google · <strong>See all reviews →</strong>
+        </div>
       </div>
 
     </div>
@@ -401,15 +630,15 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   <section class="tl-cta-section">
     <div class="tl-container">
       <div class="tl-cta-box tl-reveal">
-        <span class="tl-cta-eyebrow">Ready to Get Started?</span>
+        <span class="tl-cta-eyebrow">Ready to Elevate Your Property?</span>
         <h2 class="tl-cta-title">Your Property Deserves<br><span>Better Care.</span></h2>
-        <p class="tl-cta-body">Get a free, no-obligation estimate. We'll walk the property with you and give you a clear, honest quote — no pressure.</p>
+        <p class="tl-cta-body">Whether you need a complete landscape redesign, a new patio, drainage solutions, or a property ready to sell — TrueLine is the team that delivers.</p>
         <div class="tl-cta-btns">
           <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="tl-cta-btn-main">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
             </svg>
-            Get a Free Quote
+            Request a Free Estimate
           </a>
           <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="tl-cta-btn-ghost">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

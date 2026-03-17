@@ -4,19 +4,19 @@ function HeroCRE() {
 
   // ─── DATOS — edita aquí ───────────────────────────────────────────────
   const heroData = {
-    eyebrow: "Holly Springs · Cary · Raleigh · Durham · Chapel Hill",
-    headline: ["Expert Property", "Care You Can", "Trust."],
+    eyebrow: "Why Homeowners Choose TrueLine?",
+    headline: ["Your Property", "Held to a", "Higher Standard."],
     headlineAccent: 2, // índice de la línea que va en acento
-    subheadline: "True Line Property Solutions delivers professional landscaping, hardscape, drainage, tree services, exterior cleaning, and property preparation across the Triangle area.",
-    cta1: { label: "Get a Free Quote", href: "/contact" },
-    cta2: { label: "View Our Services", href: "#services" },
+    subheadline: "Complete exterior and property solutions for homeowners who expect quality, reliability, and results that last — across the Triangle and Triad of North Carolina.",
+    cta1: { label: "Request a Free Estimate", href: "/contact" },
+    cta2: { label: "Explore Our Services", href: "/services" },
   }
 
   const stats = [
-    { value: "7",      label: "Service Areas" },
-    { value: "6",      label: "Service Lines" },
-    { value: "100%",   label: "Licensed & Insured" },
-    { value: "Free",   label: "Estimates" },
+    { value: "✦",      label: "Licensed & Insured" },
+    { value: "✦",      label: "BBB Accredited" },
+    { value: "✦",   label: "Serving Holly Springs, Cary, Chapel Hill & Beyond" },
+    { value: "✦",   label: "Continuous Training & Certified Specialists" },
   ]
   // ─────────────────────────────────────────────────────────────────────
 
@@ -96,7 +96,7 @@ function HeroCRE() {
 
         .tl-hero h1 {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-          font-size: clamp(52px, 9vw, 108px); line-height: 0.92;
+          font-size: clamp(48px, 9vw, 108px); line-height: 0.82;
           letter-spacing: 0.01em; text-transform: uppercase;
           color: #e8e0d5; margin-bottom: 28px;
         }
@@ -192,11 +192,6 @@ function HeroCRE() {
         <div className={`tl-hero-content ${visible ? "visible" : ""}`}>
           <div className="tl-hero-inner">
 
-            <div className="tl-hero-badge">
-              <div className="tl-badge-dot" />
-              {heroData.eyebrow}
-            </div>
-
             <h1>
               {heroData.headline.map((line, i) => (
                 <span key={i} className={i === heroData.headlineAccent ? "accent" : ""}>
@@ -221,6 +216,11 @@ function HeroCRE() {
                 </svg>
               </a>
             </div>
+
+           <div className="tl-hero-badge">
+              <div className="tl-badge-dot" />
+              {heroData.eyebrow}
+            </div>     
 
             <div className="tl-hero-stats">
               {stats.map((s, i) => (

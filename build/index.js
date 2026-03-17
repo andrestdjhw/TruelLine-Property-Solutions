@@ -873,32 +873,32 @@ __webpack_require__.r(__webpack_exports__);
 function HeroCRE() {
   // ─── DATOS — edita aquí ───────────────────────────────────────────────
   const heroData = {
-    eyebrow: "Holly Springs · Cary · Raleigh · Durham · Chapel Hill",
-    headline: ["Expert Property", "Care You Can", "Trust."],
+    eyebrow: "Why Homeowners Choose TrueLine?",
+    headline: ["Your Property", "Held to a", "Higher Standard."],
     headlineAccent: 2,
     // índice de la línea que va en acento
-    subheadline: "True Line Property Solutions delivers professional landscaping, hardscape, drainage, tree services, exterior cleaning, and property preparation across the Triangle area.",
+    subheadline: "Complete exterior and property solutions for homeowners who expect quality, reliability, and results that last — across the Triangle and Triad of North Carolina.",
     cta1: {
-      label: "Get a Free Quote",
+      label: "Request a Free Estimate",
       href: "/contact"
     },
     cta2: {
-      label: "View Our Services",
-      href: "#services"
+      label: "Explore Our Services",
+      href: "/services"
     }
   };
   const stats = [{
-    value: "7",
-    label: "Service Areas"
-  }, {
-    value: "6",
-    label: "Service Lines"
-  }, {
-    value: "100%",
+    value: "✦",
     label: "Licensed & Insured"
   }, {
-    value: "Free",
-    label: "Estimates"
+    value: "✦",
+    label: "BBB Accredited"
+  }, {
+    value: "✦",
+    label: "Serving Holly Springs, Cary, Chapel Hill & Beyond"
+  }, {
+    value: "✦",
+    label: "Continuous Training & Certified Specialists"
   }];
   // ─────────────────────────────────────────────────────────────────────
 
@@ -976,7 +976,7 @@ function HeroCRE() {
 
         .tl-hero h1 {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-          font-size: clamp(52px, 9vw, 108px); line-height: 0.92;
+          font-size: clamp(48px, 9vw, 108px); line-height: 0.82;
           letter-spacing: 0.01em; text-transform: uppercase;
           color: #e8e0d5; margin-bottom: 28px;
         }
@@ -1107,12 +1107,7 @@ function HeroCRE() {
         className: `tl-hero-content ${visible ? "visible" : ""}`,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "tl-hero-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "tl-hero-badge",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "tl-badge-dot"
-            }), heroData.eyebrow]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
             children: heroData.headline.map((line, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
               className: i === heroData.headlineAccent ? "accent" : "",
               children: [line, i < heroData.headline.length - 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {})]
@@ -1151,6 +1146,11 @@ function HeroCRE() {
                 })
               })]
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "tl-hero-badge",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "tl-badge-dot"
+            }), heroData.eyebrow]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "tl-hero-stats",
             children: stats.map((s, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -1737,7 +1737,7 @@ function Navbar() {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                 d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
               })
-            }), "Get a Free Quote"]
+            }), "Request a Free Estimate"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
             className: `tl-ham ${menuOpen ? "open" : ""}`,
             onClick: () => setMenuOpen(true),
@@ -1864,7 +1864,7 @@ function Navbar() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
               d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
             })
-          }), "Get a Free Quote"]
+          }), "Request a Free Estimate"]
         })
       })]
     })]
