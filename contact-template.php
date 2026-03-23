@@ -28,24 +28,24 @@ $hours = [
 
 $faqs = [
   [
-    'q' => 'Do you offer free estimates?',
-    'a' => 'Yes — all estimates are completely free and come with no obligation. We\'ll walk the property with you, scope the work, and give you a clear, honest number before any work begins.',
-  ],
-  [
-    'q' => 'How quickly can you start a project?',
-    'a' => 'It depends on our current schedule and the scope of work, but we typically schedule new projects within 1–2 weeks of the estimate. We\'ll give you a realistic timeline upfront.',
+    'q' => 'What areas do you serve??',
+    'a' => 'We serve the Triangle and Triad regions of North Carolina, including Holly Springs, Cary, Chapel Hill, Raleigh, Durham, Hillsborough, Greensboro, Winston-Salem, and High Point.',
   ],
   [
     'q' => 'Are you licensed and insured?',
-    'a' => 'Yes. TrueLine Property Solutions is fully licensed and carries comprehensive general liability and workers\' compensation insurance. Certificates are available upon request.',
+    'a' => 'Yes. TrueLine Property Solutions is fully licensed, insured, and holds workers compensation coverage. We are also BBB accredited and certified for fertilizer and pesticide application in NC.',
   ],
   [
-    'q' => 'What areas do you serve?',
-    'a' => 'We serve Holly Springs, Cary, Chapel Hill, Raleigh, Durham, Hillsborough, and Orange County. If you\'re just outside these areas, reach out — we\'ll let you know if we can help.',
+    'q' => 'Do you offer free estimates?',
+    'a' => 'Yes. We provide free, no-obligation property assessments and estimates. Contact us to schedule a visit.',
   ],
   [
-    'q' => 'Can you handle multiple services on the same property?',
-    'a' => 'Absolutely. We offer landscaping, hardscape, drainage, tree services, exterior cleaning, and property preparation. Many clients use us for several services — it\'s easier to coordinate with one team than manage multiple contractors.',
+    'q' => 'How quickly can you start a project?',
+    'a' => 'Timeline depends on project scope and current schedule. We will give you a clear start date as part of your proposal — and we hold to it.',
+  ],
+  [
+    'q' => 'Do you work with realtors and investors?',
+    'a' => 'Yes. We partner with real estate professionals and property investors for property preparation, ongoing maintenance, and project-based work. Contact us to discuss partnership arrangements.',
   ],
 ];
 
