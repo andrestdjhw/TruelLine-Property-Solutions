@@ -175,7 +175,7 @@ function ContactForm({ compact = false }) {
           </div>
         ) : (
           <>
-            <div className="cf-title">Request a <span>Free Quote</span></div>
+            <div className="cf-title">Request a <span>Free Estimate</span></div>
             <p className="cf-sub">Tell us about your property and what you need — we'll get back to you within 1 business day.</p>
             <div className="cf-rule" />
 

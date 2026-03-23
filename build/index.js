@@ -792,7 +792,7 @@ function ContactForm({
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "cf-title",
           children: ["Request a ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: "Free Quote"
+            children: "Free Estimate"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
           className: "cf-sub",
@@ -1479,39 +1479,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ContactForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContactForm */ "./src/scripts/ContactForm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 function HeroCRE() {
   // ─── DATOS — edita aquí ───────────────────────────────────────────────
   const heroData = {
-    eyebrow: "Why Homeowners Choose TrueLine?",
+    eyebrow: "Holly Springs · Cary · Raleigh · Durham · Chapel Hill",
     headline: ["Your Property", "Held to a", "Higher Standard."],
     headlineAccent: 2,
-    // índice de la línea que va en acento
     subheadline: "Complete exterior and property solutions for homeowners who expect quality, reliability, and results that last — across the Triangle and Triad of North Carolina.",
-    cta1: {
-      label: "Request a Free Estimate",
-      href: "/contact"
-    },
     cta2: {
       label: "Explore Our Services",
-      href: "/services"
+      href: "#services"
     }
   };
   const stats = [{
-    value: "✦",
-    label: "Licensed & Insured"
+    value: "Licensed &\nInsured",
+    label: "Fully Covered"
   }, {
-    value: "✦",
-    label: "BBB Accredited"
+    value: "BBB",
+    label: "Accredited"
   }, {
-    value: "✦",
-    label: "Serving Holly Springs, Cary, Chapel Hill & Beyond"
+    value: "Serving Holly Springs,\nCary, Chapel Hill & Beyond",
+    label: "Service Area"
   }, {
-    value: "✦",
-    label: "Continuous Training & Certified Specialists"
+    value: "Continuous\nTraining",
+    label: "Certified Specialists"
   }];
   // ─────────────────────────────────────────────────────────────────────
 
@@ -1520,26 +1517,26 @@ function HeroCRE() {
     const t = setTimeout(() => setVisible(true), 80);
     return () => clearTimeout(t);
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
       children: `
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@400;500;600&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         /* ── HERO ── */
         .tl-hero {
           position: relative; overflow: hidden;
           background: linear-gradient(160deg, #080c18 0%, #0d1525 55%, #0a1118 100%);
-          min-height: 92vh;
+          min-height: 100vh;
           display: flex; flex-direction: column;
         }
 
         /* Watermark */
         .tl-hero-wm {
           position: absolute; inset: 0; pointer-events: none; z-index: 1;
-          display: flex; align-items: center; justify-content: space-between; padding: 0 6%;
+          display: flex; align-items: center; justify-content: space-between; padding: 0 4%;
         }
-        .tl-hero-wm svg { width: min(240px, 26%); opacity: 0.04; filter: brightness(100) grayscale(1); }
+        .tl-hero-wm svg { width: min(200px, 18%); opacity: 0.03; filter: brightness(100) grayscale(1); }
 
         /* Glows */
         .tl-hero-glows { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
@@ -1547,12 +1544,12 @@ function HeroCRE() {
           position: absolute; border-radius: 50%;
           filter: blur(80px); animation: tlGlow 8s ease-in-out infinite;
         }
-        .tl-glow-1 { width: 400px; height: 400px; background: rgba(74,160,80,0.1); top: -100px; left: -80px; }
-        .tl-glow-2 { width: 500px; height: 500px; background: rgba(20,80,30,0.08); bottom: -100px; right: -60px; animation-delay: 3s; }
-        .tl-glow-3 { width: 300px; height: 300px; background: rgba(74,160,80,0.06); bottom: 0; left: 35%; animation-delay: 5s; }
+        .tl-glow-1 { width: 500px; height: 500px; background: rgba(74,160,80,0.09); top: -120px; left: -100px; }
+        .tl-glow-2 { width: 400px; height: 400px; background: rgba(20,80,30,0.07); bottom: -80px; right: 40%; animation-delay: 3s; }
+        .tl-glow-3 { width: 350px; height: 350px; background: rgba(74,160,80,0.06); top: 20%; right: -60px; animation-delay: 5s; }
         @keyframes tlGlow {
           0%,100% { transform: scale(1) translate(0,0); opacity: 1; }
-          50% { transform: scale(1.15) translate(20px,-20px); opacity: 0.7; }
+          50% { transform: scale(1.12) translate(15px,-15px); opacity: 0.7; }
         }
 
         /* Grid */
@@ -1564,16 +1561,27 @@ function HeroCRE() {
           background-size: 60px 60px;
         }
 
-        /* Content */
+        /* ── CONTENT — two column layout ── */
         .tl-hero-content {
           position: relative; z-index: 10; flex: 1;
-          display: flex; align-items: center; justify-content: center;
-          padding: 80px 32px 60px; text-align: center;
+          display: flex; align-items: center;
+          padding: 100px 5% 72px;
           opacity: 0; transform: translateY(30px);
           transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+          gap: 48px;
         }
         .tl-hero-content.visible { opacity: 1; transform: translateY(0); }
-        .tl-hero-inner { max-width: 900px; margin: 0 auto; }
+
+        /* Left column */
+        .tl-hero-left {
+          flex: 1; min-width: 0;
+          display: flex; flex-direction: column; gap: 0;
+        }
+
+        /* Right column */
+        .tl-hero-right {
+          width: 420px; flex-shrink: 0;
+        }
 
         .tl-hero-badge {
           display: inline-flex; align-items: center; gap: 8px;
@@ -1581,17 +1589,18 @@ function HeroCRE() {
           color: rgba(100,200,110,0.9); font-family: 'Barlow', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
           text-transform: uppercase; padding: 6px 16px; border-radius: 3px;
-          margin-bottom: 32px; animation: badgeFade 0.6s 0.2s both;
+          margin-bottom: 28px; width: fit-content;
+          animation: badgeFade 0.6s 0.2s both;
         }
         @keyframes badgeFade { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
         .tl-badge-dot { width: 6px; height: 6px; background: #4aa050; border-radius: 50%; animation: tlPulse 2s infinite; flex-shrink: 0; }
         @keyframes tlPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
         .tl-hero h1 {
-          font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-          font-size: clamp(48px, 9vw, 108px); line-height: 0.82;
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+          font-size: clamp(44px, 6vw, 88px); line-height: 0.92;
           letter-spacing: 0.01em; text-transform: uppercase;
-          color: #e8e0d5; margin-bottom: 28px;
+          color: #e8e0d5; margin-bottom: 24px;
         }
         .tl-hero h1 .accent {
           color: #4aa050;
@@ -1599,82 +1608,118 @@ function HeroCRE() {
         }
 
         .tl-hero-sub {
-          font-size: clamp(15px, 1.8vw, 18px); line-height: 1.7;
-          color: rgba(200,215,240,0.5); max-width: 580px; margin: 0 auto 40px;
+          font-size: clamp(14px, 1.4vw, 16px); line-height: 1.75;
+          color: rgba(200,215,240,0.5); max-width: 520px;
+          margin-bottom: 36px;
         }
 
-        .tl-hero-btns {
-          display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px;
-        }
-        .tl-hero-btn-main {
-          display: flex; align-items: center; gap: 8px;
-          padding: 15px 30px; background: #4aa050; color: white;
-          border: none; border-radius: 4px; cursor: pointer;
-          font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-          font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase;
-          box-shadow: 0 6px 24px rgba(74,160,80,0.45);
-          transition: transform 0.2s, box-shadow 0.2s; text-decoration: none;
-        }
-        .tl-hero-btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(74,160,80,0.6); }
-        .tl-hero-btn-ghost {
-          display: flex; align-items: center; gap: 8px;
-          padding: 15px 30px; background: transparent; color: rgba(210,220,240,0.75);
+        .tl-hero-ghost-btn {
+          display: inline-flex; align-items: center; gap: 8px;
+          padding: 12px 24px; background: transparent; color: rgba(210,220,240,0.65);
           border: 1px solid rgba(74,160,80,0.3); border-radius: 4px; cursor: pointer;
           font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
-          font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase;
-          transition: all 0.2s; text-decoration: none;
+          font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
+          transition: all 0.2s; text-decoration: none; width: fit-content;
+          margin-bottom: 48px;
         }
-        .tl-hero-btn-ghost:hover { border-color: #4aa050; color: #fff; background: rgba(74,160,80,0.08); }
+        .tl-hero-ghost-btn:hover { border-color: #4aa050; color: #fff; background: rgba(74,160,80,0.08); }
 
-        /* Stats */
+        /* Trust stats row */
         .tl-hero-stats {
-          display: flex; justify-content: center;
+          display: grid; grid-template-columns: repeat(4, 1fr);
           border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden;
           background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
-          max-width: 640px; margin: 0 auto;
         }
         .tl-hero-stat {
-          flex: 1; padding: 18px 20px; text-align: center;
+          padding: 16px 14px; text-align: center;
           border-right: 1px solid rgba(255,255,255,0.06);
         }
         .tl-hero-stat:last-child { border-right: none; }
-        .tl-hero-stat-val {
-          font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800;
-          color: #4aa050; letter-spacing: 0.04em; line-height: 1;
+        .tl-hero-stat-icon {
+          display: flex; align-items: center; justify-content: center;
+          margin-bottom: 6px;
         }
         .tl-hero-stat-label {
-          font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-          color: rgba(190,205,235,0.35); margin-top: 4px;
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+          text-transform: uppercase; color: rgba(190,205,235,0.5);
+          line-height: 1.3;
         }
+
+        /* Form wrapper — override cf-wrap shadow para integrarlo mejor */
+        .tl-hero-form-wrap .cf-wrap {
+          background: rgba(13,22,16,0.92) !important;
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(74,160,80,0.2);
+          box-shadow: 0 24px 60px rgba(0,0,0,0.5) !important;
+        }
+        .tl-hero-form-wrap .cf-title { color: #e8e0d5 !important; }
+        .tl-hero-form-wrap .cf-sub { color: rgba(200,215,240,0.45) !important; }
+        .tl-hero-form-wrap .cf-label { color: rgba(190,210,240,0.55) !important; }
+        .tl-hero-form-wrap .cf-input,
+        .tl-hero-form-wrap .cf-select,
+        .tl-hero-form-wrap .cf-textarea {
+          background: rgba(255,255,255,0.05) !important;
+          border-color: rgba(74,160,80,0.2) !important;
+          color: #e8e0d5 !important;
+        }
+        .tl-hero-form-wrap .cf-input::placeholder,
+        .tl-hero-form-wrap .cf-textarea::placeholder {
+          color: rgba(200,215,240,0.25) !important;
+        }
+        .tl-hero-form-wrap .cf-input:focus,
+        .tl-hero-form-wrap .cf-select:focus,
+        .tl-hero-form-wrap .cf-textarea:focus {
+          background: rgba(255,255,255,0.08) !important;
+          border-color: #4aa050 !important;
+        }
+        .tl-hero-form-wrap .cf-success h3 { color: #e8e0d5 !important; }
+        .tl-hero-form-wrap .cf-success p { color: rgba(200,215,240,0.5) !important; }
 
         /* Wave */
         .tl-hero-wave { position: relative; z-index: 10; margin-top: -2px; line-height: 0; }
         .tl-hero-wave svg { display: block; width: 100%; }
 
-        @media (max-width: 640px) {
-          .tl-hero-stats { flex-direction: column; }
-          .tl-hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-          .tl-hero-stat:last-child { border-bottom: none; }
-          .tl-hero-content { padding: 60px 20px 48px; }
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1100px) {
+          .tl-hero-right { width: 360px; }
+          .tl-hero h1 { font-size: clamp(40px, 5.5vw, 72px); }
+        }
+        @media (max-width: 900px) {
+          .tl-hero-content {
+            flex-direction: column; align-items: stretch;
+            padding: 80px 24px 56px; gap: 40px;
+          }
+          .tl-hero-right { width: 100%; }
+          .tl-hero h1 { font-size: clamp(44px, 10vw, 72px); }
+          .tl-hero-sub { max-width: 100%; }
+          .tl-hero-badge { margin-bottom: 20px; }
+          .tl-hero-ghost-btn { margin-bottom: 32px; }
+        }
+        @media (max-width: 540px) {
+          .tl-hero-stats { grid-template-columns: repeat(2, 1fr); }
+          .tl-hero-stat:nth-child(2) { border-right: none; }
+          .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.06); }
+          .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.06); }
         }
       `
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
       className: "tl-hero",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "tl-hero-wm",
         "aria-hidden": "true",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
           viewBox: "0 0 40 40",
           fill: "white",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
             points: "20,2 38,11 38,29 20,38 2,29 2,11"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M12 28 L12 18 L20 12 L28 18 L28 28",
             stroke: "white",
             strokeWidth: "1.5",
             fill: "none",
             strokeLinejoin: "round"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
             x1: "12",
             y1: "28",
             x2: "28",
@@ -1682,21 +1727,21 @@ function HeroCRE() {
             stroke: "white",
             strokeWidth: "1.5"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
           viewBox: "0 0 40 40",
           fill: "white",
           style: {
             transform: "scaleX(-1)"
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polygon", {
             points: "20,2 38,11 38,29 20,38 2,29 2,11"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M12 28 L12 18 L20 12 L28 18 L28 28",
             stroke: "white",
             strokeWidth: "1.5",
             fill: "none",
             strokeLinejoin: "round"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
             x1: "12",
             y1: "28",
             x2: "28",
@@ -1705,82 +1750,132 @@ function HeroCRE() {
             strokeWidth: "1.5"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "tl-hero-glows",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "tl-glow tl-glow-1"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "tl-glow tl-glow-2"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "tl-glow tl-glow-3"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "tl-hero-grid"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: `tl-hero-content ${visible ? "visible" : ""}`,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "tl-hero-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-            children: heroData.headline.map((line, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-              className: i === heroData.headlineAccent ? "accent" : "",
-              children: [line, i < heroData.headline.length - 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {})]
-            }, i))
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "tl-hero-sub",
-            children: heroData.subheadline
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "tl-hero-btns",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: heroData.cta1.href,
-              className: "tl-hero-btn-main",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "14",
-                height: "14",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "currentColor",
-                strokeWidth: "2.5",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
-                })
-              }), heroData.cta1.label]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: heroData.cta2.href,
-              className: "tl-hero-btn-ghost",
-              children: [heroData.cta2.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                width: "14",
-                height: "14",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "currentColor",
-                strokeWidth: "2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
-                  points: "9 18 15 12 9 6"
-                })
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "tl-hero-left",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "tl-hero-badge",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               className: "tl-badge-dot"
             }), heroData.eyebrow]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+            children: heroData.headline.map((line, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+              className: i === heroData.headlineAccent ? "accent" : "",
+              children: [line, i < heroData.headline.length - 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
+            }, i))
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            className: "tl-hero-sub",
+            children: heroData.subheadline
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+            href: heroData.cta2.href,
+            className: "tl-hero-ghost-btn",
+            children: [heroData.cta2.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              width: "13",
+              height: "13",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
+                points: "9 18 15 12 9 6"
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "tl-hero-stats",
-            children: stats.map((s, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: [{
+              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                width: "18",
+                height: "18",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "#4aa050",
+                strokeWidth: "2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                })
+              }),
+              label: "Licensed &\nInsured"
+            }, {
+              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                width: "18",
+                height: "18",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "#4aa050",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                  cx: "12",
+                  cy: "8",
+                  r: "6"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  d: "M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"
+                })]
+              }),
+              label: "BBB\nAccredited"
+            }, {
+              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                width: "18",
+                height: "18",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "#4aa050",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                  cx: "12",
+                  cy: "10",
+                  r: "3"
+                })]
+              }),
+              label: "Serving Holly Springs,\nCary & Beyond"
+            }, {
+              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                width: "18",
+                height: "18",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "#4aa050",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  d: "M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                  d: "M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"
+                })]
+              }),
+              label: "Continuous\nTraining"
+            }].map((s, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
               className: "tl-hero-stat",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "tl-hero-stat-val",
-                children: s.value
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                className: "tl-hero-stat-icon",
+                children: s.icon
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                 className: "tl-hero-stat-label",
                 children: s.label
               })]
             }, i))
           })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "tl-hero-right tl-hero-form-wrap",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ContactForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            compact: true
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "tl-hero-wave",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
           viewBox: "0 0 1440 100",
           fill: "none",
           xmlns: "http://www.w3.org/2000/svg",
@@ -1788,7 +1883,7 @@ function HeroCRE() {
           style: {
             height: "clamp(40px,6vw,80px)"
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M0 0L60 8C120 16 240 32 360 38C480 44 600 40 720 36C840 32 960 32 1080 36C1200 40 1320 46 1380 49L1440 52V100H0V0Z",
             fill: "#f5f3ef"
           })
@@ -1868,10 +1963,6 @@ function Navbar() {
         link: "/services/property-preparation"
       }]
     }]
-  }, {
-    name: "Gallery",
-    link: "/gallery",
-    hasDropdown: false
   }, {
     name: "Service Areas",
     link: "/service-areas",
