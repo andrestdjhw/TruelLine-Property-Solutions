@@ -108,7 +108,7 @@ $service_areas = [
 ];
 
 // Reemplaza con el embed real de Google Maps
-$map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-79.0!3d35.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac5a2f9f51e0f7%3A0x6b0f3e3e3e3e3e3e!2sHolly+Springs%2C+NC!5e0!3m2!1sen!2sus!4v1234567890';
+$map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.25948731595!2d-79.1586794!3d35.921253400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acc4e3100fee05%3A0xf9adcbde99dac5f9!2sChapel%20Hill%2C%20NC%2027516%2C%20USA!5e0!3m2!1sen!2shn!4v1774277723972!5m2!1sen!2shn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade';
 ?>
 
 <style>

@@ -18,8 +18,8 @@ function FooterCRE() {
   }
 
   const socials = [
-    { name: "Facebook",  href: "https://facebook.com",  icon: "facebook"  },
-    { name: "Instagram", href: "https://instagram.com", icon: "instagram" },
+    { name: "Facebook",  href: "https://www.facebook.com/share/1XcvxTFnsn/",  icon: "facebook"  },
+    { name: "Jobber", href: "https://navaslandscapeservicesandmore.jobbersites.com/", icon: "jobber" },
   ]
 
   const footerLinks = [
@@ -41,8 +41,6 @@ function FooterCRE() {
         { name: "About Us",          href: "/about"         },
         { name: "Gallery",           href: "/gallery"       },
         { name: "Contact Us",        href: "/contact"       },
-        { name: "Privacy Policy",    href: "/privacy"       },
-        { name: "Terms & Conditions",href: "/terms"         },
       ],
     },
   ]
@@ -54,11 +52,11 @@ function FooterCRE() {
         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
       </svg>
     )
-    if (icon === "instagram") return (
+    if (icon === "jobber") return (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
       </svg>
     )
     return null
@@ -270,7 +268,7 @@ function FooterCRE() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                 </svg>
-                Get a Free Quote
+                Request a Free Estimate
               </a>
               <a href="/gallery" className="tl-footer-btn-ghost">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -383,8 +381,8 @@ function FooterCRE() {
               {company.license}
             </div>
             <div className="tl-footer-legal">
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms &amp; Conditions</a>
+              {/* <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms &amp; Conditions</a> */}
             </div>
           </div>
         </div>

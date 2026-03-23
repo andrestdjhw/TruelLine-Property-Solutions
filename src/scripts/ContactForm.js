@@ -1,4 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
+import emailjs from "@emailjs/browser"
+
+// ─── CREDENCIALES EmailJS ────────────────────────────────────────────────────
+// Reemplaza estos tres valores con los de tu cuenta en emailjs.com
+const EMAILJS_PUBLIC_KEY  = "NPFppts74nYqJf4Ci"
+const EMAILJS_SERVICE_ID = "service_2xpp6jf"  
+const EMAILJS_TEMPLATE_ID = "template_8rwqc1k"
+// ────────────────────────────────────────────────────────────────────────────
 
 /**
  * ContactForm — componente reutilizable de formulario de contacto.
@@ -24,15 +32,37 @@ function ContactForm({ compact = false }) {
   const [formState, setFormState] = useState({
     name: "", email: "", phone: "", service: "", message: "",
   })
-  const [submitted, setSubmitted] = useState(false)
+
+  // "idle" | "sending" | "success" | "error"
+  const [status, setStatus] = useState("idle")
 
   const handleChange = e =>
     setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }))
 
   const handleSubmit = e => {
     e.preventDefault()
-    // TODO: conectar con CF7, WPForms, o endpoint propio
-    setSubmitted(true)
+    setStatus("sending")
+
+    // Los keys del objeto deben coincidir con las variables
+    // de tu template en EmailJS: {{name}}, {{email}}, etc.
+    const templateParams = {
+      name:    formState.name,
+      email:   formState.email,
+      phone:   formState.phone,
+      service: formState.service,
+      message: formState.message,
+    }
+
+    emailjs
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+      .then(() => {
+        setStatus("success")
+        setFormState({ name: "", email: "", phone: "", service: "", message: "" })
+      })
+      .catch(err => {
+        console.error("EmailJS error:", err)
+        setStatus("error")
+      })
   }
 
   return (
@@ -94,13 +124,22 @@ function ContactForm({ compact = false }) {
           transition: transform 0.2s, box-shadow 0.2s; margin-top: 6px;
           position: relative; overflow: hidden;
         }
+        .cf-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
         .cf-submit::before {
           content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
           background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
           transform: skewX(-15deg); transition: left 0.5s;
         }
-        .cf-submit:hover::before { left: 160%; }
-        .cf-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(74,160,80,0.5); }
+        .cf-submit:hover:not(:disabled)::before { left: 160%; }
+        .cf-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(74,160,80,0.5); }
+
+        /* Feedback messages */
+        .cf-error-banner {
+          margin-top: 14px; padding: 12px 16px;
+          background: #fff5f5; border: 1.5px solid #fca5a5;
+          border-radius: 4px; color: #b91c1c;
+          font-size: 13px; line-height: 1.5;
+        }
 
         /* Success state */
         .cf-success { text-align: center; padding: 32px 20px; }
@@ -123,7 +162,8 @@ function ContactForm({ compact = false }) {
       `}</style>
 
       <div className="cf-wrap">
-        {submitted ? (
+        {status === "success" ? (
+          /* ── Estado de éxito ── */
           <div className="cf-success">
             <div className="cf-success-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4aa050" strokeWidth="2.5">
@@ -176,13 +216,26 @@ function ContactForm({ compact = false }) {
                   required value={formState.message} onChange={handleChange} />
               </div>
 
-              <button type="submit" className="cf-submit">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <line x1="22" y1="2" x2="11" y2="13"/>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                </svg>
-                Send My Request
+              <button type="submit" className="cf-submit" disabled={status === "sending"}>
+                {status === "sending" ? (
+                  "Sending…"
+                ) : (
+                  <>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <line x1="22" y1="2" x2="11" y2="13"/>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                    Send My Request
+                  </>
+                )}
               </button>
+
+              {/* ── Banner de error (solo visible si el envío falló) ── */}
+              {status === "error" && (
+                <div className="cf-error-banner">
+                  Something went wrong. Please try again or contact us directly.
+                </div>
+              )}
             </form>
           </>
         )}
