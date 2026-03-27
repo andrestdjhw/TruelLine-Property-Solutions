@@ -1964,34 +1964,13 @@ function Navbar() {
       }]
     }]
   }, {
+    name: "Gallery",
+    link: "/gallery",
+    hasDropdown: false
+  }, {
     name: "Service Areas",
     link: "/service-areas",
-    hasDropdown: true,
-    columns: [{
-      title: "Areas We Serve",
-      items: [{
-        name: "Holly Springs",
-        link: "/service-areas/holly-springs"
-      }, {
-        name: "Cary",
-        link: "/service-areas/cary"
-      }, {
-        name: "Chapel Hill",
-        link: "/service-areas/chapel-hill"
-      }, {
-        name: "Raleigh",
-        link: "/service-areas/raleigh"
-      }, {
-        name: "Durham",
-        link: "/service-areas/durham"
-      }, {
-        name: "Hillsborough",
-        link: "/service-areas/hillsborough"
-      }, {
-        name: "Orange County",
-        link: "/service-areas/orange-county"
-      }]
-    }]
+    hasDropdown: false
   }, {
     name: "Contact Us",
     link: "/contact",
@@ -2244,9 +2223,9 @@ function Navbar() {
           .tl-top-left { display: none !important; }
         }
       `
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "tl-top",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "tl-top-left",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
           href: "tel:+18005550100",
@@ -2261,7 +2240,7 @@ function Navbar() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
               d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
             })
-          }), "(919) 951-8341"]
+          }), "(800) 555-0100"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "tl-top-sep"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
@@ -2279,7 +2258,7 @@ function Navbar() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
               points: "22,6 12,13 2,6"
             })]
-          }), "navaslandscapenc1@gmail.com"]
+          }), "info@truelinepropertysolutions.com"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "tl-top-sep"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -2288,7 +2267,24 @@ function Navbar() {
             className: "tl-dot"
           }), "Licensed & Insured"]
         })]
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "tl-top-item",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+          width: "12",
+          height: "12",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+            cx: "12",
+            cy: "10",
+            r: "3"
+          })]
+        }), "Serving Your Area"]
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: `tl-nav ${isScrolled ? "scrolled" : "top"}`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -2424,7 +2420,7 @@ function Navbar() {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                 d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
               })
-            }), "Request a Free Estimate"]
+            }), "Get a Free Quote"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
             className: `tl-ham ${menuOpen ? "open" : ""}`,
             onClick: () => setMenuOpen(true),
@@ -2551,7 +2547,7 @@ function Navbar() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
               d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
             })
-          }), "Request a Free Estimate"]
+          }), "Get a Free Quote"]
         })
       })]
     })]
