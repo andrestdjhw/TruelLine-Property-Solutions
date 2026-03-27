@@ -1964,10 +1964,6 @@ function Navbar() {
       }]
     }]
   }, {
-    name: "Gallery",
-    link: "/gallery",
-    hasDropdown: false
-  }, {
     name: "Service Areas",
     link: "/service-areas",
     hasDropdown: false
