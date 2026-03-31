@@ -2332,50 +2332,19 @@ function Navbar() {
       className: `tl-nav ${isScrolled ? "scrolled" : "top"}`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: `tl-inner ${isScrolled ? "scrolled" : ""}`,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
           className: "tl-logo",
           href: "/",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "tl-logo-icon",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-              width: "42",
-              height: "42",
-              viewBox: "0 0 40 40",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-                points: "20,2 38,11 38,29 20,38 2,29 2,11",
-                fill: "var(--tl-accent)",
-                opacity: ".15"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-                points: "20,2 38,11 38,29 20,38 2,29 2,11",
-                fill: "none",
-                stroke: "var(--tl-accent)",
-                strokeWidth: "1.5"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                d: "M12 28 L12 18 L20 12 L28 18 L28 28",
-                fill: "none",
-                stroke: "var(--tl-accent)",
-                strokeWidth: "2",
-                strokeLinejoin: "round"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-                x1: "12",
-                y1: "28",
-                x2: "28",
-                y2: "28",
-                stroke: "var(--tl-accent)",
-                strokeWidth: "2"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "tl-logo-name",
-              children: ["True Line ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                children: "Property"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "tl-logo-sub",
-              children: "Solutions \xB7 Exterior Services"
-            })]
-          })]
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            src: "/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png",
+            alt: "TrueLine Property Solutions",
+            style: {
+              height: "48px",
+              width: "auto",
+              objectFit: "contain",
+              display: "block"
+            }
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
           className: "tl-links",
           children: navItems.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
@@ -2463,7 +2432,7 @@ function Navbar() {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                 d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
               })
-            }), "Get a Free Quote"]
+            }), "Request a Free Estimate"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
             className: `tl-ham ${menuOpen ? "open" : ""}`,
             onClick: () => setMenuOpen(true),
@@ -2481,55 +2450,19 @@ function Navbar() {
       className: `tl-mob ${menuOpen ? "open" : "closed"}`,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "tl-mob-head",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
           className: "tl-logo",
           href: "/",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            src: "/wp-content/themes/trueline/assets/images/trueline-logo.png",
+            alt: "TrueLine Property Solutions",
             style: {
-              width: 32,
-              height: 32,
-              flexShrink: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center"
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-              width: "32",
-              height: "32",
-              viewBox: "0 0 40 40",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-                points: "20,2 38,11 38,29 20,38 2,29 2,11",
-                fill: "var(--tl-accent)",
-                opacity: ".15"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-                points: "20,2 38,11 38,29 20,38 2,29 2,11",
-                fill: "none",
-                stroke: "var(--tl-accent)",
-                strokeWidth: "1.5"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                d: "M12 28 L12 18 L20 12 L28 18 L28 28",
-                fill: "none",
-                stroke: "var(--tl-accent)",
-                strokeWidth: "2",
-                strokeLinejoin: "round"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-                x1: "12",
-                y1: "28",
-                x2: "28",
-                y2: "28",
-                stroke: "var(--tl-accent)",
-                strokeWidth: "2"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "tl-logo-name",
-            style: {
-              fontSize: 17
-            },
-            children: ["True Line ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              children: "Property"
-            })]
-          })]
+              height: "36px",
+              width: "auto",
+              objectFit: "contain",
+              display: "block"
+            }
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
           className: "tl-mob-x",
           onClick: () => setMenuOpen(false),
