@@ -2,22 +2,18 @@ import React, { useState } from "react"
 import emailjs from "@emailjs/browser"
 
 // ─── CREDENCIALES EmailJS ────────────────────────────────────────────────────
-// Reemplaza estos tres valores con los de tu cuenta en emailjs.com
 const EMAILJS_PUBLIC_KEY  = "NPFppts74nYqJf4Ci"
-const EMAILJS_SERVICE_ID = "service_2xpp6jf"  
+const EMAILJS_SERVICE_ID  = "service_2xpp6jf"
 const EMAILJS_TEMPLATE_ID = "template_8rwqc1k"
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
  * ContactForm — componente reutilizable de formulario de contacto.
- * Se monta en cualquier div con id="cre-contact-form".
- *
- * Props (opcionales):
- *   - compact: bool  — versión sin padding exterior para embeber en tarjeta
+ * Props:
+ *   - compact: bool — versión sin padding exterior para embeber en tarjeta
  */
 function ContactForm({ compact = false }) {
 
-  // ─── DATOS — edita aquí ──────────────────────────────────────────────────
   const services = [
     "Landscaping",
     "Hardscape & Concrete",
@@ -27,14 +23,11 @@ function ContactForm({ compact = false }) {
     "Property Preparation",
     "Not sure yet — I need advice",
   ]
-  // ────────────────────────────────────────────────────────────────────────
 
   const [formState, setFormState] = useState({
     name: "", email: "", phone: "", service: "", message: "",
   })
-
-  // "idle" | "sending" | "success" | "error"
-  const [status, setStatus] = useState("idle")
+  const [status, setStatus] = useState("idle") // idle | sending | success | error
 
   const handleChange = e =>
     setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -43,8 +36,6 @@ function ContactForm({ compact = false }) {
     e.preventDefault()
     setStatus("sending")
 
-    // Los keys del objeto deben coincidir con las variables
-    // de tu template en EmailJS: {{name}}, {{email}}, etc.
     const templateParams = {
       name:    formState.name,
       email:   formState.email,
@@ -72,68 +63,84 @@ function ContactForm({ compact = false }) {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         .cf-wrap {
-          background: #fff; border-radius: 6px;
+          --cf-accent:        #2A5A49;
+          --cf-accent-dark:   #133429;
+          --cf-accent-soft:   rgba(42,90,73,0.08);
+          --cf-accent-ring:   rgba(42,90,73,0.15);
+          --cf-text:          #091914;
+          --cf-muted:         rgba(9,25,20,0.45);
+        }
+
+        .cf-wrap {
+          background: #FCF7EC;
+          border-radius: 6px;
           padding: ${compact ? "28px 24px" : "44px 40px"};
-          box-shadow: 0 2px 24px rgba(26,20,16,0.09);
+          box-shadow: 0 2px 24px rgba(9,25,20,0.08);
           font-family: 'Barlow', sans-serif;
         }
+
         .cf-title {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
           font-size: 26px; letter-spacing: 0.04em; text-transform: uppercase;
-          color: #1a1410; margin-bottom: 6px;
+          color: var(--cf-text); margin-bottom: 6px;
         }
-        .cf-title span { color: #4aa050; }
-        .cf-sub { color: #9a8f86; font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
-        .cf-rule { width: 36px; height: 3px; background: #4aa050; border-radius: 2px; margin-bottom: 28px; }
+        .cf-title span { color: var(--cf-accent); }
+        .cf-sub { color: var(--cf-muted); font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
+        .cf-rule { width: 36px; height: 3px; background: var(--cf-accent); border-radius: 2px; margin-bottom: 28px; }
 
         .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
-        .cf-row.full { grid-template-columns: 1fr; }
         .cf-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 18px; }
         .cf-label {
           font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-          text-transform: uppercase; color: #6b6560;
+          text-transform: uppercase; color: var(--cf-muted);
         }
-        .cf-label span { color: #4aa050; }
+        .cf-label span { color: var(--cf-accent); }
 
         .cf-input, .cf-select, .cf-textarea {
           width: 100%; padding: 11px 14px;
-          background: #faf8f5; border: 1.5px solid #e8e2dc;
+          background: #fff; border: 1.5px solid rgba(42,90,73,0.2);
           border-radius: 4px; font-family: 'Barlow', sans-serif;
-          font-size: 14px; color: #1a1410;
+          font-size: 14px; color: var(--cf-text);
           transition: border-color 0.2s, box-shadow 0.2s; outline: none;
           appearance: none; -webkit-appearance: none;
         }
+        .cf-input::placeholder, .cf-textarea::placeholder { color: rgba(9,25,20,0.28); }
         .cf-input:focus, .cf-select:focus, .cf-textarea:focus {
-          border-color: #4aa050; box-shadow: 0 0 0 3px rgba(74,160,80,0.1);
+          border-color: var(--cf-accent);
+          box-shadow: 0 0 0 3px var(--cf-accent-ring);
           background: #fff;
         }
         .cf-textarea { resize: vertical; min-height: 120px; }
         .cf-select {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234aa050' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232A5A49' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
           background-repeat: no-repeat; background-position: right 14px center;
           padding-right: 40px; cursor: pointer;
         }
 
         .cf-submit {
           display: flex; align-items: center; justify-content: center; gap: 9px;
-          width: 100%; padding: 14px 24px; background: #4aa050; color: white;
+          width: 100%; padding: 14px 24px;
+          background: var(--cf-accent); color: #FCF7EC;
           border: none; border-radius: 4px; cursor: pointer;
           font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
           font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase;
-          box-shadow: 0 4px 18px rgba(74,160,80,0.38);
-          transition: transform 0.2s, box-shadow 0.2s; margin-top: 6px;
-          position: relative; overflow: hidden;
+          box-shadow: 0 4px 18px rgba(42,90,73,0.28);
+          transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+          margin-top: 6px; position: relative; overflow: hidden;
         }
         .cf-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
         .cf-submit::before {
           content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+          background: linear-gradient(90deg, transparent, rgba(252,247,236,0.15), transparent);
           transform: skewX(-15deg); transition: left 0.5s;
         }
         .cf-submit:hover:not(:disabled)::before { left: 160%; }
-        .cf-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(74,160,80,0.5); }
+        .cf-submit:hover:not(:disabled) {
+          background: var(--cf-accent-dark);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 26px rgba(42,90,73,0.38);
+        }
 
-        /* Feedback messages */
         .cf-error-banner {
           margin-top: 14px; padding: 12px 16px;
           background: #fff5f5; border: 1.5px solid #fca5a5;
@@ -141,19 +148,20 @@ function ContactForm({ compact = false }) {
           font-size: 13px; line-height: 1.5;
         }
 
-        /* Success state */
         .cf-success { text-align: center; padding: 32px 20px; }
         .cf-success-icon {
-          width: 56px; height: 56px; background: rgba(74,160,80,0.1);
-          border: 2px solid rgba(74,160,80,0.3); border-radius: 50%;
+          width: 56px; height: 56px;
+          background: var(--cf-accent-soft);
+          border: 2px solid rgba(42,90,73,0.25); border-radius: 50%;
           display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;
         }
         .cf-success h3 {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 24px;
-          letter-spacing: 0.04em; text-transform: uppercase; color: #1a1410; margin-bottom: 10px;
+          letter-spacing: 0.04em; text-transform: uppercase;
+          color: var(--cf-text); margin-bottom: 10px;
         }
-        .cf-success h3 span { color: #4aa050; }
-        .cf-success p { color: #9a8f86; font-size: 14px; line-height: 1.65; }
+        .cf-success h3 span { color: var(--cf-accent); }
+        .cf-success p { color: var(--cf-muted); font-size: 14px; line-height: 1.65; }
 
         @media (max-width: 540px) {
           .cf-row { grid-template-columns: 1fr; }
@@ -163,16 +171,17 @@ function ContactForm({ compact = false }) {
 
       <div className="cf-wrap">
         {status === "success" ? (
-          /* ── Estado de éxito ── */
+
           <div className="cf-success">
             <div className="cf-success-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4aa050" strokeWidth="2.5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2.5">
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
             </div>
             <h3>Message <span>Sent!</span></h3>
             <p>Thanks for reaching out. We'll review your request and get back to you within 1 business day with a free estimate.</p>
           </div>
+
         ) : (
           <>
             <div className="cf-title">Request a <span>Free Estimate</span></div>
@@ -230,10 +239,9 @@ function ContactForm({ compact = false }) {
                 )}
               </button>
 
-              {/* ── Banner de error (solo visible si el envío falló) ── */}
               {status === "error" && (
                 <div className="cf-error-banner">
-                  Something went wrong. Please try again or contact us directly.
+                  Something went wrong. Please try again or contact us directly at (919) 951-8341.
                 </div>
               )}
             </form>

@@ -108,22 +108,25 @@ $service_areas = [
 ];
 
 // Reemplaza con el embed real de Google Maps
-$map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.25948731595!2d-79.1586794!3d35.921253400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acc4e3100fee05%3A0xf9adcbde99dac5f9!2sChapel%20Hill%2C%20NC%2027516%2C%20USA!5e0!3m2!1sen!2shn!4v1774277723972!5m2!1sen!2shn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade';
+$map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-79.0!3d35.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac5a2f9f51e0f7%3A0x6b0f3e3e3e3e3e3e!2sHolly+Springs%2C+NC!5e0!3m2!1sen!2sus!4v1234567890';
 ?>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
   /* ── BASE ── */
-  .tl-home { font-family: 'Barlow', sans-serif; background: #f5f3ef; color: #1a1410; }
+  .tl-home { font-family: 'Barlow', sans-serif; background: #FCF7EC; color: #091914; }
 
   /* ── TOKENS ── */
   .tl-home {
-    --accent:        #4aa050;
-    --accent-soft:   rgba(74,160,80,0.08);
-    --accent-border: rgba(74,160,80,0.18);
-    --dark:          #1a1410;
-    --muted:         #6b6560;
+    --accent:        #2A5A49;
+    --accent-soft:   rgba(42,90,73,0.08);
+    --accent-border: rgba(42,90,73,0.18);
+    --accent-dark:   #133429;
+    --white:         #FCF7EC;
+    --lemon:         #ECEBC3;
+    --dark:          #091914;
+    --muted:         rgba(9,25,20,0.5);
   }
 
   /* ── SCROLL REVEAL ── */
@@ -156,7 +159,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   .tl-rule { width: 44px; height: 3px; background: var(--accent); border-radius: 2px; margin: 16px auto 0; }
 
   /* ══ SERVICES ══ */
-  .tl-services-section { padding: 88px 0; background: #f5f3ef; }
+  .tl-services-section { padding: 88px 0; background: #FCF7EC; }
   .tl-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .tl-service-card {
     background: #fff; border-radius: 6px;
@@ -167,13 +170,13 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   .tl-service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,20,16,0.13); }
   .tl-service-card-top {
     height: 148px;
-    background: linear-gradient(135deg, #0a1a10 0%, #0d2018 100%);
+    background: linear-gradient(135deg, #091914 0%, #133429 100%);
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
   }
   .tl-service-card-top::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(74,160,80,0.14), transparent 60%);
+    background: radial-gradient(circle at 30% 50%, rgba(42,90,73,0.14), transparent 60%);
   }
   .tl-service-card-top svg { position: relative; z-index: 1; }
   .tl-service-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
@@ -195,19 +198,19 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   /* ══ WHY US ══ */
   .tl-why-section {
     padding: 88px 0;
-    background: linear-gradient(160deg, #0d1a10 0%, #0f2015 100%);
+    background: linear-gradient(160deg, #091914 0%, #133429 100%);
     position: relative; overflow: hidden;
   }
   .tl-why-section::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
     background:
-      radial-gradient(ellipse 55% 50% at 20% 50%, rgba(74,160,80,0.08) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 50% at 20% 50%, rgba(42,90,73,0.08) 0%, transparent 65%),
       repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
       repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
   }
   .tl-why-section .tl-title { color: #e8e0d5; }
   .tl-why-section .tl-desc { color: rgba(200,215,240,0.45); }
-  .tl-why-section .tl-label { color: rgba(100,200,110,0.85); }
+  .tl-why-section .tl-label { color: rgba(42,160,90,0.85); }
   .tl-why-grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; position: relative; z-index: 1;
   }
@@ -216,10 +219,10 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
     border-left: 3px solid var(--accent); border-radius: 4px; padding: 28px;
     display: flex; gap: 18px; align-items: flex-start; transition: background 0.2s;
   }
-  .tl-why-card:hover { background: rgba(74,160,80,0.06); }
+  .tl-why-card:hover { background: rgba(42,90,73,0.06); }
   .tl-why-icon {
-    width: 42px; height: 42px; background: rgba(74,160,80,0.1);
-    border: 1px solid rgba(74,160,80,0.22); border-radius: 6px;
+    width: 42px; height: 42px; background: rgba(42,90,73,0.1);
+    border: 1px solid rgba(42,90,73,0.22); border-radius: 6px;
     display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
   .tl-why-card-title {
@@ -229,14 +232,14 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   .tl-why-card-desc { color: rgba(200,215,240,0.45); font-size: 14px; line-height: 1.65; }
 
   /* ══ HOW WE WORK ══ */
-  .tl-how-section { padding: 88px 0; background: #f5f3ef; }
+  .tl-how-section { padding: 88px 0; background: #FCF7EC; }
   .tl-how-grid {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative;
   }
   .tl-how-grid::before {
     content: ''; position: absolute;
     top: 36px; left: calc(12.5% + 20px); right: calc(12.5% + 20px);
-    height: 2px; background: linear-gradient(90deg, var(--accent), rgba(74,160,80,0.2));
+    height: 2px; background: linear-gradient(90deg, var(--accent), rgba(42,90,73,0.2));
     z-index: 0;
   }
   .tl-how-step {
@@ -245,14 +248,14 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   }
   .tl-how-number-wrap {
     width: 72px; height: 72px; border-radius: 50%;
-    background: #fff; border: 2px solid var(--accent);
+    background: #FCF7EC; border: 2px solid var(--accent);
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 24px; flex-shrink: 0;
-    box-shadow: 0 4px 20px rgba(74,160,80,0.15);
+    box-shadow: 0 4px 20px rgba(42,90,73,0.15);
     transition: background 0.3s, box-shadow 0.3s;
   }
   .tl-how-step:hover .tl-how-number-wrap {
-    background: var(--accent); box-shadow: 0 8px 28px rgba(74,160,80,0.35);
+    background: var(--accent); box-shadow: 0 8px 28px rgba(42,90,73,0.35);
   }
   .tl-how-number {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
@@ -270,18 +273,18 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   /* ══ TESTIMONIALS ══ */
   .tl-testimonials-section {
     padding: 88px 0;
-    background: linear-gradient(160deg, #0d1a10 0%, #0f2015 100%);
+    background: linear-gradient(160deg, #091914 0%, #133429 100%);
     position: relative; overflow: hidden;
   }
   .tl-testimonials-section::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
     background:
-      radial-gradient(ellipse 55% 50% at 80% 50%, rgba(74,160,80,0.07) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 50% at 80% 50%, rgba(42,90,73,0.07) 0%, transparent 65%),
       repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
       repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
   }
   .tl-testimonials-section .tl-title { color: #e8e0d5; }
-  .tl-testimonials-section .tl-label { color: rgba(100,200,110,0.85); }
+  .tl-testimonials-section .tl-label { color: rgba(42,160,90,0.85); }
   .tl-testimonials-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
     position: relative; z-index: 1;
@@ -292,7 +295,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
     display: flex; flex-direction: column; gap: 20px;
     transition: background 0.25s, transform 0.25s;
   }
-  .tl-testimonial-card:hover { background: rgba(74,160,80,0.07); transform: translateY(-4px); }
+  .tl-testimonial-card:hover { background: rgba(42,90,73,0.07); transform: translateY(-4px); }
   .tl-stars { display: flex; gap: 3px; }
   .tl-star {
     width: 16px; height: 16px; fill: var(--accent);
@@ -309,7 +312,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   }
   .tl-testimonial-avatar {
     width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
-    background: rgba(74,160,80,0.15); border: 1px solid rgba(74,160,80,0.3);
+    background: rgba(42,90,73,0.15); border: 1px solid rgba(42,90,73,0.3);
     display: flex; align-items: center; justify-content: center;
   }
   .tl-testimonial-name {
@@ -328,17 +331,17 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   }
   .tl-reviews-badge-inner {
     display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(74,160,80,0.2);
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(42,90,73,0.2);
     border-radius: 4px; padding: 10px 20px;
     font-size: 13px; color: rgba(200,215,240,0.5); font-weight: 500;
   }
-  .tl-reviews-badge-inner strong { color: rgba(100,200,110,0.8); font-weight: 700; }
+  .tl-reviews-badge-inner strong { color: rgba(42,160,90,0.8); font-weight: 700; }
 
   /* ══ SERVICE AREAS BAND ══ */
   .tl-areas-band {
-    background: #fff;
-    border-top: 1px solid rgba(74,160,80,0.12);
-    border-bottom: 1px solid rgba(74,160,80,0.12);
+    background: #ECEBC3;
+    border-top: 1px solid rgba(42,90,73,0.2);
+    border-bottom: 1px solid rgba(42,90,73,0.2);
     padding: 28px 32px;
   }
   .tl-areas-inner {
@@ -349,7 +352,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
     font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--accent); flex-shrink: 0;
   }
-  .tl-areas-sep { width: 1px; height: 16px; background: rgba(74,160,80,0.2); flex-shrink: 0; }
+  .tl-areas-sep { width: 1px; height: 16px; background: rgba(42,90,73,0.2); flex-shrink: 0; }
   .tl-areas-list { display: flex; align-items: center; flex-wrap: wrap; gap: 0; }
   .tl-area-item {
     display: flex; align-items: center; gap: 8px;
@@ -362,22 +365,22 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   .tl-area-item:hover { color: var(--accent); }
 
   /* ══ CTA ══ */
-  .tl-cta-section { padding: 88px 0; background: #f5f3ef; }
+  .tl-cta-section { padding: 88px 0; background: #FCF7EC; }
   .tl-cta-box {
-    background: linear-gradient(135deg, #0d1a10 0%, #142018 100%);
+    background: linear-gradient(135deg, #091914 0%, #133429 100%);
     border-radius: 8px; padding: 64px 48px; text-align: center;
-    border: 1px solid rgba(74,160,80,0.2);
+    border: 1px solid rgba(42,90,73,0.2);
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     position: relative; overflow: hidden;
   }
   .tl-cta-box::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(74,160,80,0.1) 0%, transparent 65%);
+    background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(42,90,73,0.1) 0%, transparent 65%);
   }
   .tl-cta-box > * { position: relative; z-index: 1; }
   .tl-cta-eyebrow {
     font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em;
-    text-transform: uppercase; color: rgba(100,200,110,0.8); display: block; margin-bottom: 16px;
+    text-transform: uppercase; color: rgba(42,160,90,0.8); display: block; margin-bottom: 16px;
   }
   .tl-cta-title {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
@@ -392,26 +395,26 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   .tl-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .tl-cta-btn-main {
     display: inline-flex; align-items: center; gap: 9px;
-    padding: 15px 32px; background: var(--accent); color: white;
+    padding: 15px 32px; background: var(--accent); color: #FCF7EC;
     border: none; border-radius: 4px; cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase;
-    text-decoration: none; box-shadow: 0 6px 22px rgba(74,160,80,0.4);
+    text-decoration: none; box-shadow: 0 6px 22px rgba(42,90,73,0.4);
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  .tl-cta-btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(74,160,80,0.55); }
+  .tl-cta-btn-main:hover { background: #133429; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(42,90,73,0.55); }
   .tl-cta-btn-ghost {
     display: inline-flex; align-items: center; gap: 9px;
     padding: 15px 28px; background: transparent; color: rgba(200,215,240,0.65);
-    border: 1px solid rgba(74,160,80,0.3); border-radius: 4px; cursor: pointer;
+    border: 1px solid rgba(42,90,73,0.3); border-radius: 4px; cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
     font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase;
     text-decoration: none; transition: all 0.2s;
   }
-  .tl-cta-btn-ghost:hover { border-color: var(--accent); color: #fff; background: rgba(74,160,80,0.08); }
+  .tl-cta-btn-ghost:hover { border-color: var(--accent); color: #fff; background: rgba(42,90,73,0.08); }
 
   /* ══ MAP ══ */
-  .tl-map-section { padding: 0 0 88px; background: #f5f3ef; }
+  .tl-map-section { padding: 0 0 88px; background: #FCF7EC; }
   .tl-map-head { text-align: left; margin-bottom: 32px; }
   .tl-map-wrap { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 30px rgba(26,20,16,0.12); }
   .tl-map-wrap iframe { display: block; }
@@ -455,7 +458,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
           <div class="tl-service-card tl-reveal" data-delay="<?php echo ( $i % 3 ) + 1; ?>">
             <div class="tl-service-card-top">
               <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
-                   stroke="rgba(100,200,110,0.85)" stroke-width="1.6"
+                   stroke="rgba(42,160,90,0.85)" stroke-width="1.6"
                    stroke-linecap="round" stroke-linejoin="round">
                 <?php echo $service['icon']; ?>
               </svg>
@@ -493,7 +496,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
           <div class="tl-why-card tl-reveal" data-delay="<?php echo $i + 1; ?>">
             <div class="tl-why-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                   stroke="#4aa050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                   stroke="#2A5A49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <?php echo $item['icon']; ?>
               </svg>
             </div>
@@ -585,7 +588,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
 
             <div class="tl-testimonial-author">
               <div class="tl-testimonial-avatar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4aa050" stroke-width="2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2">
                   <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
@@ -602,7 +605,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
       <!-- DEV NOTE: Replace with actual Google rating when live reviews are connected -->
       <div class="tl-reviews-badge">
         <div class="tl-reviews-badge-inner">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#4aa050"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#2A5A49"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <strong>5.0</strong> rated on Google · <strong>See all reviews →</strong>
         </div>
       </div>
@@ -630,15 +633,15 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206787.2594873
   <section class="tl-cta-section">
     <div class="tl-container">
       <div class="tl-cta-box tl-reveal">
-        <span class="tl-cta-eyebrow">Ready to Elevate Your Property?</span>
+        <span class="tl-cta-eyebrow">Ready to Get Started?</span>
         <h2 class="tl-cta-title">Your Property Deserves<br><span>Better Care.</span></h2>
-        <p class="tl-cta-body">Whether you need a complete landscape redesign, a new patio, drainage solutions, or a property ready to sell — TrueLine is the team that delivers.</p>
+        <p class="tl-cta-body">Get a free, no-obligation estimate. We'll walk the property with you and give you a clear, honest quote — no pressure.</p>
         <div class="tl-cta-btns">
           <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="tl-cta-btn-main">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
             </svg>
-            Request a Free Estimate
+            Get a Free Quote
           </a>
           <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="tl-cta-btn-ghost">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

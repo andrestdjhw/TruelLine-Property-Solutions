@@ -604,7 +604,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // ─── CREDENCIALES EmailJS ────────────────────────────────────────────────────
-// Reemplaza estos tres valores con los de tu cuenta en emailjs.com
 
 const EMAILJS_PUBLIC_KEY = "NPFppts74nYqJf4Ci";
 const EMAILJS_SERVICE_ID = "service_2xpp6jf";
@@ -613,18 +612,13 @@ const EMAILJS_TEMPLATE_ID = "template_8rwqc1k";
 
 /**
  * ContactForm — componente reutilizable de formulario de contacto.
- * Se monta en cualquier div con id="cre-contact-form".
- *
- * Props (opcionales):
- *   - compact: bool  — versión sin padding exterior para embeber en tarjeta
+ * Props:
+ *   - compact: bool — versión sin padding exterior para embeber en tarjeta
  */
 function ContactForm({
   compact = false
 }) {
-  // ─── DATOS — edita aquí ──────────────────────────────────────────────────
   const services = ["Landscaping", "Hardscape & Concrete", "Drainage & Erosion Control", "Tree Services", "Exterior Cleaning", "Property Preparation", "Not sure yet — I need advice"];
-  // ────────────────────────────────────────────────────────────────────────
-
   const [formState, setFormState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     name: "",
     email: "",
@@ -632,9 +626,8 @@ function ContactForm({
     service: "",
     message: ""
   });
+  const [status, setStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("idle"); // idle | sending | success | error
 
-  // "idle" | "sending" | "success" | "error"
-  const [status, setStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("idle");
   const handleChange = e => setFormState(prev => ({
     ...prev,
     [e.target.name]: e.target.value
@@ -642,9 +635,6 @@ function ContactForm({
   const handleSubmit = e => {
     e.preventDefault();
     setStatus("sending");
-
-    // Los keys del objeto deben coincidir con las variables
-    // de tu template en EmailJS: {{name}}, {{email}}, etc.
     const templateParams = {
       name: formState.name,
       email: formState.email,
@@ -673,68 +663,84 @@ function ContactForm({
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         .cf-wrap {
-          background: #fff; border-radius: 6px;
+          --cf-accent:        #2A5A49;
+          --cf-accent-dark:   #133429;
+          --cf-accent-soft:   rgba(42,90,73,0.08);
+          --cf-accent-ring:   rgba(42,90,73,0.15);
+          --cf-text:          #091914;
+          --cf-muted:         rgba(9,25,20,0.45);
+        }
+
+        .cf-wrap {
+          background: #FCF7EC;
+          border-radius: 6px;
           padding: ${compact ? "28px 24px" : "44px 40px"};
-          box-shadow: 0 2px 24px rgba(26,20,16,0.09);
+          box-shadow: 0 2px 24px rgba(9,25,20,0.08);
           font-family: 'Barlow', sans-serif;
         }
+
         .cf-title {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
           font-size: 26px; letter-spacing: 0.04em; text-transform: uppercase;
-          color: #1a1410; margin-bottom: 6px;
+          color: var(--cf-text); margin-bottom: 6px;
         }
-        .cf-title span { color: #4aa050; }
-        .cf-sub { color: #9a8f86; font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
-        .cf-rule { width: 36px; height: 3px; background: #4aa050; border-radius: 2px; margin-bottom: 28px; }
+        .cf-title span { color: var(--cf-accent); }
+        .cf-sub { color: var(--cf-muted); font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
+        .cf-rule { width: 36px; height: 3px; background: var(--cf-accent); border-radius: 2px; margin-bottom: 28px; }
 
         .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
-        .cf-row.full { grid-template-columns: 1fr; }
         .cf-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 18px; }
         .cf-label {
           font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-          text-transform: uppercase; color: #6b6560;
+          text-transform: uppercase; color: var(--cf-muted);
         }
-        .cf-label span { color: #4aa050; }
+        .cf-label span { color: var(--cf-accent); }
 
         .cf-input, .cf-select, .cf-textarea {
           width: 100%; padding: 11px 14px;
-          background: #faf8f5; border: 1.5px solid #e8e2dc;
+          background: #fff; border: 1.5px solid rgba(42,90,73,0.2);
           border-radius: 4px; font-family: 'Barlow', sans-serif;
-          font-size: 14px; color: #1a1410;
+          font-size: 14px; color: var(--cf-text);
           transition: border-color 0.2s, box-shadow 0.2s; outline: none;
           appearance: none; -webkit-appearance: none;
         }
+        .cf-input::placeholder, .cf-textarea::placeholder { color: rgba(9,25,20,0.28); }
         .cf-input:focus, .cf-select:focus, .cf-textarea:focus {
-          border-color: #4aa050; box-shadow: 0 0 0 3px rgba(74,160,80,0.1);
+          border-color: var(--cf-accent);
+          box-shadow: 0 0 0 3px var(--cf-accent-ring);
           background: #fff;
         }
         .cf-textarea { resize: vertical; min-height: 120px; }
         .cf-select {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234aa050' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232A5A49' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
           background-repeat: no-repeat; background-position: right 14px center;
           padding-right: 40px; cursor: pointer;
         }
 
         .cf-submit {
           display: flex; align-items: center; justify-content: center; gap: 9px;
-          width: 100%; padding: 14px 24px; background: #4aa050; color: white;
+          width: 100%; padding: 14px 24px;
+          background: var(--cf-accent); color: #FCF7EC;
           border: none; border-radius: 4px; cursor: pointer;
           font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
           font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase;
-          box-shadow: 0 4px 18px rgba(74,160,80,0.38);
-          transition: transform 0.2s, box-shadow 0.2s; margin-top: 6px;
-          position: relative; overflow: hidden;
+          box-shadow: 0 4px 18px rgba(42,90,73,0.28);
+          transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+          margin-top: 6px; position: relative; overflow: hidden;
         }
         .cf-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
         .cf-submit::before {
           content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+          background: linear-gradient(90deg, transparent, rgba(252,247,236,0.15), transparent);
           transform: skewX(-15deg); transition: left 0.5s;
         }
         .cf-submit:hover:not(:disabled)::before { left: 160%; }
-        .cf-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(74,160,80,0.5); }
+        .cf-submit:hover:not(:disabled) {
+          background: var(--cf-accent-dark);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 26px rgba(42,90,73,0.38);
+        }
 
-        /* Feedback messages */
         .cf-error-banner {
           margin-top: 14px; padding: 12px 16px;
           background: #fff5f5; border: 1.5px solid #fca5a5;
@@ -742,19 +748,20 @@ function ContactForm({
           font-size: 13px; line-height: 1.5;
         }
 
-        /* Success state */
         .cf-success { text-align: center; padding: 32px 20px; }
         .cf-success-icon {
-          width: 56px; height: 56px; background: rgba(74,160,80,0.1);
-          border: 2px solid rgba(74,160,80,0.3); border-radius: 50%;
+          width: 56px; height: 56px;
+          background: var(--cf-accent-soft);
+          border: 2px solid rgba(42,90,73,0.25); border-radius: 50%;
           display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;
         }
         .cf-success h3 {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 24px;
-          letter-spacing: 0.04em; text-transform: uppercase; color: #1a1410; margin-bottom: 10px;
+          letter-spacing: 0.04em; text-transform: uppercase;
+          color: var(--cf-text); margin-bottom: 10px;
         }
-        .cf-success h3 span { color: #4aa050; }
-        .cf-success p { color: #9a8f86; font-size: 14px; line-height: 1.65; }
+        .cf-success h3 span { color: var(--cf-accent); }
+        .cf-success p { color: var(--cf-muted); font-size: 14px; line-height: 1.65; }
 
         @media (max-width: 540px) {
           .cf-row { grid-template-columns: 1fr; }
@@ -763,10 +770,7 @@ function ContactForm({
       `
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "cf-wrap",
-      children: status === "success" ?
-      /*#__PURE__*/
-      /* ── Estado de éxito ── */
-      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: status === "success" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "cf-success",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "cf-success-icon",
@@ -775,7 +779,7 @@ function ContactForm({
             height: "24",
             viewBox: "0 0 24 24",
             fill: "none",
-            stroke: "#4aa050",
+            stroke: "#2A5A49",
             strokeWidth: "2.5",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
               points: "20 6 9 17 4 12"
@@ -912,7 +916,7 @@ function ContactForm({
             })
           }), status === "error" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "cf-error-banner",
-            children: "Something went wrong. Please try again or contact us directly."
+            children: "Something went wrong. Please try again or contact us directly at (919) 951-8341."
           })]
         })]
       })
@@ -1557,7 +1561,7 @@ function HeroCRE() {
         /* ── HERO ── */
         .tl-hero {
           position: relative; overflow: hidden;
-          background: linear-gradient(160deg, #080c18 0%, #0d1525 55%, #0a1118 100%);
+          background: linear-gradient(160deg, #091914 0%, #0f2015 55%, #133429 100%);
           min-height: 100vh;
           display: flex; flex-direction: column;
         }
@@ -1575,9 +1579,9 @@ function HeroCRE() {
           position: absolute; border-radius: 50%;
           filter: blur(80px); animation: tlGlow 8s ease-in-out infinite;
         }
-        .tl-glow-1 { width: 500px; height: 500px; background: rgba(74,160,80,0.09); top: -120px; left: -100px; }
-        .tl-glow-2 { width: 400px; height: 400px; background: rgba(20,80,30,0.07); bottom: -80px; right: 40%; animation-delay: 3s; }
-        .tl-glow-3 { width: 350px; height: 350px; background: rgba(74,160,80,0.06); top: 20%; right: -60px; animation-delay: 5s; }
+        .tl-glow-1 { width: 500px; height: 500px; background: rgba(42,90,73,0.12); top: -120px; left: -100px; }
+        .tl-glow-2 { width: 400px; height: 400px; background: rgba(19,52,41,0.1); bottom: -80px; right: 40%; animation-delay: 3s; }
+        .tl-glow-3 { width: 350px; height: 350px; background: rgba(42,90,73,0.08); top: 20%; right: -60px; animation-delay: 5s; }
         @keyframes tlGlow {
           0%,100% { transform: scale(1) translate(0,0); opacity: 1; }
           50% { transform: scale(1.12) translate(15px,-15px); opacity: 0.7; }
@@ -1616,15 +1620,15 @@ function HeroCRE() {
 
         .tl-hero-badge {
           display: inline-flex; align-items: center; gap: 8px;
-          background: rgba(74,160,80,0.1); border: 1px solid rgba(74,160,80,0.28);
-          color: rgba(100,200,110,0.9); font-family: 'Barlow', sans-serif;
+          background: rgba(42,90,73,0.1); border: 1px solid rgba(42,90,73,0.3);
+          color: rgba(42,160,90,0.9); font-family: 'Barlow', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
           text-transform: uppercase; padding: 6px 16px; border-radius: 3px;
           margin-bottom: 28px; width: fit-content;
           animation: badgeFade 0.6s 0.2s both;
         }
         @keyframes badgeFade { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
-        .tl-badge-dot { width: 6px; height: 6px; background: #4aa050; border-radius: 50%; animation: tlPulse 2s infinite; flex-shrink: 0; }
+        .tl-badge-dot { width: 6px; height: 6px; background: #2A5A49; border-radius: 50%; animation: tlPulse 2s infinite; flex-shrink: 0; }
         @keyframes tlPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
         .tl-hero h1 {
@@ -1634,8 +1638,8 @@ function HeroCRE() {
           color: #e8e0d5; margin-bottom: 24px;
         }
         .tl-hero h1 .accent {
-          color: #4aa050;
-          text-shadow: 0 0 60px rgba(74,160,80,0.3);
+          color: #ECEBC3;
+          text-shadow: 0 0 60px rgba(42,90,73,0.4);
         }
 
         .tl-hero-sub {
@@ -1647,13 +1651,13 @@ function HeroCRE() {
         .tl-hero-ghost-btn {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 12px 24px; background: transparent; color: rgba(210,220,240,0.65);
-          border: 1px solid rgba(74,160,80,0.3); border-radius: 4px; cursor: pointer;
+          border: 1px solid rgba(42,90,73,0.35); border-radius: 4px; cursor: pointer;
           font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
           font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
           transition: all 0.2s; text-decoration: none; width: fit-content;
           margin-bottom: 48px;
         }
-        .tl-hero-ghost-btn:hover { border-color: #4aa050; color: #fff; background: rgba(74,160,80,0.08); }
+        .tl-hero-ghost-btn:hover { border-color: #ECEBC3; color: #FCF7EC; background: rgba(42,90,73,0.1); }
 
         /* Trust stats row */
         .tl-hero-stats {
@@ -1681,7 +1685,7 @@ function HeroCRE() {
         .tl-hero-form-wrap .cf-wrap {
           background: rgba(13,22,16,0.92) !important;
           backdrop-filter: blur(20px);
-          border: 1px solid rgba(74,160,80,0.2);
+          border: 1px solid rgba(42,90,73,0.25);
           box-shadow: 0 24px 60px rgba(0,0,0,0.5) !important;
         }
         .tl-hero-form-wrap .cf-title { color: #e8e0d5 !important; }
@@ -1691,7 +1695,7 @@ function HeroCRE() {
         .tl-hero-form-wrap .cf-select,
         .tl-hero-form-wrap .cf-textarea {
           background: rgba(255,255,255,0.05) !important;
-          border-color: rgba(74,160,80,0.2) !important;
+          border-color: rgba(42,90,73,0.25) !important;
           color: #e8e0d5 !important;
         }
         .tl-hero-form-wrap .cf-input::placeholder,
@@ -1702,7 +1706,7 @@ function HeroCRE() {
         .tl-hero-form-wrap .cf-select:focus,
         .tl-hero-form-wrap .cf-textarea:focus {
           background: rgba(255,255,255,0.08) !important;
-          border-color: #4aa050 !important;
+          border-color: #2A5A49 !important;
         }
         .tl-hero-form-wrap .cf-success h3 { color: #e8e0d5 !important; }
         .tl-hero-form-wrap .cf-success p { color: rgba(200,215,240,0.5) !important; }
@@ -1831,7 +1835,7 @@ function HeroCRE() {
                 height: "18",
                 viewBox: "0 0 24 24",
                 fill: "none",
-                stroke: "#4aa050",
+                stroke: "#2A5A49",
                 strokeWidth: "2",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
                   d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
@@ -1844,7 +1848,7 @@ function HeroCRE() {
                 height: "18",
                 viewBox: "0 0 24 24",
                 fill: "none",
-                stroke: "#4aa050",
+                stroke: "#2A5A49",
                 strokeWidth: "2",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
                   cx: "12",
@@ -1861,7 +1865,7 @@ function HeroCRE() {
                 height: "18",
                 viewBox: "0 0 24 24",
                 fill: "none",
-                stroke: "#4aa050",
+                stroke: "#2A5A49",
                 strokeWidth: "2",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
                   d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
@@ -1878,7 +1882,7 @@ function HeroCRE() {
                 height: "18",
                 viewBox: "0 0 24 24",
                 fill: "none",
-                stroke: "#4aa050",
+                stroke: "#2A5A49",
                 strokeWidth: "2",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
                   d: "M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"
@@ -1916,7 +1920,7 @@ function HeroCRE() {
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M0 0L60 8C120 16 240 32 360 38C480 44 600 40 720 36C840 32 960 32 1080 36C1200 40 1320 46 1380 49L1440 52V100H0V0Z",
-            fill: "#f5f3ef"
+            fill: "#FCF7EC"
           })
         })
       })]

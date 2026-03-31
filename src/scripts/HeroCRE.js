@@ -36,7 +36,7 @@ function HeroCRE() {
         /* ── HERO ── */
         .tl-hero {
           position: relative; overflow: hidden;
-          background: linear-gradient(160deg, #080c18 0%, #0d1525 55%, #0a1118 100%);
+          background: linear-gradient(160deg, #091914 0%, #0f2015 55%, #133429 100%);
           min-height: 100vh;
           display: flex; flex-direction: column;
         }
@@ -54,9 +54,9 @@ function HeroCRE() {
           position: absolute; border-radius: 50%;
           filter: blur(80px); animation: tlGlow 8s ease-in-out infinite;
         }
-        .tl-glow-1 { width: 500px; height: 500px; background: rgba(74,160,80,0.09); top: -120px; left: -100px; }
-        .tl-glow-2 { width: 400px; height: 400px; background: rgba(20,80,30,0.07); bottom: -80px; right: 40%; animation-delay: 3s; }
-        .tl-glow-3 { width: 350px; height: 350px; background: rgba(74,160,80,0.06); top: 20%; right: -60px; animation-delay: 5s; }
+        .tl-glow-1 { width: 500px; height: 500px; background: rgba(42,90,73,0.12); top: -120px; left: -100px; }
+        .tl-glow-2 { width: 400px; height: 400px; background: rgba(19,52,41,0.1); bottom: -80px; right: 40%; animation-delay: 3s; }
+        .tl-glow-3 { width: 350px; height: 350px; background: rgba(42,90,73,0.08); top: 20%; right: -60px; animation-delay: 5s; }
         @keyframes tlGlow {
           0%,100% { transform: scale(1) translate(0,0); opacity: 1; }
           50% { transform: scale(1.12) translate(15px,-15px); opacity: 0.7; }
@@ -95,15 +95,15 @@ function HeroCRE() {
 
         .tl-hero-badge {
           display: inline-flex; align-items: center; gap: 8px;
-          background: rgba(74,160,80,0.1); border: 1px solid rgba(74,160,80,0.28);
-          color: rgba(100,200,110,0.9); font-family: 'Barlow', sans-serif;
+          background: rgba(42,90,73,0.1); border: 1px solid rgba(42,90,73,0.3);
+          color: rgba(42,160,90,0.9); font-family: 'Barlow', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
           text-transform: uppercase; padding: 6px 16px; border-radius: 3px;
           margin-bottom: 28px; width: fit-content;
           animation: badgeFade 0.6s 0.2s both;
         }
         @keyframes badgeFade { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
-        .tl-badge-dot { width: 6px; height: 6px; background: #4aa050; border-radius: 50%; animation: tlPulse 2s infinite; flex-shrink: 0; }
+        .tl-badge-dot { width: 6px; height: 6px; background: #2A5A49; border-radius: 50%; animation: tlPulse 2s infinite; flex-shrink: 0; }
         @keyframes tlPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
         .tl-hero h1 {
@@ -113,8 +113,8 @@ function HeroCRE() {
           color: #e8e0d5; margin-bottom: 24px;
         }
         .tl-hero h1 .accent {
-          color: #4aa050;
-          text-shadow: 0 0 60px rgba(74,160,80,0.3);
+          color: #ECEBC3;
+          text-shadow: 0 0 60px rgba(42,90,73,0.4);
         }
 
         .tl-hero-sub {
@@ -126,13 +126,13 @@ function HeroCRE() {
         .tl-hero-ghost-btn {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 12px 24px; background: transparent; color: rgba(210,220,240,0.65);
-          border: 1px solid rgba(74,160,80,0.3); border-radius: 4px; cursor: pointer;
+          border: 1px solid rgba(42,90,73,0.35); border-radius: 4px; cursor: pointer;
           font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
           font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
           transition: all 0.2s; text-decoration: none; width: fit-content;
           margin-bottom: 48px;
         }
-        .tl-hero-ghost-btn:hover { border-color: #4aa050; color: #fff; background: rgba(74,160,80,0.08); }
+        .tl-hero-ghost-btn:hover { border-color: #ECEBC3; color: #FCF7EC; background: rgba(42,90,73,0.1); }
 
         /* Trust stats row */
         .tl-hero-stats {
@@ -160,7 +160,7 @@ function HeroCRE() {
         .tl-hero-form-wrap .cf-wrap {
           background: rgba(13,22,16,0.92) !important;
           backdrop-filter: blur(20px);
-          border: 1px solid rgba(74,160,80,0.2);
+          border: 1px solid rgba(42,90,73,0.25);
           box-shadow: 0 24px 60px rgba(0,0,0,0.5) !important;
         }
         .tl-hero-form-wrap .cf-title { color: #e8e0d5 !important; }
@@ -170,7 +170,7 @@ function HeroCRE() {
         .tl-hero-form-wrap .cf-select,
         .tl-hero-form-wrap .cf-textarea {
           background: rgba(255,255,255,0.05) !important;
-          border-color: rgba(74,160,80,0.2) !important;
+          border-color: rgba(42,90,73,0.25) !important;
           color: #e8e0d5 !important;
         }
         .tl-hero-form-wrap .cf-input::placeholder,
@@ -181,7 +181,7 @@ function HeroCRE() {
         .tl-hero-form-wrap .cf-select:focus,
         .tl-hero-form-wrap .cf-textarea:focus {
           background: rgba(255,255,255,0.08) !important;
-          border-color: #4aa050 !important;
+          border-color: #2A5A49 !important;
         }
         .tl-hero-form-wrap .cf-success h3 { color: #e8e0d5 !important; }
         .tl-hero-form-wrap .cf-success p { color: rgba(200,215,240,0.5) !important; }
@@ -267,10 +267,10 @@ function HeroCRE() {
             {/* Trust stats */}
             <div className="tl-hero-stats">
               {[
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4aa050" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: "Licensed &\nInsured" },
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4aa050" strokeWidth="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>, label: "BBB\nAccredited" },
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4aa050" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, label: "Serving Holly Springs,\nCary & Beyond" },
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4aa050" strokeWidth="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>, label: "Continuous\nTraining" },
+                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: "Licensed &\nInsured" },
+                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>, label: "BBB\nAccredited" },
+                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, label: "Serving Holly Springs,\nCary & Beyond" },
+                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>, label: "Continuous\nTraining" },
               ].map((s, i) => (
                 <div key={i} className="tl-hero-stat">
                   <div className="tl-hero-stat-icon">{s.icon}</div>
@@ -291,7 +291,7 @@ function HeroCRE() {
         {/* Wave */}
         <div className="tl-hero-wave">
           <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ height: "clamp(40px,6vw,80px)" }}>
-            <path d="M0 0L60 8C120 16 240 32 360 38C480 44 600 40 720 36C840 32 960 32 1080 36C1200 40 1320 46 1380 49L1440 52V100H0V0Z" fill="#f5f3ef"/>
+            <path d="M0 0L60 8C120 16 240 32 360 38C480 44 600 40 720 36C840 32 960 32 1080 36C1200 40 1320 46 1380 49L1440 52V100H0V0Z" fill="#FCF7EC"/>
           </svg>
         </div>
 
