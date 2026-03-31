@@ -956,7 +956,7 @@ function FooterCRE() {
   };
   const socials = [{
     name: "Facebook",
-    href: "https://www.facebook.com/share/1XcvxTFnsn/",
+    href: "https://facebook.com",
     icon: "facebook"
   }, {
     name: "Jobber",
@@ -998,6 +998,12 @@ function FooterCRE() {
     }, {
       name: "Contact Us",
       href: "/contact"
+    }, {
+      name: "Privacy Policy",
+      href: "/privacy"
+    }, {
+      name: "Terms & Conditions",
+      href: "/terms"
     }]
   }];
   // ────────────────────────────────────────────────────────────────────────
@@ -1040,16 +1046,31 @@ function FooterCRE() {
         @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600&display=swap');
         *, *::before, *::after { box-sizing: border-box; }
 
+        /* ── BRAND TOKENS ── */
         .tl-footer {
-          background: #080c18;
-          border-top: 1px solid rgba(74,160,80,0.18);
+          --f-accent:       #2A5A49;
+          --f-accent-dark:  #133429;
+          --f-accent-soft:  rgba(42,90,73,0.08);
+          --f-accent-mid:   rgba(42,90,73,0.15);
+          --f-accent-border:rgba(42,90,73,0.18);
+          --f-onyx:         #091914;
+          --f-white:        #FCF7EC;
+          --f-lemon:        #ECEBC3;
+          --f-text:         #091914;
+          --f-muted:        rgba(9,25,20,0.5);
+          --f-muted-light:  rgba(9,25,20,0.38);
+        }
+
+        .tl-footer {
+          background: var(--f-white);
+          border-top: 3px solid var(--f-accent);
           font-family: 'Barlow', sans-serif;
         }
 
-        /* ── CTA BAND ── */
+        /* ── CTA BAND — Onyx oscuro ── */
         .tl-footer-cta-band {
-          background: linear-gradient(135deg, #0a1410 0%, #0f1e14 100%);
-          border-bottom: 1px solid rgba(74,160,80,0.15);
+          background: var(--f-onyx);
+          border-bottom: 1px solid rgba(42,90,73,0.25);
           padding: 48px 32px;
         }
         .tl-footer-cta-inner {
@@ -1060,36 +1081,36 @@ function FooterCRE() {
         .tl-footer-cta-text h2 {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
           font-size: clamp(24px, 2.8vw, 36px); letter-spacing: 0.04em;
-          text-transform: uppercase; color: #fff; line-height: 1.1; margin-bottom: 8px;
+          text-transform: uppercase; color: var(--f-white); line-height: 1.1; margin-bottom: 8px;
         }
-        .tl-footer-cta-text h2 span { color: #4aa050; }
+        .tl-footer-cta-text h2 span { color: var(--f-lemon); }
         .tl-footer-cta-text p {
-          color: rgba(190,210,235,0.5); font-size: 14px; line-height: 1.6; max-width: 480px;
+          color: rgba(236,235,195,0.45); font-size: 14px; line-height: 1.6; max-width: 480px;
         }
         .tl-footer-cta-btns { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
         .tl-footer-btn-primary {
           display: flex; align-items: center; gap: 8px;
-          padding: 13px 24px; background: #4aa050; color: white;
+          padding: 13px 24px; background: var(--f-accent); color: var(--f-white);
           border: none; border-radius: 4px; cursor: pointer;
           font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
           font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
-          box-shadow: 0 4px 18px rgba(74,160,80,0.4);
-          transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; white-space: nowrap;
+          box-shadow: 0 4px 18px rgba(42,90,73,0.4);
+          transition: transform 0.2s, box-shadow 0.2s, background 0.2s; text-decoration: none; white-space: nowrap;
         }
-        .tl-footer-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,160,80,0.55); }
+        .tl-footer-btn-primary:hover { background: var(--f-accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,90,73,0.5); }
         .tl-footer-btn-ghost {
           display: flex; align-items: center; gap: 8px;
-          padding: 13px 24px; background: transparent; color: rgba(190,210,240,0.7);
-          border: 1px solid rgba(74,160,80,0.28); border-radius: 4px; cursor: pointer;
+          padding: 13px 24px; background: transparent; color: rgba(236,235,195,0.65);
+          border: 1px solid rgba(236,235,195,0.25); border-radius: 4px; cursor: pointer;
           font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
           font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
           transition: all 0.2s; text-decoration: none; white-space: nowrap;
         }
-        .tl-footer-btn-ghost:hover { border-color: #4aa050; color: #fff; background: rgba(74,160,80,0.07); }
+        .tl-footer-btn-ghost:hover { border-color: var(--f-lemon); color: var(--f-lemon); background: rgba(236,235,195,0.06); }
 
-        /* ── MAIN FOOTER ── */
+        /* ── MAIN FOOTER — Floral White ── */
         .tl-footer-main {
-          max-width: 1280px; margin: 0 auto; padding: 56px 32px 40px;
+          max-width: 1280px; margin: 0 auto; padding: 52px 32px 36px;
           display: grid; gap: 48px;
           grid-template-columns: 1.8fr 1fr 1fr;
         }
@@ -1099,41 +1120,43 @@ function FooterCRE() {
         .tl-footer-logo-icon {
           width: 44px; height: 44px; flex-shrink: 0;
           display: flex; align-items: center; justify-content: center;
-          filter: drop-shadow(0 3px 10px rgba(74,160,80,0.45));
+          filter: drop-shadow(0 2px 8px rgba(42,90,73,0.25));
         }
         .tl-footer-logo-name {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-          font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; line-height: 1;
+          font-size: 19px; letter-spacing: 0.05em; text-transform: uppercase;
+          color: var(--f-text); line-height: 1;
         }
-        .tl-footer-logo-name span { color: #4aa050; }
+        .tl-footer-logo-name span { color: var(--f-accent); }
         .tl-footer-logo-sub {
           font-family: 'Barlow', sans-serif; font-size: 9px; font-weight: 600;
-          letter-spacing: 0.18em; text-transform: uppercase; color: rgba(150,170,210,0.4); margin-top: 2px;
+          letter-spacing: 0.18em; text-transform: uppercase;
+          color: var(--f-muted-light); margin-top: 2px;
         }
 
         /* Tagline */
         .tl-footer-tagline {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
           font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;
-          color: rgba(100,200,110,0.7); margin-bottom: 14px;
-          border-left: 3px solid rgba(74,160,80,0.35); padding-left: 12px;
+          color: var(--f-accent); margin-bottom: 14px;
+          border-left: 3px solid var(--f-accent); padding-left: 12px;
         }
 
         .tl-footer-desc {
-          color: rgba(180,195,220,0.45); font-size: 13.5px; line-height: 1.75; margin-bottom: 24px;
+          color: var(--f-muted); font-size: 13.5px; line-height: 1.75; margin-bottom: 24px;
         }
 
         /* Contact info */
         .tl-footer-contact { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
         .tl-footer-contact-item {
           display: flex; align-items: flex-start; gap: 10px;
-          color: rgba(180,195,220,0.5); font-size: 13px; line-height: 1.5;
+          color: var(--f-muted); font-size: 13px; line-height: 1.5;
           text-decoration: none; transition: color 0.2s;
         }
-        .tl-footer-contact-item:hover { color: #4aa050; }
+        .tl-footer-contact-item:hover { color: var(--f-accent); }
         .tl-footer-contact-icon {
-          width: 28px; height: 28px; background: rgba(74,160,80,0.08);
-          border: 1px solid rgba(74,160,80,0.18); border-radius: 4px;
+          width: 28px; height: 28px; background: var(--f-accent-soft);
+          border: 1px solid var(--f-accent-border); border-radius: 4px;
           display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
         }
 
@@ -1141,16 +1164,16 @@ function FooterCRE() {
         .tl-footer-badges { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
         .tl-footer-badge {
           display: flex; align-items: center; gap: 6px;
-          background: rgba(74,160,80,0.08); border: 1px solid rgba(74,160,80,0.22);
-          color: rgba(100,200,110,0.75); font-size: 10px; font-weight: 700;
+          background: var(--f-accent-soft); border: 1px solid var(--f-accent-border);
+          color: var(--f-accent); font-size: 10px; font-weight: 700;
           letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 12px; border-radius: 3px;
         }
-        .tl-footer-badge-dot { width: 5px; height: 5px; background: #4aa050; border-radius: 50%; opacity: 0.8; }
+        .tl-footer-badge-dot { width: 5px; height: 5px; background: var(--f-accent); border-radius: 50%; }
         /* DEV NOTE: Replace .tl-footer-badge-bbb with actual BBB logo image when available */
         .tl-footer-badge-bbb {
           display: flex; align-items: center; gap: 6px;
-          background: rgba(74,160,80,0.05); border: 1px dashed rgba(74,160,80,0.2);
-          color: rgba(100,200,110,0.45); font-size: 10px; font-weight: 700;
+          background: transparent; border: 1px dashed var(--f-accent-border);
+          color: var(--f-muted-light); font-size: 10px; font-weight: 700;
           letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 3px;
         }
 
@@ -1158,38 +1181,39 @@ function FooterCRE() {
         .tl-footer-socials { display: flex; gap: 8px; }
         .tl-footer-social {
           width: 34px; height: 34px;
-          background: rgba(74,160,80,0.08); border: 1px solid rgba(74,160,80,0.18);
+          background: var(--f-accent-soft); border: 1px solid var(--f-accent-border);
           border-radius: 4px; display: flex; align-items: center; justify-content: center;
-          color: rgba(190,205,230,0.5); text-decoration: none; transition: all 0.2s;
+          color: var(--f-accent); text-decoration: none; transition: all 0.2s;
         }
-        .tl-footer-social:hover { background: rgba(74,160,80,0.2); border-color: #4aa050; color: #4aa050; transform: translateY(-2px); }
+        .tl-footer-social:hover { background: var(--f-accent); color: var(--f-white); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(42,90,73,0.3); }
 
         /* Link columns */
         .tl-footer-col-title {
           font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700;
-          letter-spacing: 0.18em; text-transform: uppercase; color: #4aa050;
+          letter-spacing: 0.18em; text-transform: uppercase; color: var(--f-accent);
           margin-bottom: 16px; padding-bottom: 10px;
-          border-bottom: 1px solid rgba(74,160,80,0.15);
+          border-bottom: 1px solid var(--f-accent-border);
         }
         .tl-footer-col-links { display: flex; flex-direction: column; gap: 2px; }
         .tl-footer-col-link {
           display: flex; align-items: center; gap: 7px;
           padding: 6px 8px; border-radius: 4px;
-          color: rgba(180,195,220,0.5); font-size: 13px; font-weight: 500;
+          color: var(--f-muted); font-size: 13px; font-weight: 500;
           text-decoration: none; transition: all 0.18s;
           border-left: 2px solid transparent;
         }
         .tl-footer-col-link:hover {
-          color: #fff; background: rgba(74,160,80,0.07);
-          border-left-color: #4aa050; padding-left: 12px;
+          color: var(--f-accent); background: var(--f-accent-soft);
+          border-left-color: var(--f-accent); padding-left: 12px;
         }
-        .tl-footer-col-link svg { opacity: 0.4; flex-shrink: 0; transition: opacity 0.18s; }
+        .tl-footer-col-link svg { opacity: 0.35; flex-shrink: 0; transition: opacity 0.18s; }
         .tl-footer-col-link:hover svg { opacity: 1; }
 
-        /* ── BOTTOM BAR ── */
+        /* ── BOTTOM BAR — Lemon Chiffon ── */
         .tl-footer-bottom {
-          border-top: 1px solid rgba(255,255,255,0.05);
-          padding: 20px 32px;
+          background: var(--f-lemon);
+          border-top: 1px solid rgba(42,90,73,0.15);
+          padding: 18px 32px;
         }
         .tl-footer-bottom-inner {
           max-width: 1280px; margin: 0 auto;
@@ -1197,21 +1221,21 @@ function FooterCRE() {
           gap: 16px; flex-wrap: wrap;
         }
         .tl-footer-copyright {
-          color: rgba(150,165,190,0.35); font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
+          color: var(--f-muted); font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
         }
         .tl-footer-license-pill {
           display: flex; align-items: center; gap: 6px;
-          background: rgba(74,160,80,0.08); border: 1px solid rgba(74,160,80,0.18);
-          color: rgba(100,200,110,0.65); font-size: 10px; font-weight: 700;
+          background: rgba(42,90,73,0.1); border: 1px solid rgba(42,90,73,0.25);
+          color: var(--f-accent); font-size: 10px; font-weight: 700;
           letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 12px; border-radius: 2px;
         }
-        .tl-footer-license-dot { width: 5px; height: 5px; background: #4aa050; border-radius: 50%; opacity: 0.7; }
+        .tl-footer-license-dot { width: 5px; height: 5px; background: var(--f-accent); border-radius: 50%; }
         .tl-footer-legal { display: flex; gap: 20px; }
         .tl-footer-legal a {
-          color: rgba(150,165,190,0.35); font-size: 11.5px; font-weight: 500;
+          color: var(--f-muted); font-size: 11.5px; font-weight: 500;
           text-decoration: none; transition: color 0.2s;
         }
-        .tl-footer-legal a:hover { color: rgba(100,200,110,0.8); }
+        .tl-footer-legal a:hover { color: var(--f-accent); }
 
         @media (max-width: 1024px) {
           .tl-footer-main { grid-template-columns: 1fr 1fr; }
@@ -1255,7 +1279,7 @@ function FooterCRE() {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                   d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
                 })
-              }), "Request a Free Estimate"]
+              }), "Get a Free Quote"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: "/gallery",
               className: "tl-footer-btn-ghost",
@@ -1298,17 +1322,17 @@ function FooterCRE() {
                 viewBox: "0 0 40 40",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
                   points: "20,2 38,11 38,29 20,38 2,29 2,11",
-                  fill: "#4aa050",
+                  fill: "#2A5A49",
                   opacity: ".15"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
                   points: "20,2 38,11 38,29 20,38 2,29 2,11",
                   fill: "none",
-                  stroke: "#4aa050",
+                  stroke: "#2A5A49",
                   strokeWidth: "1.5"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                   d: "M12 28 L12 18 L20 12 L28 18 L28 28",
                   fill: "none",
-                  stroke: "#4aa050",
+                  stroke: "#2A5A49",
                   strokeWidth: "2",
                   strokeLinejoin: "round"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
@@ -1316,7 +1340,7 @@ function FooterCRE() {
                   y1: "28",
                   x2: "28",
                   y2: "28",
-                  stroke: "#4aa050",
+                  stroke: "#2A5A49",
                   strokeWidth: "2"
                 })]
               })
@@ -1349,7 +1373,7 @@ function FooterCRE() {
                   height: "13",
                   viewBox: "0 0 24 24",
                   fill: "none",
-                  stroke: "#4aa050",
+                  stroke: "#2A5A49",
                   strokeWidth: "2",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                     d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
@@ -1366,7 +1390,7 @@ function FooterCRE() {
                   height: "13",
                   viewBox: "0 0 24 24",
                   fill: "none",
-                  stroke: "#4aa050",
+                  stroke: "#2A5A49",
                   strokeWidth: "2",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                     d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
@@ -1384,7 +1408,7 @@ function FooterCRE() {
                   height: "13",
                   viewBox: "0 0 24 24",
                   fill: "none",
-                  stroke: "#4aa050",
+                  stroke: "#2A5A49",
                   strokeWidth: "2",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
                     d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
@@ -1455,8 +1479,15 @@ function FooterCRE() {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               className: "tl-footer-license-dot"
             }), company.license]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "tl-footer-legal"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "tl-footer-legal",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/privacy",
+              children: "Privacy Policy"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "/terms",
+              children: "Terms & Conditions"
+            })]
           })]
         })
       })]
