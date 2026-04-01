@@ -304,18 +304,11 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
 
         <!-- Imagen -->
         <div class="sv-reveal sv-intro-img-wrap">
-          <?php if ( file_exists( get_template_directory() . '/assets/images/exterior-cleaning-hero.jpg' ) ) : ?>
-            <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Exterior Cleaning — pressure washing NC" loading="lazy" />
-          <?php else : ?>
-            <div class="sv-intro-img-placeholder">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                <path d="M9 22V12h6v10"/>
-              </svg>
-              <!-- DEV NOTE: Add before/after pressure wash or clean roofline photo at /assets/images/exterior-cleaning-hero.jpg -->
-              <span>Photo Coming Soon</span>
-            </div>
-          <?php endif; ?>
+          <?php
+          // DEV NOTE: Actualizar $img_hero con la URL final del recurso en WordPress Media
+          $img_hero = '/wp-content/uploads/2026/04/exteriorcleaning.jpg';
+          ?>
+          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Landscaping — NC residential landscape" loading="lazy" />
         </div>
 
         <!-- Texto -->

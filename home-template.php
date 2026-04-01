@@ -23,36 +23,42 @@ $services = [
     'title' => 'Landscaping',
     'desc'  => 'Design, installation, and seasonal maintenance to keep your property looking its best year-round.',
     'href'  => '/services/landscaping',
+    'img'   => '/wp-content/uploads/2026/04/Landscaping-scaled.jpg',
     'icon'  => '<path d="M12 2a10 10 0 000 20" stroke-linecap="round"/><path d="M12 2c2.5 5 4 10 4 10s-4 2-8 0c0 0 1.5-5 4-10z"/><line x1="12" y1="12" x2="12" y2="22"/>',
   ],
   [
     'title' => 'Hardscape & Concrete',
     'desc'  => 'Patios, retaining walls, walkways, parking areas, and driveways built for durability and curb appeal.',
     'href'  => '/services/hardscape-concrete',
+    'img'   => '/wp-content/uploads/2026/04/Hardscrapenconcrete-scaled.jpg',
     'icon'  => '<rect x="3" y="12" width="18" height="9" rx="1"/><path d="M3 12l4-7h10l4 7"/><line x1="3" y1="16" x2="21" y2="16"/>',
   ],
   [
     'title' => 'Drainage & Erosion Control',
     'desc'  => 'French drains, drainage solutions, and erosion management that protect your land and investment.',
     'href'  => '/services/drainage-erosion-control',
+    'img'   => '/wp-content/uploads/2026/04/drainagenerotion.jpg',
     'icon'  => '<path d="M12 2v6M8 6l4 4 4-4"/><path d="M3 14s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/><path d="M3 18s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/>',
   ],
   [
     'title' => 'Tree Services',
     'desc'  => 'Expert tree trimming, removal, storm cleanup, and risk mitigation for overgrown or hazardous trees.',
     'href'  => '/services/tree-services',
+    'img'   => '/wp-content/uploads/2026/04/treeservice.jpg',
     'icon'  => '<path d="M12 22V12"/><path d="M5 12H2l10-10 10 10h-3"/><path d="M5 17H2l10-10 10 10h-3"/>',
   ],
   [
     'title' => 'Exterior Cleaning',
     'desc'  => 'Roof cleaning, gutter care, pressure washing, and deck maintenance to protect and refresh every surface.',
     'href'  => '/services/exterior-cleaning',
+    'img'   => '/wp-content/uploads/2026/04/exteriorcleaning.jpg',
     'icon'  => '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/><circle cx="18" cy="20" r="3"/><path d="M18 17v-4m-2 5l4-2"/>',
   ],
   [
     'title' => 'Property Preparation',
     'desc'  => 'Full interior and exterior preparation for homeowners, investors, and realtors getting a property market-ready.',
     'href'  => '/services/property-preparation',
+    'img'   => '/wp-content/uploads/2026/04/propertypreparation.jpg',
     'icon'  => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>',
   ],
 ];
@@ -169,7 +175,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   }
   .tl-service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,20,16,0.13); }
   .tl-service-card-top {
-    height: 148px;
+    height: 200px;
     background: linear-gradient(135deg, #091914 0%, #133429 100%);
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
@@ -177,8 +183,19 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   .tl-service-card-top::before {
     content: ''; position: absolute; inset: 0;
     background: radial-gradient(circle at 30% 50%, rgba(42,90,73,0.14), transparent 60%);
+    z-index: 1;
   }
-  .tl-service-card-top svg { position: relative; z-index: 1; }
+  .tl-service-card-top img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+  .tl-service-card:hover .tl-service-card-top img { transform: scale(1.06); }
+  .tl-service-card-top-overlay {
+    position: absolute; inset: 0; z-index: 2;
+    background: linear-gradient(to bottom, rgba(9,25,20,0.15) 0%, rgba(9,25,20,0.5) 100%);
+  }
+  .tl-service-card-top svg { position: relative; z-index: 2; }
   .tl-service-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
   .tl-service-card-title {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
@@ -457,11 +474,18 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
         <?php foreach ( $services as $i => $service ) : ?>
           <div class="tl-service-card tl-reveal" data-delay="<?php echo ( $i % 3 ) + 1; ?>">
             <div class="tl-service-card-top">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
-                   stroke="rgba(42,160,90,0.85)" stroke-width="1.6"
-                   stroke-linecap="round" stroke-linejoin="round">
-                <?php echo $service['icon']; ?>
-              </svg>
+              <?php if ( ! empty( $service['img'] ) ) : ?>
+                <img src="<?php echo esc_url( $service['img'] ); ?>"
+                     alt="<?php echo esc_attr( $service['title'] ); ?>"
+                     loading="lazy" />
+                <div class="tl-service-card-top-overlay"></div>
+              <?php else : ?>
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
+                     stroke="rgba(42,160,90,0.85)" stroke-width="1.6"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <?php echo $service['icon']; ?>
+                </svg>
+              <?php endif; ?>
             </div>
             <div class="tl-service-card-body">
               <div class="tl-service-card-title"><?php echo esc_html( $service['title'] ); ?></div>

@@ -304,19 +304,11 @@ $img_hero = $theme_uri . '/assets/images/tree-services-hero.jpg';
 
         <!-- Imagen -->
         <div class="sv-reveal sv-intro-img-wrap">
-          <?php if ( file_exists( get_template_directory() . '/assets/images/tree-services-hero.jpg' ) ) : ?>
-            <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Tree Services — professional tree work NC" loading="lazy" />
-          <?php else : ?>
-            <div class="sv-intro-img-placeholder">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
-                <path d="M12 22V12"/>
-                <path d="M5 12H2l10-10 10 10h-3"/>
-                <path d="M5 17H2l10-10 10 10h-3"/>
-              </svg>
-              <!-- DEV NOTE: Add tree services photo at /assets/images/tree-services-hero.jpg -->
-              <span>Photo Coming Soon</span>
-            </div>
-          <?php endif; ?>
+          <?php
+          // DEV NOTE: Actualizar $img_hero con la URL final del recurso en WordPress Media
+          $img_hero = '/wp-content/uploads/2026/04/treeservice.jpg';
+          ?>
+          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Landscaping — NC residential landscape" loading="lazy" />
         </div>
 
         <!-- Texto -->

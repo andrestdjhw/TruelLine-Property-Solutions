@@ -158,16 +158,13 @@ $img_hero = $theme_uri . '/assets/images/hardscape-hero.jpg';
   <section class="sv-intro-section">
     <div class="sv-container">
       <div class="sv-intro-grid">
+        <!-- Imagen -->
         <div class="sv-reveal sv-intro-img-wrap">
-          <?php if ( file_exists( get_template_directory() . '/assets/images/hardscape-hero.jpg' ) ) : ?>
-            <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Hardscape — concrete and paver work NC" loading="lazy" />
-          <?php else : ?>
-            <div class="sv-intro-img-placeholder">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><rect x="3" y="12" width="18" height="9" rx="1"/><path d="M3 12l4-7h10l4 7"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
-              <!-- DEV NOTE: Add hardscape/concrete photo at /assets/images/hardscape-hero.jpg -->
-              <span>Photo Coming Soon</span>
-            </div>
-          <?php endif; ?>
+          <?php
+          // DEV NOTE: Actualizar $img_hero con la URL final del recurso en WordPress Media
+          $img_hero = '/wp-content/uploads/2026/04/Hardscrapenconcrete-scaled.jpg';
+          ?>
+          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Landscaping — NC residential landscape" loading="lazy" />
         </div>
         <div class="sv-intro-text">
           <div class="sv-reveal">

@@ -305,19 +305,11 @@ $img_hero = $theme_uri . '/assets/images/drainage-hero.jpg';
 
         <!-- Imagen -->
         <div class="sv-reveal sv-intro-img-wrap">
-          <?php if ( file_exists( get_template_directory() . '/assets/images/drainage-hero.jpg' ) ) : ?>
-            <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Drainage — French drain installation NC" loading="lazy" />
-          <?php else : ?>
-            <div class="sv-intro-img-placeholder">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
-                <path d="M12 2v6M8 6l4 4 4-4"/>
-                <path d="M3 14s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/>
-                <path d="M3 18s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/>
-              </svg>
-              <!-- DEV NOTE: Add French drain / drainage installation photo at /assets/images/drainage-hero.jpg -->
-              <span>Photo Coming Soon</span>
-            </div>
-          <?php endif; ?>
+          <?php
+          // DEV NOTE: Actualizar $img_hero con la URL final del recurso en WordPress Media
+          $img_hero = '/wp-content/uploads/2026/04/drainagenerotion.jpg';
+          ?>
+          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Landscaping — NC residential landscape" loading="lazy" />
         </div>
 
         <!-- Texto -->
