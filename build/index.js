@@ -1004,10 +1004,10 @@ function FooterCRE() {
       href: "/contact"
     }, {
       name: "Privacy Policy",
-      href: "/privacy"
+      href: "#"
     }, {
       name: "Terms & Conditions",
-      href: "/terms"
+      href: "#"
     }]
   }];
   // ────────────────────────────────────────────────────────────────────────
@@ -1486,10 +1486,10 @@ function FooterCRE() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "tl-footer-legal",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "/privacy",
+              href: "#",
               children: "Privacy Policy"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "/terms",
+              href: "#",
               children: "Terms & Conditions"
             })]
           })]
@@ -1998,10 +1998,6 @@ function Navbar() {
         link: "/services/property-preparation"
       }]
     }]
-  }, {
-    name: "Gallery",
-    link: "/gallery",
-    hasDropdown: false
   }, {
     name: "Service Areas",
     link: "/service-areas",

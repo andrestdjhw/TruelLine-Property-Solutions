@@ -20,16 +20,16 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
   /* ── BASE ── */
-  .au-page { font-family: 'Barlow', sans-serif; background: #f5f3ef; color: #1a1410; }
+  .au-page { font-family: 'Barlow', sans-serif; background: #FCF7EC; color: #091914; }
 
   /* ── BRAND TOKENS ── */
   .au-page {
-    --accent:        #4aa050;
-    --accent-hover:  #5dba64;
-    --accent-soft:   rgba(74,160,80,0.08);
-    --accent-border: rgba(74,160,80,0.18);
-    --dark:          #1a1410;
-    --muted:         #6b6560;
+    --accent:        #2A5A49;
+    --accent-hover:  #133429;
+    --accent-soft:   rgba(42,90,73,0.08);
+    --accent-border: rgba(42,90,73,0.18);
+    --dark:          #091914;
+    --muted:         rgba(9,25,20,0.5);
   }
 
   /* ── SCROLL REVEAL ── */
@@ -61,14 +61,14 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
 
   /* ══ PAGE HEADER ══ */
   .au-header {
-    background: linear-gradient(160deg, #080c18 0%, #0d1a10 60%, #0a1510 100%);
+    background: linear-gradient(160deg, #091914 0%, #0f2015 60%, #133429 100%);
     padding: 80px 32px 88px; text-align: center;
     position: relative; overflow: hidden;
   }
   .au-header::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
     background:
-      radial-gradient(ellipse 60% 70% at 50% 60%, rgba(74,160,80,0.09) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 70% at 50% 60%, rgba(42,90,73,0.1) 0%, transparent 65%),
       repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
       repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
   }
@@ -81,8 +81,8 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   .au-header-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
   .au-hero-label {
     display: inline-flex; align-items: center; gap: 7px;
-    background: rgba(74,160,80,0.1); border: 1px solid rgba(74,160,80,0.25);
-    color: rgba(100,200,110,0.9); font-size: 10.5px; font-weight: 700;
+    background: rgba(42,90,73,0.1); border: 1px solid rgba(42,90,73,0.25);
+    color: rgba(42,160,90,0.9); font-size: 10.5px; font-weight: 700;
     letter-spacing: 0.18em; text-transform: uppercase;
     padding: 5px 14px; border-radius: 3px; margin-bottom: 24px;
   }
@@ -98,7 +98,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   .au-header-sub { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto; }
 
   /* Wave */
-  .au-wave { line-height: 0; background: linear-gradient(160deg, #080c18, #0a1510); }
+  .au-wave { line-height: 0; background: linear-gradient(160deg, #091914, #133429); }
   .au-wave svg { display: block; width: 100%; }
 
   /* ══ ORIGIN / STORY ══ */
@@ -112,12 +112,12 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   }
   .au-origin-img-wrap::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(74,160,80,0.15) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(42,90,73,0.15) 0%, transparent 60%);
     pointer-events: none;
   }
   .au-origin-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .au-origin-img-placeholder {
-    width: 100%; height: 100%; background: linear-gradient(135deg, #0d1a10, #0a1510);
+    width: 100%; height: 100%; background: linear-gradient(135deg, #091914, #133429);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
   }
   .au-origin-img-placeholder svg { opacity: 0.15; }
@@ -125,7 +125,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   .au-origin-badge {
     position: absolute; bottom: 20px; left: 20px; z-index: 2;
     background: rgba(8,12,8,0.88); backdrop-filter: blur(12px);
-    border: 1px solid rgba(74,160,80,0.3); border-radius: 4px; padding: 12px 18px;
+    border: 1px solid rgba(42,90,73,0.3); border-radius: 4px; padding: 12px 18px;
   }
   .au-origin-badge-val {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px;
@@ -141,9 +141,9 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
 
   /* ══ STATS BAR ══ */
   .au-stats-bar {
-    background: #0d1a10;
-    border-top: 1px solid rgba(74,160,80,0.15);
-    border-bottom: 1px solid rgba(74,160,80,0.15);
+    background: #091914;
+    border-top: 1px solid rgba(42,90,73,0.15);
+    border-bottom: 1px solid rgba(42,90,73,0.15);
   }
   .au-stats-inner {
     max-width: 1200px; margin: 0 auto; padding: 48px 32px;
@@ -161,7 +161,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   .au-stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(200,215,240,0.35); margin-top: 6px; }
 
   /* ══ CORE VALUES ══ */
-  .au-values-section { padding: 88px 32px; background: #f5f3ef; }
+  .au-values-section { padding: 88px 32px; background: #FCF7EC; }
   .au-values-inner { max-width: 1200px; margin: 0 auto; }
   .au-values-head { text-align: center; margin-bottom: 52px; }
   .au-values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
@@ -176,7 +176,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
     content: attr(data-number);
     position: absolute; top: -10px; right: 14px;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
-    font-size: 72px; color: rgba(74,160,80,0.05); line-height: 1;
+    font-size: 72px; color: rgba(42,90,73,0.05); line-height: 1;
     pointer-events: none; user-select: none;
   }
   .au-value-card:hover { border-bottom-color: var(--accent); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(26,20,16,0.12); }
@@ -188,22 +188,22 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
     font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 17px;
     text-transform: uppercase; color: var(--dark); margin-bottom: 8px; line-height: 1.1;
   }
-  .au-value-desc { font-size: 12.5px; color: #9a8f86; line-height: 1.6; }
+  .au-value-desc { font-size: 12.5px; color: rgba(9,25,20,0.4); line-height: 1.6; }
 
   /* ══ LICENSED / CREDENTIALS ══ */
   .au-creds-section {
-    background: linear-gradient(160deg, #080c18 0%, #0d1a10 100%);
+    background: linear-gradient(160deg, #091914 0%, #133429 100%);
     padding: 88px 32px; position: relative; overflow: hidden;
   }
   .au-creds-section::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(ellipse 50% 60% at 70% 50%, rgba(74,160,80,0.08) 0%, transparent 65%);
+    background: radial-gradient(ellipse 50% 60% at 70% 50%, rgba(42,90,73,0.08) 0%, transparent 65%);
   }
   .au-creds-inner {
     max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
     display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
   }
-  .au-creds-label { color: rgba(100,200,110,0.85); }
+  .au-creds-label { color: rgba(42,160,90,0.85); }
   .au-creds-title {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
     font-size: clamp(26px, 3.5vw, 44px); text-transform: uppercase;
@@ -216,8 +216,8 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   .au-creds-tagline {
     margin-top: 24px; font-family: 'Barlow Condensed', sans-serif;
     font-size: 16px; font-weight: 700; font-style: italic;
-    color: rgba(100,200,110,0.7); letter-spacing: 0.04em;
-    border-left: 3px solid rgba(74,160,80,0.4); padding-left: 16px;
+    color: rgba(42,160,90,0.7); letter-spacing: 0.04em;
+    border-left: 3px solid rgba(42,90,73,0.4); padding-left: 16px;
   }
   .au-creds-badges { display: flex; flex-direction: column; gap: 16px; }
   .au-creds-badge-item {
@@ -226,7 +226,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
     border-left: 3px solid var(--accent); border-radius: 4px; padding: 18px 20px;
   }
   .au-creds-badge-icon {
-    width: 36px; height: 36px; background: rgba(74,160,80,0.1);
+    width: 36px; height: 36px; background: rgba(42,90,73,0.1);
     border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
   .au-creds-badge-title {
@@ -236,7 +236,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   .au-creds-badge-desc { font-size: 12.5px; color: rgba(200,215,240,0.4); line-height: 1.6; }
 
   /* ══ SERVICE AREAS ══ */
-  .au-areas-section { background: #fff; padding: 88px 32px; }
+  .au-areas-section { background: #ECEBC3; padding: 88px 32px; }
   .au-areas-inner { max-width: 1200px; margin: 0 auto; }
   .au-areas-head { text-align: center; margin-bottom: 44px; }
   .au-areas-grid {
@@ -250,24 +250,24 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
     padding: 8px 20px; border-radius: 4px; text-decoration: none;
     transition: background 0.2s, color 0.2s, transform 0.2s;
   }
-  .au-area-pill:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+  .au-area-pill:hover { background: var(--accent); color: #FCF7EC; transform: translateY(-2px); }
 
   /* ══ BOTTOM CTA ══ */
-  .au-cta-section { background: #f5f3ef; padding: 88px 32px; }
+  .au-cta-section { background: #FCF7EC; padding: 88px 32px; }
   .au-cta-inner {
     max-width: 800px; margin: 0 auto; text-align: center;
-    background: linear-gradient(135deg, #0d1a10 0%, #142018 100%);
-    border: 1px solid rgba(74,160,80,0.2); border-radius: 8px;
+    background: linear-gradient(135deg, #091914 0%, #133429 100%);
+    border: 1px solid rgba(42,90,73,0.2); border-radius: 8px;
     padding: 60px 48px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     position: relative; overflow: hidden;
   }
   .au-cta-inner::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(74,160,80,0.1) 0%, transparent 65%);
+    background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(42,90,73,0.1) 0%, transparent 65%);
     pointer-events: none;
   }
   .au-cta-inner > * { position: relative; z-index: 1; }
-  .au-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(100,200,110,0.8); margin-bottom: 16px; display: block; }
+  .au-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(42,160,90,0.8); margin-bottom: 16px; display: block; }
   .au-cta-title {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
     font-size: clamp(26px, 4vw, 44px); text-transform: uppercase;
@@ -277,11 +277,11 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   .au-cta-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
   .au-cta-btn {
     display: inline-flex; align-items: center; gap: 10px;
-    padding: 15px 36px; background: var(--accent); color: white;
+    padding: 15px 36px; background: var(--accent); color: #FCF7EC;
     border: none; border-radius: 4px; cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-    box-shadow: 0 6px 22px rgba(74,160,80,0.4);
+    box-shadow: 0 6px 22px rgba(42,90,73,0.4);
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative; overflow: hidden;
   }
@@ -291,7 +291,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
     transform: skewX(-15deg); transition: left 0.5s;
   }
   .au-cta-btn:hover::before { left: 160%; }
-  .au-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(74,160,80,0.55); }
+  .au-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(42,90,73,0.55); }
   .au-cta-phone {
     display: flex; align-items: center; gap: 8px;
     color: rgba(200,215,240,0.6); font-family: 'Barlow Condensed', sans-serif;
@@ -345,12 +345,12 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
   <!-- Wave -->
   <div class="au-wave">
     <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:clamp(32px,5vw,60px)">
-      <path d="M0 0L60 6C120 12 240 24 360 28C480 32 600 28 720 24C840 20 960 20 1080 24C1200 28 1320 34 1380 37L1440 40V80H0V0Z" fill="#f5f3ef"/>
+      <path d="M0 0L60 6C120 12 240 24 360 28C480 32 600 28 720 24C840 20 960 20 1080 24C1200 28 1320 34 1380 37L1440 40V80H0V0Z" fill="#FCF7EC"/>
     </svg>
   </div>
 
   <!-- ══ ORIGIN STORY ══ -->
-  <section style="background:#f5f3ef">
+  <section style="background:#FCF7EC">
     <div class="au-origin">
 
       <!-- Imagen -->
@@ -453,7 +453,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
         foreach ( $values as $i => $v ) : ?>
           <div class="au-value-card au-reveal" data-number="0<?php echo $i + 1; ?>" data-delay="<?php echo $i + 1; ?>">
             <div class="au-value-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4aa050" stroke-width="2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2">
                 <?php echo $v['icon']; ?>
               </svg>
             </div>
@@ -512,7 +512,7 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
         foreach ( $credentials as $i => $c ) : ?>
           <div class="au-creds-badge-item au-reveal" data-delay="<?php echo $i + 1; ?>">
             <div class="au-creds-badge-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4aa050" stroke-width="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2">
                 <?php echo $c['icon']; ?>
               </svg>
             </div>

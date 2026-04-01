@@ -42,7 +42,6 @@ function Navbar() {
         },
       ],
     },
-    { name: "Gallery", link: "/gallery", hasDropdown: false },
     { name: "Service Areas", link: "/service-areas", hasDropdown: false },
     { name: "Contact Us", link: "/contact", hasDropdown: false },
   ]
