@@ -960,7 +960,7 @@ function FooterCRE() {
   };
   const socials = [{
     name: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/profile.php?id=100084989864880&rdid=VlAsIHcPapOvNQSx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1XcvxTFnsn%2F#",
     icon: "facebook"
   }, {
     name: "Jobber",
@@ -1122,7 +1122,7 @@ function FooterCRE() {
         /* Brand column */
         .tl-footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; text-decoration: none; }
         .tl-footer-logo-icon {
-          width: 44px; height: 44px; flex-shrink: 0;
+          width: 60px; height: 60px; flex-shrink: 0;
           display: flex; align-items: center; justify-content: center;
           filter: drop-shadow(0 2px 8px rgba(42,90,73,0.25));
         }
@@ -1315,50 +1315,19 @@ function FooterCRE() {
         className: "tl-footer-main",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "tl-footer-brand",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
             href: "/",
             className: "tl-footer-logo",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "tl-footer-logo-icon",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-                width: "44",
-                height: "44",
-                viewBox: "0 0 40 40",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-                  points: "20,2 38,11 38,29 20,38 2,29 2,11",
-                  fill: "#2A5A49",
-                  opacity: ".15"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polygon", {
-                  points: "20,2 38,11 38,29 20,38 2,29 2,11",
-                  fill: "none",
-                  stroke: "#2A5A49",
-                  strokeWidth: "1.5"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M12 28 L12 18 L20 12 L28 18 L28 28",
-                  fill: "none",
-                  stroke: "#2A5A49",
-                  strokeWidth: "2",
-                  strokeLinejoin: "round"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-                  x1: "12",
-                  y1: "28",
-                  x2: "28",
-                  y2: "28",
-                  stroke: "#2A5A49",
-                  strokeWidth: "2"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "tl-footer-logo-name",
-                children: ["TrueLine ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  children: "Property"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "tl-footer-logo-sub",
-                children: "Solutions \xB7 North Carolina"
-              })]
-            })]
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: "/wp-content/uploads/2026/03/Imagotipo_Variante-scaled.png",
+              alt: "TrueLine Property Solutions",
+              style: {
+                height: "52px",
+                width: "auto",
+                objectFit: "contain",
+                display: "block"
+              }
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "tl-footer-tagline",
             children: "Your Property. Held to a Higher Standard."

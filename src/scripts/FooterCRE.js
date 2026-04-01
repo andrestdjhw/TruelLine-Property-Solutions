@@ -18,7 +18,7 @@ function FooterCRE() {
   }
 
   const socials = [
-    { name: "Facebook",  href: "https://facebook.com",  icon: "facebook"  },
+    { name: "Facebook",  href: "https://www.facebook.com/profile.php?id=100084989864880&rdid=VlAsIHcPapOvNQSx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1XcvxTFnsn%2F#",  icon: "facebook"  },
     { name: "Jobber", href: "https://navaslandscapeservicesandmore.jobbersites.com/", icon: "jobber" },
   ]
 
@@ -142,7 +142,7 @@ function FooterCRE() {
         /* Brand column */
         .tl-footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; text-decoration: none; }
         .tl-footer-logo-icon {
-          width: 44px; height: 44px; flex-shrink: 0;
+          width: 60px; height: 60px; flex-shrink: 0;
           display: flex; align-items: center; justify-content: center;
           filter: drop-shadow(0 2px 8px rgba(42,90,73,0.25));
         }
@@ -306,19 +306,13 @@ function FooterCRE() {
 
           {/* Brand + Contact */}
           <div className="tl-footer-brand">
+            {/* Logo — actualizar src con ruta final del asset PNG */}
             <a href="/" className="tl-footer-logo">
-              <div className="tl-footer-logo-icon">
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                  <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" fill="#2A5A49" opacity=".15"/>
-                  <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" fill="none" stroke="#2A5A49" strokeWidth="1.5"/>
-                  <path d="M12 28 L12 18 L20 12 L28 18 L28 28" fill="none" stroke="#2A5A49" strokeWidth="2" strokeLinejoin="round"/>
-                  <line x1="12" y1="28" x2="28" y2="28" stroke="#2A5A49" strokeWidth="2"/>
-                </svg>
-              </div>
-              <div>
-                <div className="tl-footer-logo-name">TrueLine <span>Property</span></div>
-                <div className="tl-footer-logo-sub">Solutions · North Carolina</div>
-              </div>
+              <img
+                src="/wp-content/uploads/2026/03/Imagotipo_Variante-scaled.png"
+                alt="TrueLine Property Solutions"
+                style={{ height: "52px", width: "auto", objectFit: "contain", display: "block" }}
+              />
             </a>
 
             <div className="tl-footer-tagline">Your Property. Held to a Higher Standard.</div>
