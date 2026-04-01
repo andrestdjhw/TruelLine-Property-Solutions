@@ -17,13 +17,13 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
-  .sv-page { font-family: 'Barlow', sans-serif; background: #f5f3ef; color: #1a1410; }
+  .sv-page { font-family: 'Barlow', sans-serif; background: #FCF7EC; color: #091914; }
   .sv-page {
-    --accent:        #4aa050;
-    --accent-soft:   rgba(74,160,80,0.08);
-    --accent-border: rgba(74,160,80,0.18);
-    --dark:          #1a1410;
-    --muted:         #6b6560;
+    --accent:        #2A5A49;
+    --accent-soft:   rgba(42,90,73,0.08);
+    --accent-border: rgba(42,90,73,0.18);
+    --dark:          #091914;
+    --muted:         rgba(9,25,20,0.5);
   }
 
   .sv-reveal {
@@ -54,14 +54,14 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
 
   /* ══ PAGE HEADER ══ */
   .sv-header {
-    background: linear-gradient(160deg, #080c18 0%, #0d1a10 60%, #0a1510 100%);
+    background: linear-gradient(160deg, #091914 0%, #0f2015 60%, #133429 100%);
     padding: 80px 32px 88px; text-align: center;
     position: relative; overflow: hidden;
   }
   .sv-header::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
     background:
-      radial-gradient(ellipse 60% 70% at 50% 60%, rgba(74,160,80,0.1) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 70% at 50% 60%, rgba(42,90,73,0.1) 0%, transparent 65%),
       repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
       repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
   }
@@ -74,8 +74,8 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   .sv-header-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
   .sv-hero-label {
     display: inline-flex; align-items: center; gap: 7px;
-    background: rgba(74,160,80,0.1); border: 1px solid rgba(74,160,80,0.25);
-    color: rgba(100,200,110,0.9); font-size: 10.5px; font-weight: 700;
+    background: rgba(42,90,73,0.1); border: 1px solid rgba(42,90,73,0.25);
+    color: rgba(42,160,90,0.9); font-size: 10.5px; font-weight: 700;
     letter-spacing: 0.18em; text-transform: uppercase;
     padding: 5px 14px; border-radius: 3px; margin-bottom: 24px;
   }
@@ -91,11 +91,11 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   .sv-header-sub { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto 36px; }
   .sv-header-cta {
     display: inline-flex; align-items: center; gap: 9px;
-    padding: 14px 32px; background: var(--accent); color: white;
+    padding: 14px 32px; background: var(--accent); color: #FCF7EC;
     border: none; border-radius: 4px; cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-    box-shadow: 0 6px 22px rgba(74,160,80,0.4);
+    box-shadow: 0 6px 22px rgba(42,90,73,0.4);
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative; overflow: hidden;
   }
@@ -105,26 +105,26 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
     transform: skewX(-15deg); transition: left 0.5s;
   }
   .sv-header-cta:hover::before { left: 160%; }
-  .sv-header-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(74,160,80,0.55); }
+  .sv-header-cta:hover { background: #133429; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(42,90,73,0.55); }
 
-  .sv-wave { line-height: 0; background: linear-gradient(160deg, #080c18, #0a1510); }
+  .sv-wave { line-height: 0; background: linear-gradient(160deg, #091914, #133429); }
   .sv-wave svg { display: block; width: 100%; }
 
   /* ══ INTRO ══ */
-  .sv-intro-section { padding: 88px 0; background: #f5f3ef; }
+  .sv-intro-section { padding: 88px 0; background: #FCF7EC; }
   .sv-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
   .sv-intro-img-wrap {
     position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 4/3;
-    box-shadow: 0 20px 60px rgba(26,20,16,0.2);
+    box-shadow: 0 20px 60px rgba(9,25,20,0.2);
   }
   .sv-intro-img-wrap::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(74,160,80,0.15) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(42,90,73,0.15) 0%, transparent 60%);
     pointer-events: none;
   }
   .sv-intro-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .sv-intro-img-placeholder {
-    width: 100%; height: 100%; background: linear-gradient(135deg, #0d1a10, #0a1510);
+    width: 100%; height: 100%; background: linear-gradient(135deg, #091914, #133429);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
   }
   .sv-intro-img-placeholder svg { opacity: 0.15; }
@@ -136,13 +136,13 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   .sv-services-head { text-align: center; margin-bottom: 52px; }
   .sv-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .sv-service-item {
-    background: #faf8f5; border-radius: 6px; padding: 28px 26px;
+    background: #fff; border-radius: 6px; padding: 28px 26px;
     border-left: 3px solid var(--accent);
-    box-shadow: 0 2px 14px rgba(26,20,16,0.06);
+    box-shadow: 0 2px 14px rgba(9,25,20,0.06);
     transition: transform 0.25s, box-shadow 0.25s, background 0.2s;
     display: flex; gap: 18px; align-items: flex-start;
   }
-  .sv-service-item:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(26,20,16,0.11); background: #fff; }
+  .sv-service-item:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(9,25,20,0.11); background: #FCF7EC; }
   .sv-service-icon {
     width: 42px; height: 42px; background: var(--accent-soft);
     border: 1px solid var(--accent-border); border-radius: 6px;
@@ -157,13 +157,13 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   /* ══ APPROACH ══ */
   .sv-who-section {
     padding: 88px 0;
-    background: linear-gradient(160deg, #0d1a10 0%, #0f2015 100%);
+    background: linear-gradient(160deg, #091914 0%, #133429 100%);
     position: relative; overflow: hidden;
   }
   .sv-who-section::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
     background:
-      radial-gradient(ellipse 55% 50% at 80% 50%, rgba(74,160,80,0.08) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 50% at 80% 50%, rgba(42,90,73,0.08) 0%, transparent 65%),
       repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
       repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
   }
@@ -179,13 +179,13 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   .sv-who-body strong { color: rgba(200,215,240,0.8); font-weight: 600; }
 
   /* ══ SERVICE AREAS ══ */
-  .sv-areas-section { background: #fff; padding: 56px 32px; }
+  .sv-areas-section { background: #ECEBC3; padding: 56px 32px; }
   .sv-areas-inner {
     max-width: 1200px; margin: 0 auto;
     display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
   }
   .sv-areas-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); flex-shrink: 0; }
-  .sv-areas-sep { width: 1px; height: 16px; background: rgba(74,160,80,0.2); flex-shrink: 0; }
+  .sv-areas-sep { width: 1px; height: 16px; background: rgba(42,90,73,0.2); flex-shrink: 0; }
   .sv-areas-list { display: flex; align-items: center; flex-wrap: wrap; }
   .sv-area-item {
     font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600;
@@ -197,21 +197,21 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   .sv-area-item:hover { color: var(--accent); }
 
   /* ══ BOTTOM CTA ══ */
-  .sv-cta-section { background: #f5f3ef; padding: 88px 32px; }
+  .sv-cta-section { background: #FCF7EC; padding: 88px 32px; }
   .sv-cta-inner {
     max-width: 800px; margin: 0 auto; text-align: center;
-    background: linear-gradient(135deg, #0d1a10 0%, #142018 100%);
-    border: 1px solid rgba(74,160,80,0.2); border-radius: 8px;
+    background: linear-gradient(135deg, #091914 0%, #133429 100%);
+    border: 1px solid rgba(42,90,73,0.2); border-radius: 8px;
     padding: 60px 48px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     position: relative; overflow: hidden;
   }
   .sv-cta-inner::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(74,160,80,0.1) 0%, transparent 65%);
+    background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(42,90,73,0.1) 0%, transparent 65%);
     pointer-events: none;
   }
   .sv-cta-inner > * { position: relative; z-index: 1; }
-  .sv-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(100,200,110,0.8); margin-bottom: 16px; display: block; }
+  .sv-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(42,160,90,0.8); margin-bottom: 16px; display: block; }
   .sv-cta-title {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
     font-size: clamp(26px, 4vw, 44px); text-transform: uppercase;
@@ -221,11 +221,11 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   .sv-cta-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
   .sv-cta-btn {
     display: inline-flex; align-items: center; gap: 9px;
-    padding: 14px 32px; background: var(--accent); color: white;
+    padding: 14px 32px; background: var(--accent); color: #FCF7EC;
     border: none; border-radius: 4px; cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
     font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-    box-shadow: 0 6px 22px rgba(74,160,80,0.4);
+    box-shadow: 0 6px 22px rgba(42,90,73,0.4);
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative; overflow: hidden;
   }
@@ -235,7 +235,7 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
     transform: skewX(-15deg); transition: left 0.5s;
   }
   .sv-cta-btn:hover::before { left: 160%; }
-  .sv-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(74,160,80,0.55); }
+  .sv-cta-btn:hover { background: #133429; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(42,90,73,0.55); }
   .sv-cta-phone {
     display: flex; align-items: center; gap: 8px;
     color: rgba(200,215,240,0.6); font-family: 'Barlow Condensed', sans-serif;
@@ -293,7 +293,7 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   <!-- Wave -->
   <div class="sv-wave">
     <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:clamp(32px,5vw,60px)">
-      <path d="M0 0L60 6C120 12 240 24 360 28C480 32 600 28 720 24C840 20 960 20 1080 24C1200 28 1320 34 1380 37L1440 40V80H0V0Z" fill="#f5f3ef"/>
+      <path d="M0 0L60 6C120 12 240 24 360 28C480 32 600 28 720 24C840 20 960 20 1080 24C1200 28 1320 34 1380 37L1440 40V80H0V0Z" fill="#FCF7EC"/>
     </svg>
   </div>
 
@@ -381,7 +381,7 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
         <?php foreach ( $offerings as $i => $item ) : ?>
           <div class="sv-service-item sv-reveal" data-delay="<?php echo ( $i % 4 ) + 1; ?>">
             <div class="sv-service-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4aa050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <?php echo $item['icon']; ?>
               </svg>
             </div>
@@ -400,7 +400,7 @@ $img_hero = $theme_uri . '/assets/images/exterior-cleaning-hero.jpg';
   <section class="sv-who-section">
     <div class="sv-container">
       <div class="sv-who-inner sv-reveal">
-        <span class="sv-label" style="color:rgba(100,200,110,0.85)">Our Standard</span>
+        <span class="sv-label" style="color:rgba(42,160,90,0.85)">Our Standard</span>
         <h2 class="sv-who-title">The Right Method for<br><span>Every Surface</span></h2>
         <div class="sv-who-rule"></div>
         <p class="sv-who-body">
