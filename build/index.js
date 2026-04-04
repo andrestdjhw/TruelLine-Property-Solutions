@@ -1004,10 +1004,10 @@ function FooterCRE() {
       href: "/contact"
     }, {
       name: "Privacy Policy",
-      href: "#"
+      href: "/privacy-policy"
     }, {
       name: "Terms & Conditions",
-      href: "#"
+      href: "/terms-conditions"
     }]
   }];
   // ────────────────────────────────────────────────────────────────────────
@@ -1455,10 +1455,10 @@ function FooterCRE() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "tl-footer-legal",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "#",
+              href: "/privacy-policy",
               children: "Privacy Policy"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "#",
+              href: "/terms-conditions",
               children: "Terms & Conditions"
             })]
           })]
@@ -1530,9 +1530,15 @@ function HeroCRE() {
         /* ── HERO ── */
         .tl-hero {
           position: relative; overflow: hidden;
-          background: linear-gradient(160deg, #091914 0%, #0f2015 55%, #133429 100%);
           min-height: 100vh;
           display: flex; flex-direction: column;
+          /* ── BG IMAGE — actualizar src con la URL final del PNG ── */
+          background-image:
+            linear-gradient(160deg, rgba(9,25,20,0.88) 0%, rgba(15,32,21,0.82) 55%, rgba(19,52,41,0.80) 100%),
+            url('/wp-content/uploads/2026/04/TruelieHeroPanel-scaled.png');
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
         }
 
         /* Watermark */

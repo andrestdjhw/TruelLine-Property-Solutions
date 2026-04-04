@@ -41,8 +41,8 @@ function FooterCRE() {
         { name: "About Us",          href: "/about"         },
         { name: "Gallery",           href: "/gallery"       },
         { name: "Contact Us",        href: "/contact"       },
-        { name: "Privacy Policy",    href: "#"       },
-        { name: "Terms & Conditions",href: "#"         },
+        { name: "Privacy Policy",    href: "/privacy-policy"       },
+        { name: "Terms & Conditions",href: "/terms-conditions"         },
       ],
     },
   ]
@@ -395,8 +395,8 @@ function FooterCRE() {
               {company.license}
             </div>
             <div className="tl-footer-legal">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms &amp; Conditions</a>
+              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/terms-conditions">Terms &amp; Conditions</a>
             </div>
           </div>
         </div>
