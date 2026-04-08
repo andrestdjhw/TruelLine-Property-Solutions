@@ -20,8 +20,12 @@ if (document.querySelector("#cre-hero")) {
   ReactDOM.createRoot(document.querySelector("#cre-hero")).render(<HeroCRE />)
 }
 
-// ─── CONTACT FORM — solo en contact-template.php ─────────────────────────
-// Se puede reutilizar en cualquier página añadiendo <div id="cre-contact-form"></div>
+// ─── CONTACT FORM — contact-template.php y cualquier página con el div ──
 if (document.querySelector("#cre-contact-form")) {
   ReactDOM.createRoot(document.querySelector("#cre-contact-form")).render(<ContactForm />)
+}
+
+// ─── CONTACT FORM — services-template.php ────────────────────────────────
+if (document.querySelector("#cre-contact-form-services")) {
+  ReactDOM.createRoot(document.querySelector("#cre-contact-form-services")).render(<ContactForm compact={true} />)
 }

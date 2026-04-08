@@ -8,7 +8,7 @@ function HeroCRE() {
     eyebrow: "Holly Springs · Cary · Raleigh · Durham · Chapel Hill",
     headline: ["Your Property", "Held to a", "Higher Standard."],
     headlineAccent: 2,
-    subheadline: "Complete exterior and property solutions for homeowners who expect quality, reliability, and results that last — across the Triangle and Triad of North Carolina.",
+    subheadline: "Complete exterior and property solutions for homeowners who expect quality, reliability, and results that last across the Triangle and Triad of North Carolina.",
     cta2: { label: "Explore Our Services", href: "#services" },
   }
 
@@ -21,11 +21,28 @@ function HeroCRE() {
   // ─────────────────────────────────────────────────────────────────────
 
   const [visible, setVisible] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // ─── IMÁGENES DEL SLIDESHOW ────────────────────────────────────────
+  // Actualizar con las URLs finales de WordPress Media
+  const slides = [
+    '/wp-content/uploads/2026/04/TruelineHeroSlide1-scaled.jpg',
+    '/wp-content/uploads/2026/04/TruelineHeroSlide2-scaled.jpeg',   // DEV: reemplazar con imagen real
+    '/wp-content/uploads/2026/04/TruelineHeroSlide3-scaled.jpg',   // DEV: reemplazar con imagen real
+  ]
+  // ──────────────────────────────────────────────────────────────────
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80)
     return () => clearTimeout(t)
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length)
+    }, 6000) // cambia cada 6 segundos
+    return () => clearInterval(interval)
+  }, [slides.length])
 
   return (
     <>
@@ -38,13 +55,23 @@ function HeroCRE() {
           position: relative; overflow: hidden;
           min-height: 100vh;
           display: flex; flex-direction: column;
-          /* ── BG IMAGE — actualizar src con la URL final del PNG ── */
-          background-image:
-            linear-gradient(160deg, rgba(9,25,20,0.88) 0%, rgba(15,32,21,0.82) 55%, rgba(19,52,41,0.80) 100%),
-            url('/wp-content/uploads/2026/04/TruelieHeroPanel-scaled.png');
+          background: #091914;
+        }
+
+        /* ── SLIDESHOW LAYERS ── */
+        .tl-slide {
+          position: absolute; inset: 0; z-index: 0;
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;
+          opacity: 0;
+          transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: opacity;
+        }
+        .tl-slide.active { opacity: 1; }
+        .tl-slide-overlay {
+          position: absolute; inset: 0; z-index: 1; pointer-events: none;
+          background: linear-gradient(160deg, rgba(9,25,20,0.88) 0%, rgba(15,32,21,0.82) 55%, rgba(19,52,41,0.80) 100%);
         }
 
         /* Watermark */
@@ -80,17 +107,18 @@ function HeroCRE() {
         /* ── CONTENT — two column layout ── */
         .tl-hero-content {
           position: relative; z-index: 10; flex: 1;
-          display: flex; align-items: center;
+          display: flex; align-items: center; justify-content: center;
           padding: 100px 5% 72px;
+          max-width: 1440px; margin: 0 auto; width: 100%;
           opacity: 0; transform: translateY(30px);
           transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-          gap: 48px;
+          gap: 64px;
         }
         .tl-hero-content.visible { opacity: 1; transform: translateY(0); }
 
         /* Left column */
         .tl-hero-left {
-          flex: 1; min-width: 0;
+          flex: 1; min-width: 0; max-width: 680px;
           display: flex; flex-direction: column; gap: 0;
         }
 
@@ -114,7 +142,7 @@ function HeroCRE() {
 
         .tl-hero h1 {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
-          font-size: clamp(44px, 6vw, 88px); line-height: 0.92;
+          font-size: clamp(52px, 7vw, 108px); line-height: 0.92;
           letter-spacing: 0.01em; text-transform: uppercase;
           color: #e8e0d5; margin-bottom: 24px;
         }
@@ -199,7 +227,7 @@ function HeroCRE() {
         /* ── RESPONSIVE ── */
         @media (max-width: 1100px) {
           .tl-hero-right { width: 360px; }
-          .tl-hero h1 { font-size: clamp(40px, 5.5vw, 72px); }
+          .tl-hero h1 { font-size: clamp(44px, 6vw, 84px); }
         }
         @media (max-width: 900px) {
           .tl-hero-content {
@@ -221,6 +249,16 @@ function HeroCRE() {
       `}</style>
 
       <section className="tl-hero">
+
+        {/* ── SLIDESHOW BACKGROUND ── */}
+        {slides.map((src, i) => (
+          <div
+            key={i}
+            className={`tl-slide ${i === currentSlide ? 'active' : ''}`}
+            style={{ backgroundImage: `url('${src}')` }}
+          />
+        ))}
+        <div className="tl-slide-overlay" />
 
         {/* Watermark */}
         <div className="tl-hero-wm" aria-hidden="true">

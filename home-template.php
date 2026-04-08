@@ -215,8 +215,15 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   /* ══ WHY US ══ */
   .tl-why-section {
     padding: 88px 0;
-    background: linear-gradient(160deg, #091914 0%, #133429 100%);
     position: relative; overflow: hidden;
+    /* ── BG IMAGE — actualizar URL con imagen final de WordPress Media ── */
+    background-image:
+      linear-gradient(160deg, rgba(9,25,20,0.92) 0%, rgba(19,52,41,0.88) 100%),
+      url('/wp-content/uploads/2026/04/TruelieHeroPanel-scaled.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* parallax sutil */
+    background-repeat: no-repeat;
   }
   .tl-why-section::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -290,8 +297,15 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   /* ══ TESTIMONIALS ══ */
   .tl-testimonials-section {
     padding: 88px 0;
-    background: linear-gradient(160deg, #091914 0%, #133429 100%);
     position: relative; overflow: hidden;
+    /* ── BG IMAGE — actualizar URL con imagen final de WordPress Media ── */
+    background-image:
+      linear-gradient(160deg, rgba(9,25,20,0.92) 0%, rgba(19,52,41,0.88) 100%),
+      url('/wp-content/uploads/2026/04/Estampados-01Trueline-scaled.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
   .tl-testimonials-section::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -576,21 +590,21 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
       // or pull via Google Places API and render dynamically.
       $testimonials = [
         [
-          'quote'  => 'They did exactly what they said they would — on time, clean, and professional.',
-          'name'   => 'Homeowner',
-          'city'   => 'Holly Springs, NC',
+          'quote'  => 'Our real estate agent recommended we hire Nava\'s Landscaping Service to refresh our yard before putting our house on the market. They did a fantastic job. We\'re amazed at how good it looks. Miriam has an exceptional eye for landscape design and the crew was extremely hard working. I can\'t recommend them highly enough!',
+          'name'   => 'Lisa Kahan',
+          'city'   => 'Chapel Hill, NC',
           'stars'  => 5,
         ],
         [
-          'quote'  => 'Best contractor we\'ve hired. Our patio and retaining wall look incredible.',
-          'name'   => 'Homeowner',
+          'quote'  => 'We have used Nava\'s Landscape Service for our regular yard maintenance as well as special clean up projects. They are fast, efficient and friendly!',
+          'name'   => 'Cat Moleski',
           'city'   => 'Cary, NC',
           'stars'  => 5,
         ],
         [
-          'quote'  => 'They prepared our home for sale in record time. Our realtor was impressed.',
-          'name'   => 'Homeowner',
-          'city'   => 'Chapel Hill, NC',
+          'quote'  => 'Professional, reliable, and detail-oriented. TrueLine transformed our outdoor space completely — from the drainage solution to the landscaping. Every visit leaves our property looking better than before.',
+          'name'   => 'Verified Client',
+          'city'   => 'Holly Springs, NC',
           'stars'  => 5,
         ],
       ];
@@ -628,10 +642,10 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
 
       <!-- DEV NOTE: Replace with actual Google rating when live reviews are connected -->
       <div class="tl-reviews-badge">
-        <div class="tl-reviews-badge-inner">
+        <a href="https://www.google.com/search?kgmid=/g/11s4gclddv&q=Nava%27s+Landscape+Services+and+More" target="_blank" rel="noopener noreferrer" class="tl-reviews-badge-inner" style="text-decoration:none">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#2A5A49"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <strong>5.0</strong> rated on Google · <strong>See all reviews →</strong>
-        </div>
+        </a>
       </div>
 
     </div>
@@ -665,7 +679,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
             </svg>
-            Request a Free Estimate
+            Get a Free Quote
           </a>
           <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>" class="tl-cta-btn-ghost">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
