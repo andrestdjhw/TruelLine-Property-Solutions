@@ -8,6 +8,6 @@
   <body <?php body_class(); ?>>
 
     <!-- Navbar React — aparece en TODAS las páginas -->
-    <div id="cre-navbar"></div>
+    <div id="cre-navbar" style="position: sticky; top: 0; z-index: 1000;"></div>
 
     <!-- El hero (#cre-hero) se monta SOLO en inicio-template.php -->

@@ -152,7 +152,7 @@ function HeroCRE() {
         }
 
         .tl-hero-sub {
-          font-size: clamp(14px, 1.4vw, 16px); line-height: 1.75;
+          font-size: clamp(18px, 1.4vw, 16px); line-height: 1.75;
           color: rgba(200,215,240,0.5); max-width: 520px;
           margin-bottom: 36px;
         }

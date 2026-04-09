@@ -624,14 +624,23 @@ function ContactForm({
     email: "",
     phone: "",
     service: "",
-    message: ""
+    message: "",
+    consent: false
   });
   const [status, setStatus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("idle"); // idle | sending | success | error
 
-  const handleChange = e => setFormState(prev => ({
-    ...prev,
-    [e.target.name]: e.target.value
-  }));
+  const handleChange = e => {
+    const {
+      name,
+      type,
+      value,
+      checked
+    } = e.target;
+    setFormState(prev => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value
+    }));
+  };
   const handleSubmit = e => {
     e.preventDefault();
     setStatus("sending");
@@ -763,6 +772,29 @@ function ContactForm({
         .cf-success h3 span { color: var(--cf-accent); }
         .cf-success p { color: var(--cf-muted); font-size: 14px; line-height: 1.65; }
 
+        /* Checkbox */
+        .cf-consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 18px; cursor: pointer; }
+        .cf-consent input[type="checkbox"] {
+          appearance: none; -webkit-appearance: none;
+          width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
+          border: 1.5px solid rgba(42,90,73,0.35); border-radius: 3px;
+          background: #fff; cursor: pointer; position: relative;
+          transition: border-color 0.2s, background 0.2s;
+        }
+        .cf-consent input[type="checkbox"]:checked {
+          background: var(--cf-accent); border-color: var(--cf-accent);
+        }
+        .cf-consent input[type="checkbox"]:checked::after {
+          content: ''; position: absolute; left: 4px; top: 1px;
+          width: 6px; height: 10px;
+          border: 2px solid #FCF7EC; border-top: none; border-left: none;
+          transform: rotate(45deg);
+        }
+        .cf-consent input[type="checkbox"]:focus { box-shadow: 0 0 0 3px var(--cf-accent-ring); }
+        .cf-consent-text { font-size: 12.5px; color: var(--cf-muted); line-height: 1.6; }
+        .cf-consent-text a { color: var(--cf-accent); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+        .cf-consent-text a:hover { opacity: 0.75; }
+
         @media (max-width: 540px) {
           .cf-row { grid-template-columns: 1fr; }
           .cf-wrap { padding: 24px 18px; }
@@ -892,10 +924,32 @@ function ContactForm({
               value: formState.message,
               onChange: handleChange
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+            className: "cf-consent",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              type: "checkbox",
+              name: "consent",
+              required: true,
+              checked: formState.consent,
+              onChange: handleChange
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+              className: "cf-consent-text",
+              children: ["I agree to the", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                href: "/terms",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                children: "Terms & Conditions"
+              }), " ", "and", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                href: "/privacy",
+                target: "_blank",
+                rel: "noopener noreferrer",
+                children: "Privacy Policy"
+              }), " ", "of TrueLine Property Solutions."]
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "submit",
             className: "cf-submit",
-            disabled: status === "sending",
+            disabled: status === "sending" || !formState.consent,
             children: status === "sending" ? "Sending…" : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
                 width: "14",
@@ -1645,7 +1699,7 @@ function HeroCRE() {
         }
 
         .tl-hero-sub {
-          font-size: clamp(14px, 1.4vw, 16px); line-height: 1.75;
+          font-size: clamp(18px, 1.4vw, 16px); line-height: 1.75;
           color: rgba(200,215,240,0.5); max-width: 520px;
           margin-bottom: 36px;
         }
