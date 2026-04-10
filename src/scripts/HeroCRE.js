@@ -108,8 +108,8 @@ function HeroCRE() {
         .tl-hero-content {
           position: relative; z-index: 10; flex: 1;
           display: flex; align-items: center; justify-content: center;
-          padding: 100px 5% 72px;
-          max-width: 1440px; margin: 0 auto; width: 100%;
+          padding: 100px 4% 72px;
+          max-width: 1600px; margin: 0 auto; width: 100%;
           opacity: 0; transform: translateY(30px);
           transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
           gap: 64px;
@@ -152,7 +152,7 @@ function HeroCRE() {
         }
 
         .tl-hero-sub {
-          font-size: clamp(18px, 1.4vw, 16px); line-height: 1.75;
+          font-size: clamp(24px, 1.4vw, 16px); line-height: 1.75;
           color: rgba(200,215,240,0.5); max-width: 520px;
           margin-bottom: 36px;
         }
@@ -246,6 +246,12 @@ function HeroCRE() {
           .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.06); }
           .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.06); }
         }
+       @media (min-width: 1600px) {
+          .tl-hero-content { padding: 100px 6% 72px; max-width: 1800px; }
+          .tl-hero-left { max-width: 780px; }
+          .tl-hero-right { width: 480px; }
+        } 
+        
       `}</style>
 
       <section className="tl-hero">
