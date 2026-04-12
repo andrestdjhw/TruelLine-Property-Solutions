@@ -149,7 +149,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   .tl-reveal[data-delay="6"] { transition-delay: 0.48s; }
 
   /* ── SHARED ── */
-  .tl-container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .tl-container { max-width: 1600px; margin: 0 auto; padding: 0 48px; }
   .tl-section-head { text-align: center; margin-bottom: 52px; }
   .tl-label {
     display: inline-block; font-size: 10.5px; font-weight: 700;
@@ -468,6 +468,12 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
     .tl-why-card { flex-direction: column; gap: 12px; }
     .tl-how-grid { grid-template-columns: 1fr; gap: 32px; }
     .tl-testimonials-grid { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 1600px) {
+    .tl-container { max-width: 1800px; padding: 0 64px; }
+    .tl-title { font-size: clamp(32px, 3vw, 56px); }
+    .tl-services-grid { gap: 32px; }
+    .tl-why-grid { gap: 32px; }
   }
 </style>
 

@@ -1,10 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import emailjs from "@emailjs/browser"
+import ReCAPTCHA from "react-google-recaptcha"
 
 // ─── CREDENCIALES EmailJS ────────────────────────────────────────────────────
-const EMAILJS_PUBLIC_KEY  = "NPFppts74nYqJf4Ci"
-const EMAILJS_SERVICE_ID  = "service_2xpp6jf"
-const EMAILJS_TEMPLATE_ID = "template_8rwqc1k"
+const EMAILJS_PUBLIC_KEY  = "k71YblwDfy7-d6UKH"
+const EMAILJS_SERVICE_ID  = "service_jv6uq6n"
+const EMAILJS_TEMPLATE_ID = "template_wo6toyt"
+// ────────────────────────────────────────────────────────────────────────────
+const RECAPTCHA_SITE_KEY = "6LfABrQsAAAAAPI-2gxFy6270pEFxwiUNScV0eIP"
 // ────────────────────────────────────────────────────────────────────────────
 
 /**
@@ -28,6 +31,8 @@ function ContactForm({ compact = false }) {
     name: "", email: "", phone: "", service: "", message: "", consent: false,
   })
   const [status, setStatus] = useState("idle") // idle | sending | success | error
+  const [captchaToken, setCaptchaToken] = useState(null)
+  const recaptchaRef = useRef(null)
 
   const handleChange = e => {
     const { name, type, value, checked } = e.target
@@ -50,11 +55,15 @@ function ContactForm({ compact = false }) {
       .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
       .then(() => {
         setStatus("success")
-        setFormState({ name: "", email: "", phone: "", service: "", message: "" })
+        setFormState({ name: "", email: "", phone: "", service: "", message: "", consent: false })
+        setCaptchaToken(null)
+        recaptchaRef.current?.reset()
       })
       .catch(err => {
         console.error("EmailJS error:", err)
         setStatus("error")
+        setCaptchaToken(null)
+        recaptchaRef.current?.reset()
       })
   }
 
@@ -188,6 +197,10 @@ function ContactForm({ compact = false }) {
         .cf-consent-text a { color: var(--cf-accent); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
         .cf-consent-text a:hover { opacity: 0.75; }
 
+        /* reCAPTCHA wrapper */
+        .cf-captcha { margin-bottom: 18px; display: flex; justify-content: flex-start; }
+        .cf-captcha > div { border-radius: 4px; overflow: hidden; }
+
         @media (max-width: 540px) {
           .cf-row { grid-template-columns: 1fr; }
           .cf-wrap { padding: 24px 18px; }
@@ -267,7 +280,17 @@ function ContactForm({ compact = false }) {
                 </span>
               </label>
 
-              <button type="submit" className="cf-submit" disabled={status === "sending" || !formState.consent}>
+              <div className="cf-captcha">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={RECAPTCHA_SITE_KEY}
+                  onChange={token => setCaptchaToken(token)}
+                  onExpired={() => setCaptchaToken(null)}
+                  theme="light"
+                />
+              </div>
+
+              <button type="submit" className="cf-submit" disabled={status === "sending" || !formState.consent || !captchaToken}>
                 {status === "sending" ? (
                   "Sending…"
                 ) : (
