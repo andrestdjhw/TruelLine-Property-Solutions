@@ -363,7 +363,7 @@ function Navbar() {
           <div className="tl-top-sep" />
           <a href="mailto:navaslandscapenc1@gmail.com" className="tl-top-item">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            navaslandscapenc1@gmail.com
+            info@truelinesolutionsus.com
           </a>
           <div className="tl-top-sep" />
           <div className="tl-top-badge"><div className="tl-dot" />Licensed &amp; Insured</div>

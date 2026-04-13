@@ -2466,7 +2466,7 @@ function Navbar() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
               points: "22,6 12,13 2,6"
             })]
-          }), "navaslandscapenc1@gmail.com"]
+          }), "info@truelinesolutionsus.com"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "tl-top-sep"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
