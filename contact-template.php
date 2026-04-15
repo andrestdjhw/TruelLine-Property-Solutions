@@ -14,8 +14,8 @@ get_header(); ?>
 $contact = [
   'phone'      => '(919) 951-8341',
   'phone_href' => 'tel:+19199518341',
-  'email'      => 'navaslandscapenc1@gmail.com',
-  'email_href' => 'mailto:navaslandscapenc1@gmail.com',
+  'email'      => 'info@truelinesolutionsus.com',
+  'email_href' => 'mailto:info@truelinesolutionsus.com',
   'location'   => 'The Triangle & Triad, North Carolina',
   'response'   => 'Within 24 hrs',
 ];
