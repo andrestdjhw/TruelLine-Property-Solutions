@@ -323,6 +323,36 @@ get_header(); ?>
           'meta'      => 'High Point properties receive the same commitment to quality and precision that defines TrueLine\'s work across every market we serve.',
           'embed_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52003!2d-80.0053!3d35.9557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88530bc771b841eb%3A0xf2ee8a2d049910df!2sHigh%20Point%2C%20NC!5e0!3m2!1sen!2sus!4v1',
         ],
+        [
+          'name'      => 'Chatham County',
+          'region'    => 'Chatham County',
+          'meta'      => 'Chatham County\'s growing residential communities and rural properties get the same high standard of exterior care TrueLine delivers across the region.',
+          'embed_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52003!2d-79.2559!3d35.7043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acef1b29e5e75b%3A0x78b3e67b9f1eda8d!2sChatham%20County%2C%20NC!5e0!3m2!1sen!2sus!4v1',
+        ],
+        [
+          'name'      => 'Apex',
+          'region'    => 'Wake County',
+          'meta'      => 'One of the most desirable communities in the Triangle — Apex homeowners get the full range of TrueLine exterior property services.',
+          'embed_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52003!2d-78.8503!3d35.7329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acf5c6a5e3f205%3A0x9b0e55c3a9e2b1a1!2sApex%2C%20NC!5e0!3m2!1sen!2sus!4v1',
+        ],
+        [
+          'name'      => 'Siler City',
+          'region'    => 'Chatham County',
+          'meta'      => 'Siler City properties receive professional exterior care and property services — the same quality TrueLine brings to every market we serve.',
+          'embed_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52003!2d-79.4645!3d35.7243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acedf3b3e3e3e3%3A0x1a2b3c4d5e6f7a8b!2sSiler%20City%2C%20NC!5e0!3m2!1sen!2sus!4v1',
+        ],
+        [
+          'name'      => 'Mebane',
+          'region'    => 'Alamance County',
+          'meta'      => 'Mebane\'s fast-growing residential areas get reliable exterior property services from TrueLine — landscaping, hardscape, drainage, and more.',
+          'embed_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52003!2d-79.2667!3d36.0957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ace1f1f1f1f1f1%3A0x2b3c4d5e6f7a8b9c!2sMebane%2C%20NC!5e0!3m2!1sen!2sus!4v1',
+        ],
+        [
+          'name'      => 'Burlington',
+          'region'    => 'Alamance County',
+          'meta'      => 'Burlington homeowners and property investors get TrueLine\'s full suite of exterior services — the same one standard across every city we serve.',
+          'embed_src' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52003!2d-79.4378!3d36.0957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ace2d2d2d2d2d2%3A0x3c4d5e6f7a8b9c0d!2sBurlington%2C%20NC!5e0!3m2!1sen!2sus!4v1',
+        ],
       ];
       // ──────────────────────────────────────────────────────────────────
       ?>

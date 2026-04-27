@@ -26,7 +26,7 @@ function HeroCRE() {
   // ─── IMÁGENES DEL SLIDESHOW ────────────────────────────────────────
   // Actualizar con las URLs finales de WordPress Media
   const slides = [
-    '/wp-content/uploads/2026/04/TruelineHeroSlide1-scaled.jpg',
+    '/wp-content/uploads/2026/04/HeroLandscaping4-scaled.jpg',
     '/wp-content/uploads/2026/04/TruelineHeroSlide2-scaled.jpeg',   // DEV: reemplazar con imagen real
     '/wp-content/uploads/2026/04/TruelineHeroSlide3-scaled.jpg',   // DEV: reemplazar con imagen real
   ]
@@ -153,7 +153,7 @@ function HeroCRE() {
 
         .tl-hero-sub {
           font-size: clamp(24px, 1.4vw, 16px); line-height: 1.75;
-          color: rgba(200,215,240,0.5); max-width: 520px;
+          color: rgba(255,255,255,0.88); max-width: 520px;
           margin-bottom: 36px;
         }
 
@@ -186,7 +186,7 @@ function HeroCRE() {
         .tl-hero-stat-label {
           font-family: 'Barlow Condensed', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-          text-transform: uppercase; color: rgba(190,205,235,0.5);
+          text-transform: uppercase; color: rgba(255,255,255,0.75);
           line-height: 1.3;
         }
 

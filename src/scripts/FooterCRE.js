@@ -41,8 +41,8 @@ function FooterCRE() {
         { name: "About Us",          href: "/about"         },
         { name: "Gallery",           href: "/gallery"       },
         { name: "Contact Us",        href: "/contact"       },
-        { name: "Privacy Policy",    href: "/privacy-policy"       },
-        { name: "Terms & Conditions",href: "/terms-conditions"         },
+        { name: "Privacy Policy",    href: "/privacy"       },
+        { name: "Terms & Conditions",href: "/terms"         },
       ],
     },
   ]
@@ -142,7 +142,7 @@ function FooterCRE() {
         /* Brand column */
         .tl-footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; text-decoration: none; }
         .tl-footer-logo-icon {
-          width: 60px; height: 60px; flex-shrink: 0;
+          width: 44px; height: 44px; flex-shrink: 0;
           display: flex; align-items: center; justify-content: center;
           filter: drop-shadow(0 2px 8px rgba(42,90,73,0.25));
         }
@@ -290,13 +290,6 @@ function FooterCRE() {
                 </svg>
                 Request a Free Estimate
               </a>
-              <a href="/gallery" className="tl-footer-btn-ghost">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                View Our Work
-              </a>
             </div>
           </div>
         </div>
@@ -309,7 +302,7 @@ function FooterCRE() {
             {/* Logo — actualizar src con ruta final del asset PNG */}
             <a href="/" className="tl-footer-logo">
               <img
-                src="/wp-content/uploads/2026/03/Imagotipo_Variante-scaled.png"
+                src="/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png"
                 alt="TrueLine Property Solutions"
                 style={{ height: "52px", width: "auto", objectFit: "contain", display: "block" }}
               />
@@ -336,14 +329,15 @@ function FooterCRE() {
                 </div>
                 {company.email}
               </a>
-              <div className="tl-footer-contact-item">
+              <a href="https://www.google.com/search?kgmid=/g/11s4gclddv&q=Nava%27s+Landscape+Services+and+More"
+                 target="_blank" rel="noopener noreferrer" className="tl-footer-contact-item">
                 <div className="tl-footer-contact-icon">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
                   </svg>
                 </div>
                 {company.location}
-              </div>
+              </a>
             </div>
 
             {/* Badges — DEV NOTE: replace .tl-footer-badge-bbb with actual BBB image/logo */}
@@ -395,8 +389,8 @@ function FooterCRE() {
               {company.license}
             </div>
             <div className="tl-footer-legal">
-              <a href="/privacy-policy">Privacy Policy</a>
-              <a href="/terms-conditions">Terms &amp; Conditions</a>
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms &amp; Conditions</a>
             </div>
           </div>
         </div>

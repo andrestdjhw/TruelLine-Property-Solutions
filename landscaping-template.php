@@ -62,7 +62,14 @@ $img_hero = $theme_uri . '/assets/images/landscaping-hero.jpg';
 
   /* ══ PAGE HEADER ══ */
   .sv-header {
-    background: linear-gradient(160deg, #091914 0%, #0f2015 60%, #133429 100%);
+    /* ── BG IMAGE — actualizar URL con imagen final de WordPress Media ── */
+    background-image:
+      linear-gradient(160deg, rgba(9,25,20,0.90) 0%, rgba(15,32,21,0.85) 60%, rgba(19,52,41,0.82) 100%),
+      var(--sv-header-bg, none);
+    background-color: #091914;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     padding: 80px 32px 88px; text-align: center;
     position: relative; overflow: hidden;
   }
@@ -278,7 +285,11 @@ $img_hero = $theme_uri . '/assets/images/landscaping-hero.jpg';
 <div class="sv-page">
 
   <!-- ══ PAGE HEADER ══ -->
-  <div class="sv-header">
+  <?php
+// ── BG IMAGE DEL HEADER — actualizar con URL final de WordPress Media ──
+$header_bg = '/wp-content/uploads/2026/04/TruelieHeroPanel-scaled.png';
+?>
+<div class="sv-header" style="--sv-header-bg: url('<?php echo esc_url( $header_bg ); ?>');">
     <div class="sv-header-wm" aria-hidden="true">
       <svg viewBox="0 0 40 40" fill="white">
         <polygon points="20,2 38,11 38,29 20,38 2,29 2,11"/>
@@ -323,7 +334,7 @@ $img_hero = $theme_uri . '/assets/images/landscaping-hero.jpg';
         <div class="sv-reveal sv-intro-img-wrap">
           <?php
           // DEV NOTE: Actualizar $img_hero con la URL final del recurso en WordPress Media
-          $img_hero = '/wp-content/uploads/2026/04/Landscaping-scaled.jpg';
+          $img_hero = '/wp-content/uploads/2026/04/HeroLandscaping4-scaled.jpg';
           ?>
           <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Landscaping — NC residential landscape" loading="lazy" />
         </div>

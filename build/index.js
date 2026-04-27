@@ -1102,10 +1102,10 @@ function FooterCRE() {
       href: "/contact"
     }, {
       name: "Privacy Policy",
-      href: "/privacy-policy"
+      href: "/privacy"
     }, {
       name: "Terms & Conditions",
-      href: "/terms-conditions"
+      href: "/terms"
     }]
   }];
   // ────────────────────────────────────────────────────────────────────────
@@ -1220,7 +1220,7 @@ function FooterCRE() {
         /* Brand column */
         .tl-footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; text-decoration: none; }
         .tl-footer-logo-icon {
-          width: 60px; height: 60px; flex-shrink: 0;
+          width: 44px; height: 44px; flex-shrink: 0;
           display: flex; align-items: center; justify-content: center;
           filter: drop-shadow(0 2px 8px rgba(42,90,73,0.25));
         }
@@ -1366,9 +1366,9 @@ function FooterCRE() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
               children: "Serving the Triangle and Triad of North Carolina \u2014 Holly Springs, Cary, Raleigh, Durham, Chapel Hill, Hillsborough, and Orange County."
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "tl-footer-cta-btns",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
               href: "/contact",
               className: "tl-footer-btn-primary",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
@@ -1382,31 +1382,7 @@ function FooterCRE() {
                   d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
                 })
               }), "Request a Free Estimate"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "/gallery",
-              className: "tl-footer-btn-ghost",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
-                width: "14",
-                height: "14",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "currentColor",
-                strokeWidth: "2",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
-                  x: "3",
-                  y: "3",
-                  width: "18",
-                  height: "18",
-                  rx: "2"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
-                  cx: "8.5",
-                  cy: "8.5",
-                  r: "1.5"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
-                  points: "21 15 16 10 5 21"
-                })]
-              }), "View Our Work"]
-            })]
+            })
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -1417,7 +1393,7 @@ function FooterCRE() {
             href: "/",
             className: "tl-footer-logo",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-              src: "/wp-content/uploads/2026/03/Imagotipo_Variante-scaled.png",
+              src: "/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png",
               alt: "TrueLine Property Solutions",
               style: {
                 height: "52px",
@@ -1470,7 +1446,10 @@ function FooterCRE() {
                   })]
                 })
               }), company.email]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+              href: "https://www.google.com/search?kgmid=/g/11s4gclddv&q=Nava%27s+Landscape+Services+and+More",
+              target: "_blank",
+              rel: "noopener noreferrer",
               className: "tl-footer-contact-item",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                 className: "tl-footer-contact-icon",
@@ -1553,10 +1532,10 @@ function FooterCRE() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "tl-footer-legal",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "/privacy-policy",
+              href: "/privacy",
               children: "Privacy Policy"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-              href: "/terms-conditions",
+              href: "/terms",
               children: "Terms & Conditions"
             })]
           })]
@@ -1620,7 +1599,7 @@ function HeroCRE() {
 
   // ─── IMÁGENES DEL SLIDESHOW ────────────────────────────────────────
   // Actualizar con las URLs finales de WordPress Media
-  const slides = ['/wp-content/uploads/2026/04/TruelineHeroSlide1-scaled.jpg', '/wp-content/uploads/2026/04/TruelineHeroSlide2-scaled.jpeg',
+  const slides = ['/wp-content/uploads/2026/04/HeroLandscaping4-scaled.jpg', '/wp-content/uploads/2026/04/TruelineHeroSlide2-scaled.jpeg',
   // DEV: reemplazar con imagen real
   '/wp-content/uploads/2026/04/TruelineHeroSlide3-scaled.jpg' // DEV: reemplazar con imagen real
   ];
@@ -1745,7 +1724,7 @@ function HeroCRE() {
 
         .tl-hero-sub {
           font-size: clamp(24px, 1.4vw, 16px); line-height: 1.75;
-          color: rgba(200,215,240,0.5); max-width: 520px;
+          color: rgba(255,255,255,0.88); max-width: 520px;
           margin-bottom: 36px;
         }
 
@@ -1778,7 +1757,7 @@ function HeroCRE() {
         .tl-hero-stat-label {
           font-family: 'Barlow Condensed', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-          text-transform: uppercase; color: rgba(190,205,235,0.5);
+          text-transform: uppercase; color: rgba(255,255,255,0.75);
           line-height: 1.3;
         }
 
@@ -2113,10 +2092,6 @@ function Navbar() {
         link: "/services/property-preparation"
       }]
     }]
-  }, {
-    name: "Gallery",
-    link: "/gallery",
-    hasDropdown: false
   }, {
     name: "Service Areas",
     link: "/service-areas",
