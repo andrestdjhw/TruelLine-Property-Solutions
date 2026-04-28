@@ -306,7 +306,7 @@ $img_hero = $theme_uri . '/assets/images/tree-services-hero.jpg';
         <div class="sv-reveal sv-intro-img-wrap">
           <?php
           // DEV NOTE: Actualizar $img_hero con la URL final del recurso en WordPress Media
-          $img_hero = '/wp-content/uploads/2026/04/treeservice.jpg';
+          $img_hero = '/wp-content/uploads/2026/04/TreeServicesTrueLine-scaled.jpg';
           ?>
           <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Landscaping — NC residential landscape" loading="lazy" />
         </div>
