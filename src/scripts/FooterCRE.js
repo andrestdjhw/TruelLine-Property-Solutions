@@ -39,7 +39,6 @@ function FooterCRE() {
       items: [
         { name: "Home",              href: "/"              },
         { name: "About Us",          href: "/about"         },
-        { name: "Gallery",           href: "/gallery"       },
         { name: "Contact Us",        href: "/contact"       },
         { name: "Privacy Policy",    href: "/privacy"       },
         { name: "Terms & Conditions",href: "/terms"         },
@@ -329,7 +328,7 @@ function FooterCRE() {
                 </div>
                 {company.email}
               </a>
-              <a href="https://www.google.com/search?kgmid=/g/11s4gclddv&q=Nava%27s+Landscape+Services+and+More"
+              <a href="https://www.google.com/maps/place/Holly+Springs,+Carolina+del+Norte,+EE.+UU./@35.644151,-78.848793,13z/data=!3m1!4b1!4m6!3m5!1s0x89acf53e203c208f:0x5f9f54184597aa40!8m2!3d35.6512655!4d-78.8336218!16zL20vMHlsdGg?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D"
                  target="_blank" rel="noopener noreferrer" className="tl-footer-contact-item">
                 <div className="tl-footer-contact-icon">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2">

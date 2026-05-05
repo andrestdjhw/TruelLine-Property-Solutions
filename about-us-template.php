@@ -355,19 +355,11 @@ $img_team = $theme_uri . '/assets/images/about-team.jpg';
 
       <!-- Imagen -->
       <div class="au-reveal au-origin-img-wrap">
-        <?php if ( file_exists( get_template_directory() . '/assets/images/about-team.jpg' ) ) : ?>
-          <img src="<?php echo esc_url( $img_team ); ?>" alt="TrueLine Property Solutions — team at work" loading="lazy" />
-        <?php else : ?>
-          <div class="au-origin-img-placeholder">
-            <svg width="80" height="80" viewBox="0 0 40 40" fill="white">
-              <polygon points="20,2 38,11 38,29 20,38 2,29 2,11"/>
-              <path d="M12 28 L12 18 L20 12 L28 18 L28 28" stroke="white" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-              <line x1="12" y1="28" x2="28" y2="28" stroke="white" stroke-width="1.5"/>
-            </svg>
-            <!-- DEV NOTE: Add team/job site photo at /assets/images/about-team.jpg -->
-            <span>Team Photo Coming Soon</span>
-          </div>
-        <?php endif; ?>
+        <?php
+        // DEV NOTE: Actualizar con la URL final de WordPress Media
+        $img_team = '/wp-content/uploads/2026/05/HeroAboutTrueLine-scaled.jpg';
+        ?>
+        <img src="<?php echo esc_url( $img_team ); ?>" alt="TrueLine Property Solutions — team at work" loading="lazy" />
         <div class="au-origin-badge">
           <div class="au-origin-badge-val">NC Triangle</div>
           <div class="au-origin-badge-label">Licensed &amp; Insured · BBB Accredited</div>

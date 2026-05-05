@@ -26,7 +26,7 @@ function HeroCRE() {
   // ─── IMÁGENES DEL SLIDESHOW ────────────────────────────────────────
   // Actualizar con las URLs finales de WordPress Media
   const slides = [
-    '/wp-content/uploads/2026/04/HeroLandscaping4-scaled.jpg',
+    '/wp-content/uploads/2026/04/TruelineHeroSlide1-scaled.jpg',
     '/wp-content/uploads/2026/04/TruelineHeroSlide2-scaled.jpeg',   // DEV: reemplazar con imagen real
     '/wp-content/uploads/2026/04/TruelineHeroSlide3-scaled.jpg',   // DEV: reemplazar con imagen real
   ]
@@ -130,7 +130,7 @@ function HeroCRE() {
         .tl-hero-badge {
           display: inline-flex; align-items: center; gap: 8px;
           background: rgba(42,90,73,0.1); border: 1px solid rgba(42,90,73,0.3);
-          color: rgba(42,160,90,0.9); font-family: 'Barlow', sans-serif;
+          color: rgba(255, 255, 255, 0.9); font-family: 'Barlow', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
           text-transform: uppercase; padding: 6px 16px; border-radius: 3px;
           margin-bottom: 28px; width: fit-content;
@@ -190,35 +190,10 @@ function HeroCRE() {
           line-height: 1.3;
         }
 
-        /* Form wrapper — override cf-wrap shadow para integrarlo mejor */
+        /* Form wrapper — color claro, sombra para destacar sobre el fondo oscuro */
         .tl-hero-form-wrap .cf-wrap {
-          background: rgba(13,22,16,0.92) !important;
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(42,90,73,0.25);
-          box-shadow: 0 24px 60px rgba(0,0,0,0.5) !important;
+          box-shadow: 0 24px 60px rgba(0,0,0,0.35) !important;
         }
-        .tl-hero-form-wrap .cf-title { color: #e8e0d5 !important; }
-        .tl-hero-form-wrap .cf-sub { color: rgba(200,215,240,0.45) !important; }
-        .tl-hero-form-wrap .cf-label { color: rgba(190,210,240,0.55) !important; }
-        .tl-hero-form-wrap .cf-input,
-        .tl-hero-form-wrap .cf-select,
-        .tl-hero-form-wrap .cf-textarea {
-          background: rgba(255,255,255,0.05) !important;
-          border-color: rgba(42,90,73,0.25) !important;
-          color: #e8e0d5 !important;
-        }
-        .tl-hero-form-wrap .cf-input::placeholder,
-        .tl-hero-form-wrap .cf-textarea::placeholder {
-          color: rgba(200,215,240,0.25) !important;
-        }
-        .tl-hero-form-wrap .cf-input:focus,
-        .tl-hero-form-wrap .cf-select:focus,
-        .tl-hero-form-wrap .cf-textarea:focus {
-          background: rgba(255,255,255,0.08) !important;
-          border-color: #2A5A49 !important;
-        }
-        .tl-hero-form-wrap .cf-success h3 { color: #e8e0d5 !important; }
-        .tl-hero-form-wrap .cf-success p { color: rgba(200,215,240,0.5) !important; }
 
         /* Wave */
         .tl-hero-wave { position: relative; z-index: 10; margin-top: -2px; line-height: 0; }
