@@ -407,7 +407,7 @@ function Navbar() {
           {/* Logo — actualizar src con ruta final del asset PNG */}
           <a className="tl-logo" href="/">
             <img
-              src="/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png"
+              src="/wp-content/uploads/2026/05/Imagotipo_Principal.png"
               alt="TrueLine Property Solutions"
               style={{ height: "48px", width: "auto", objectFit: "contain", display: "block" }}
             />

@@ -1390,7 +1390,7 @@ function FooterCRE() {
             href: "/",
             className: "tl-footer-logo",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-              src: "/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png",
+              src: "/wp-content/uploads/2026/05/Imagotipo_Principal.png",
               alt: "TrueLine Property Solutions",
               style: {
                 height: "52px",
@@ -2551,7 +2551,7 @@ function Navbar() {
           className: "tl-logo",
           href: "/",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            src: "/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png",
+            src: "/wp-content/uploads/2026/05/Imagotipo_Principal.png",
             alt: "TrueLine Property Solutions",
             style: {
               height: "48px",

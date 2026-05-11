@@ -30,14 +30,14 @@ $services = [
     'title' => 'Hardscape & Concrete',
     'desc'  => 'Patios, retaining walls, walkways, parking areas, and driveways built for durability and curb appeal.',
     'href'  => '/services/hardscape-concrete',
-    'img'   => '/wp-content/uploads/2026/04/Hardscrapenconcrete-scaled.jpg',
+    'img'   => '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg',
     'icon'  => '<rect x="3" y="12" width="18" height="9" rx="1"/><path d="M3 12l4-7h10l4 7"/><line x1="3" y1="16" x2="21" y2="16"/>',
   ],
   [
     'title' => 'Drainage & Erosion Control',
     'desc'  => 'French drains, drainage solutions, and erosion management that protect your land and investment.',
     'href'  => '/services/drainage-erosion-control',
-    'img'   => '/wp-content/uploads/2026/04/DrainageErotionTrueLine-scaled.jpg',
+    'img'   => '/wp-content/uploads/2026/05/DrainageErotionControl-scaled.jpg',
     'icon'  => '<path d="M12 2v6M8 6l4 4 4-4"/><path d="M3 14s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/><path d="M3 18s1-1 2-1 2 2 3 2 2-2 3-2 2 2 3 2 2-1 2-1"/>',
   ],
   [
@@ -51,14 +51,14 @@ $services = [
     'title' => 'Exterior Cleaning',
     'desc'  => 'Roof cleaning, gutter care, pressure washing, and deck maintenance to protect and refresh every surface.',
     'href'  => '/services/exterior-cleaning',
-    'img'   => '/wp-content/uploads/2026/04/ExteriorCleaningTrueLine-scaled.jpg',
+    'img'   => '/wp-content/uploads/2026/05/ExteriorCleaningHouse-scaled.jpg',
     'icon'  => '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/><circle cx="18" cy="20" r="3"/><path d="M18 17v-4m-2 5l4-2"/>',
   ],
   [
     'title' => 'Property Preparation',
     'desc'  => 'Full interior and exterior preparation for homeowners, investors, and realtors getting a property market-ready.',
     'href'  => '/services/property-preparation',
-    'img'   => '/wp-content/uploads/2026/04/PropertyPreparationTrueLine-scaled.jpg',
+    'img'   => '/wp-content/uploads/2026/05/PropertyPreparationHouse-scaled.jpg',
     'icon'  => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>',
   ],
 ];
