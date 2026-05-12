@@ -345,9 +345,9 @@ function FooterCRE() {
                 <div className="tl-footer-badge-dot" />
                 Licensed &amp; Insured
               </div>
-              <div className="tl-footer-badge-bbb">
+              {/* <div className="tl-footer-badge-bbb">
                 BBB Badge — Placeholder
-              </div>
+              </div> */}
             </div>
 
             <div className="tl-footer-socials">

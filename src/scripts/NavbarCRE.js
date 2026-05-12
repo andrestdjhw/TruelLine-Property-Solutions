@@ -38,6 +38,7 @@ function Navbar() {
             { name: "Tree Services", link: "/services/tree-services" },
             { name: "Exterior Cleaning", link: "/services/exterior-cleaning" },
             { name: "Property Preparation", link: "/services/property-preparation" },
+            { name: "Hauling & Debris Removal", link: "/services/hauling-debris-removal" },
           ],
         },
       ],
@@ -496,7 +497,7 @@ function Navbar() {
         <div className="tl-mob-head">
           <a className="tl-logo" href="/">
             <img
-              src="/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png"
+              src="/wp-content/uploads/2026/05/Imagotipo_Principal.png"
               alt="TrueLine Property Solutions"
               style={{ height: "36px", width: "auto", objectFit: "contain", display: "block" }}
             />

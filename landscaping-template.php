@@ -103,7 +103,7 @@ $img_hero = $theme_uri . '/assets/images/landscaping-hero.jpg';
     color: #e8e0d5; margin-bottom: 20px;
   }
   .sv-header h1 em { color: var(--accent); font-style: normal; }
-  .sv-header-sub { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto 36px; }
+  .sv-header-sub { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto 36px; text-shadow: 0 0 10px #27a139;}
   .sv-header-cta {
     display: inline-flex; align-items: center; gap: 9px;
     padding: 14px 32px; background: var(--accent); color: #FCF7EC;
@@ -287,7 +287,7 @@ $img_hero = $theme_uri . '/assets/images/landscaping-hero.jpg';
   <!-- ══ PAGE HEADER ══ -->
   <?php
 // ── BG IMAGE DEL HEADER — actualizar con URL final de WordPress Media ──
-$header_bg = '/wp-content/uploads/2026/04/TruelieHeroPanel-scaled.png';
+$header_bg = '/wp-content/uploads/2026/05/LandscapingServiceHeroTrueline-scaled.jpg';
 ?>
 <div class="sv-header" style="--sv-header-bg: url('<?php echo esc_url( $header_bg ); ?>');">
     <div class="sv-header-wm" aria-hidden="true">

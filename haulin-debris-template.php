@@ -1,21 +1,25 @@
 <?php
 /**
- * Template Name: Hardscape-Concrete Template
+ * Template Name: Hauling & Debris Removal Template
  *
- * Página de servicio: Hardscape & Concrete.
+ * Página de servicio: Hauling & Debris Removal.
  * Sin componente React. Navbar y footer vienen de header.php / footer.php.
  */
 
 get_header(); ?>
 
 <?php
-// DEV NOTE: Actualizar con la URL final de WordPress Media
-$img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
+// ── BG IMAGE DEL HEADER — actualizar con URL final de WordPress Media ──
+$header_bg = '/wp-content/uploads/2026/05/HaulingHeroTrueline-scaled.jpg';
+
+// ── INTRO IMAGE — actualizar con URL final de WordPress Media ──
+$img_hero = '/wp-content/uploads/2026/05/HaulingHeroTrueline-scaled.jpg';
 ?>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
+  /* ── BASE ── */
   .sv-page { font-family: 'Barlow', sans-serif; background: #FCF7EC; color: #091914; }
   .sv-page {
     --accent:        #2A5A49;
@@ -25,6 +29,7 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
     --muted:         rgba(9,25,20,0.5);
   }
 
+  /* ── SCROLL REVEAL ── */
   .sv-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1); }
   .sv-reveal.sv-in { opacity: 1; transform: none; }
   .sv-reveal[data-delay="1"] { transition-delay: 0.08s; }
@@ -36,6 +41,7 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   .sv-reveal[data-delay="7"] { transition-delay: 0.56s; }
   .sv-reveal[data-delay="8"] { transition-delay: 0.64s; }
 
+  /* ── SHARED ── */
   .sv-container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
   .sv-label { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
   .sv-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(28px, 4vw, 48px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--dark); line-height: 1; }
@@ -56,7 +62,13 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
     padding: 80px 32px 88px; text-align: center;
     position: relative; overflow: hidden;
   }
-  .sv-header::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 70% at 50% 60%, rgba(42,90,73,0.1) 0%, transparent 65%), repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px), repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px); }
+  .sv-header::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 70% at 50% 60%, rgba(42,90,73,0.1) 0%, transparent 65%),
+      repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px),
+      repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px);
+  }
   .sv-header-wm { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 6%; pointer-events: none; z-index: 0; }
   .sv-header-wm svg { width: min(220px, 22%); opacity: 0.04; }
   .sv-header-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
@@ -65,12 +77,13 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   @keyframes svPulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
   .sv-header h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(38px, 6.5vw, 76px); line-height: 0.95; letter-spacing: 0.02em; text-transform: uppercase; color: #e8e0d5; margin-bottom: 20px; }
   .sv-header h1 em { color: #ECEBC3; font-style: normal; }
-  .sv-header-sub { color: rgba(245, 247, 250,0.5); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto 36px; text-shadow: 0 0 10px #27a139;}
+  .sv-header-sub { color: rgba(200,215,240,0.6); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto 36px; text-shadow: 0 0 10px #27a139;}
   .sv-header-cta { display: inline-flex; align-items: center; gap: 9px; padding: 14px 32px; background: var(--accent); color: #FCF7EC; border: none; border-radius: 4px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; box-shadow: 0 6px 22px rgba(42,90,73,0.4); transition: transform 0.2s, box-shadow 0.2s, background 0.2s; position: relative; overflow: hidden; }
-  .sv-header-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(252,247,236,0.15), transparent); transform: skewX(-15deg); transition: left 0.5s; }
+  .sv-header-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transform: skewX(-15deg); transition: left 0.5s; }
   .sv-header-cta:hover::before { left: 160%; }
   .sv-header-cta:hover { background: #133429; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(42,90,73,0.55); }
 
+  /* Wave */
   .sv-wave { line-height: 0; background: linear-gradient(160deg, #091914, #133429); }
   .sv-wave svg { display: block; width: 100%; }
 
@@ -80,12 +93,9 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   .sv-intro-img-wrap { position: relative; border-radius: 6px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 20px 60px rgba(9,25,20,0.2); }
   .sv-intro-img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(42,90,73,0.15) 0%, transparent 60%); pointer-events: none; }
   .sv-intro-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .sv-intro-img-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #091914, #133429); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
-  .sv-intro-img-placeholder svg { opacity: 0.15; }
-  .sv-intro-img-placeholder span { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
   .sv-intro-text { display: flex; flex-direction: column; gap: 20px; }
 
-  /* ══ WHAT WE OFFER ══ */
+  /* ══ WHAT WE HAUL ══ */
   .sv-services-section { padding: 88px 0; background: #fff; }
   .sv-services-head { text-align: center; margin-bottom: 52px; }
   .sv-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -98,12 +108,16 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   /* ══ WHO WE SERVE ══ */
   .sv-who-section { padding: 88px 0; background: linear-gradient(160deg, #091914 0%, #133429 100%); position: relative; overflow: hidden; }
   .sv-who-section::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 55% 50% at 80% 50%, rgba(42,90,73,0.08) 0%, transparent 65%), repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px), repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.012) 60px,rgba(255,255,255,0.012) 61px); }
-  .sv-who-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .sv-who-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
   .sv-who-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(26px, 4vw, 44px); text-transform: uppercase; color: #e8e0d5; line-height: 1.05; margin-bottom: 24px; }
   .sv-who-title span { color: var(--accent); }
   .sv-who-body { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.8; }
   .sv-who-body strong { color: rgba(200,215,240,0.8); font-weight: 600; }
-  .sv-who-rule { width: 40px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 auto 32px; }
+  .sv-who-rule { width: 40px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 32px; }
+  /* Who list */
+  .sv-who-list { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .sv-who-list-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(200,215,240,0.6); line-height: 1.6; }
+  .sv-who-list-item::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
 
   /* ══ SERVICE AREAS ══ */
   .sv-areas-section { background: #ECEBC3; padding: 56px 32px; }
@@ -120,16 +134,21 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   .sv-cta-inner { max-width: 800px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, #091914 0%, #133429 100%); border: 1px solid rgba(42,90,73,0.2); border-radius: 8px; padding: 60px 48px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); position: relative; overflow: hidden; }
   .sv-cta-inner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(42,90,73,0.1) 0%, transparent 65%); pointer-events: none; }
   .sv-cta-inner > * { position: relative; z-index: 1; }
+  .sv-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(42,160,90,0.8); margin-bottom: 16px; display: block; }
   .sv-cta-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(26px, 4vw, 44px); text-transform: uppercase; color: #e8e0d5; line-height: 1.05; margin-bottom: 32px; }
   .sv-cta-title span { color: var(--accent); }
   .sv-cta-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
   .sv-cta-btn { display: inline-flex; align-items: center; gap: 9px; padding: 14px 32px; background: var(--accent); color: #FCF7EC; border: none; border-radius: 4px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; box-shadow: 0 6px 22px rgba(42,90,73,0.4); transition: transform 0.2s, box-shadow 0.2s, background 0.2s; position: relative; overflow: hidden; }
-  .sv-cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(252,247,236,0.15), transparent); transform: skewX(-15deg); transition: left 0.5s; }
+  .sv-cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transform: skewX(-15deg); transition: left 0.5s; }
   .sv-cta-btn:hover::before { left: 160%; }
   .sv-cta-btn:hover { background: #133429; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(42,90,73,0.55); }
+  .sv-cta-contact { display: flex; flex-direction: column; gap: 10px; align-items: center; }
   .sv-cta-phone { display: flex; align-items: center; gap: 8px; color: rgba(200,215,240,0.6); font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.06em; text-decoration: none; transition: color 0.2s; }
   .sv-cta-phone:hover { color: var(--accent); }
+  .sv-cta-email { display: flex; align-items: center; gap: 8px; color: rgba(200,215,240,0.45); font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 500; text-decoration: none; transition: color 0.2s; letter-spacing: 0.02em; }
+  .sv-cta-email:hover { color: var(--accent); }
 
+  /* ── RESPONSIVE ── */
   @media (max-width: 1024px) { .sv-intro-grid { grid-template-columns: 1fr; gap: 40px; } .sv-services-grid { grid-template-columns: 1fr; } }
   @media (max-width: 640px) { .sv-header { padding: 56px 20px 64px; } .sv-intro-section, .sv-services-section, .sv-who-section, .sv-cta-section { padding: 56px 0; } .sv-container { padding: 0 20px; } .sv-areas-section { padding: 40px 20px; } .sv-cta-inner { padding: 40px 24px; } .sv-cta-actions { flex-direction: column; gap: 16px; } }
 </style>
@@ -137,11 +156,7 @@ $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
 <div class="sv-page">
 
   <!-- ══ PAGE HEADER ══ -->
-  <?php
-// ── BG IMAGE DEL HEADER — actualizar con URL final de WordPress Media ──
-$header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
-?>
-<div class="sv-header" style="--sv-header-bg: url('<?php echo esc_url( $header_bg ); ?>');">
+  <div class="sv-header" style="--sv-header-bg: url('<?php echo esc_url( $header_bg ); ?>');">
     <div class="sv-header-wm" aria-hidden="true">
       <svg viewBox="0 0 40 40" fill="white"><polygon points="20,2 38,11 38,29 20,38 2,29 2,11"/><path d="M12 28 L12 18 L20 12 L28 18 L28 28" stroke="white" stroke-width="1.5" fill="none" stroke-linejoin="round"/><line x1="12" y1="28" x2="28" y2="28" stroke="white" stroke-width="1.5"/></svg>
       <svg viewBox="0 0 40 40" fill="white" style="transform:scaleX(-1)"><polygon points="20,2 38,11 38,29 20,38 2,29 2,11"/><path d="M12 28 L12 18 L20 12 L28 18 L28 28" stroke="white" stroke-width="1.5" fill="none" stroke-linejoin="round"/><line x1="12" y1="28" x2="28" y2="28" stroke="white" stroke-width="1.5"/></svg>
@@ -149,10 +164,10 @@ $header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
     <div class="sv-header-inner">
       <div class="sv-hero-label">
         <div class="sv-hero-dot"></div>
-        TrueLine Property Solutions · Hardscape &amp; Concrete
+        TrueLine Property Solutions · Hauling &amp; Debris Removal
       </div>
-      <h1>Hardscape &amp; Concrete<br><em>Services</em></h1>
-      <p class="sv-header-sub">Patios, retaining walls, walkways, parking areas, and driveways built to last, built to add value, and built to look exactly the way you envisioned.</p>
+      <h1>Hauling &amp; Debris<br><em>Removal</em></h1>
+      <p class="sv-header-sub">Fast, reliable removal of junk, yard waste, bulk materials, and debris so your property is clean, cleared, and ready for whatever comes next.</p>
       <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="sv-header-cta">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         Request a Free Estimate
@@ -171,49 +186,75 @@ $header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   <section class="sv-intro-section">
     <div class="sv-container">
       <div class="sv-intro-grid">
+
+        <!-- Imagen -->
         <div class="sv-reveal sv-intro-img-wrap">
-          <?php
-          // DEV NOTE: Actualizar con la URL final de WordPress Media
-          $img_hero = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
-          ?>
-          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Hardscape — concrete and paver work NC" loading="lazy" />
+          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Hauling — property cleared and clean" loading="lazy" />
         </div>
+
+        <!-- Texto -->
         <div class="sv-intro-text">
           <div class="sv-reveal">
-            <span class="sv-label">The Value</span>
-            <h2 class="sv-title">Structure That Holds<br><span>Its Value</span></h2>
+            <span class="sv-label">We Remove It. You Move On.</span>
+            <h2 class="sv-title">Clutter &amp; Debris Cleared.<br><span>Property Restored.</span></h2>
             <div class="sv-rule"></div>
           </div>
           <p class="sv-reveal sv-body" data-delay="1">
-            Hardscape is one of the highest-return investments a homeowner can make. Done correctly, a well-built patio, retaining wall, or driveway enhances your property's function, curb appeal, and resale value for decades.
+            Clutter, debris, and bulk waste don't just take up space — they affect how your property looks, how it functions, and how others perceive it.
           </p>
           <p class="sv-reveal sv-body" data-delay="2">
-            Done incorrectly, it becomes a liability — cracking, shifting, and failing within years. At TrueLine, <strong>we use quality concrete</strong>, proper base preparation, and proven construction methods to deliver <strong>hardscape that performs.</strong>
+            Whether you're clearing after a storm, cleaning out before a sale, finishing a renovation, or just reclaiming your yard, TrueLine handles the removal <strong>cleanly and efficiently.</strong>
+          </p>
+          <p class="sv-reveal sv-body" data-delay="3">
+            <strong>No dumpster rental. No coordinating multiple pickups. One call, one team, done.</strong>
           </p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══ WHAT WE OFFER ══ -->
+  <!-- ══ WHAT WE HAUL ══ -->
   <section class="sv-services-section">
     <div class="sv-container">
       <div class="sv-services-head sv-reveal">
         <span class="sv-label">Services Included</span>
-        <h2 class="sv-title">What We <span>Build</span></h2>
+        <h2 class="sv-title">What We <span>Haul</span></h2>
         <div class="sv-rule" style="margin:14px auto 0"></div>
       </div>
 
       <?php
       $offerings = [
-        [ 'name' => 'Patios & Outdoor Living Areas',  'desc' => 'Custom concrete and hardscape patios designed for your layout and lifestyle. From clean, modern slabs to structured outdoor living areas with seating and utility in mind.',     'icon' => '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/>' ],
-        [ 'name' => 'Retaining Walls',                'desc' => 'Structural retaining walls that manage elevation, control erosion, and define spaces — engineered for stability and built with precision.',                                              'icon' => '<rect x="3" y="12" width="18" height="9" rx="1"/><path d="M3 12l4-7h10l4 7"/><line x1="3" y1="16" x2="21" y2="16"/>' ],
-        [ 'name' => 'Walkways & Pathways',             'desc' => 'Concrete or paver walkways that connect spaces, improve accessibility, and add a finished, intentional look to your property.',                                                          'icon' => '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>' ],
-        [ 'name' => 'Driveways & Parking Areas',       'desc' => 'Durable concrete driveways and parking pads built for heavy use, proper drainage, and long-term performance.',                                                                          'icon' => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>' ],
-        [ 'name' => 'Concrete Work',                   'desc' => 'Custom concrete installations across residential and commercial properties — slabs, pads, borders, and more.',                                                                           'icon' => '<path d="M12 2v6M8 6l4 4 4-4"/><circle cx="12" cy="17" r="5"/>' ],
-        [ 'name' => 'Deck Installation',               'desc' => 'New deck construction and repairs designed for safety, durability, and a clean aesthetic that complements your home.',                                                                   'icon' => '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' ],
-        [ 'name' => 'Pergola Construction',            'desc' => 'Freestanding or attached pergolas that extend your outdoor living space with structure, shade, and style.',                                                                              'icon' => '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>' ],
-        [ 'name' => 'Fence Installation & Repair',     'desc' => 'New fence installation and repair across a range of materials and styles — installed level, secure, and properly finished.',                                                             'icon' => '<path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>' ],
+        [
+          'name' => 'Yard Waste & Organic Debris',
+          'desc' => 'Branches, leaves, brush, grass clippings, tree stumps, and organic material from cleanups, storm damage, or landscaping projects — collected and disposed of properly.',
+          'icon' => '<path d="M12 2a10 10 0 000 20" stroke-linecap="round"/><path d="M12 2c2.5 5 4 10 4 10s-4 2-8 0c0 0 1.5-5 4-10z"/><line x1="12" y1="12" x2="12" y2="22"/>',
+        ],
+        [
+          'name' => 'Junk & Bulk Item Removal',
+          'desc' => 'Old furniture, appliances, equipment, and bulk household items removed from interior or exterior spaces. Fast, no-hassle pickup.',
+          'icon' => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>',
+        ],
+        [
+          'name' => 'Construction & Renovation Debris',
+          'desc' => 'Leftover materials, rubble, lumber, concrete fragments, drywall, and construction waste cleared from job sites and properties after renovation or remodeling work.',
+          'icon' => '<path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>',
+        ],
+        [
+          'name' => 'Property Cleanout',
+          'desc' => 'Full cleanout of properties being prepared for sale, rent, or renovation — interior and exterior. We remove everything that needs to go, efficiently and without damage to the property.',
+          'icon' => '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+        ],
+        [
+          'name' => 'Post-Storm Debris Removal',
+          'desc' => 'Rapid removal of downed branches, fallen trees, scattered debris, and storm-related waste following weather events. We work quickly so your property is restored without delay.',
+          'icon' => '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+        ],
+        [
+          'name' => 'General Hauling',
+          'desc' => 'Bulk materials, soil, gravel, fill dirt, or any heavy load that needs to be moved on or off your property. If it needs to go, we can handle it.',
+          'icon' => '<rect x="3" y="12" width="18" height="9" rx="1"/><path d="M3 12l4-7h10l4 7"/><line x1="3" y1="16" x2="21" y2="16"/>',
+        ],
       ];
       ?>
 
@@ -221,7 +262,9 @@ $header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
         <?php foreach ( $offerings as $i => $item ) : ?>
           <div class="sv-service-item sv-reveal" data-delay="<?php echo ( $i % 4 ) + 1; ?>">
             <div class="sv-service-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><?php echo $item['icon']; ?></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <?php echo $item['icon']; ?>
+              </svg>
             </div>
             <div>
               <div class="sv-service-name"><?php echo esc_html( $item['name'] ); ?></div>
@@ -230,6 +273,7 @@ $header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
           </div>
         <?php endforeach; ?>
       </div>
+
     </div>
   </section>
 
@@ -237,10 +281,25 @@ $header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   <section class="sv-who-section">
     <div class="sv-container">
       <div class="sv-who-inner sv-reveal">
-        <h2 class="sv-who-title">Why Hardscape From<br><span>TrueLine?</span></h2>
+        <span class="sv-label" style="color:rgba(42,160,90,0.85)">Efficient. Clean. Accountable.</span>
+        <h2 class="sv-who-title">Who This Service<br><span>Is For</span></h2>
         <div class="sv-who-rule"></div>
-        <p class="sv-who-body">We understand materials. We know what performs in North Carolina's climate — the temperature shifts, the rainfall, the soil conditions. <strong>That knowledge is built into every project we take on.</strong></p>
-        <p class="sv-who-body" style="margin-top:18px">We price fairly for the quality we deliver. We don't underbid and underperform. <strong>We show you what's needed, why it's needed, and what it will cost</strong> — clearly, before a single shovel hits the ground.</p>
+        <p class="sv-who-body">
+          We don't just throw things in a truck and leave. We load carefully, protect your property during the process, and leave the area clean when we're done. TrueLine's hauling service is available as a <strong>standalone job or as part of a larger project</strong> — landscaping cleanup, property preparation, tree removal, or post-construction clearing.
+        </p>
+        <div class="sv-who-list">
+          <?php
+          $who = [
+            'Homeowners clearing out before a renovation or move',
+            'Sellers and realtors preparing a property for listing',
+            'Investors and property managers cleaning out between tenants',
+            'Homeowners dealing with storm or tree damage',
+            'Anyone who needs bulk waste removed without the hassle of renting a dumpster',
+          ];
+          foreach ( $who as $item ) : ?>
+            <div class="sv-who-list-item"><?php echo esc_html( $item ); ?></div>
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </section>
@@ -250,11 +309,13 @@ $header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
     <div class="sv-areas-inner">
       <span class="sv-areas-label">Service Areas</span>
       <div class="sv-areas-sep"></div>
-      <nav class="sv-areas-list" aria-label="Hardscape service areas">
+      <nav class="sv-areas-list" aria-label="Hauling service areas">
         <?php
-        $areas = [ 'Holly Springs', 'Cary', 'Chapel Hill', 'Raleigh', 'Durham', 'Hillsborough', 'Orange County' ];
+        $areas = [ 'Holly Springs', 'Cary', 'Chapel Hill', 'Raleigh', 'Durham', 'Hillsborough', 'Orange County', 'Greensboro', 'Winston-Salem', 'High Point' ];
         foreach ( $areas as $area ) : ?>
-          <a href="<?php echo esc_url( home_url( '/service-areas/' . sanitize_title( $area ) ) ); ?>" class="sv-area-item"><?php echo esc_html( $area ); ?></a>
+          <a href="<?php echo esc_url( home_url( '/service-areas/' . sanitize_title( $area ) ) ); ?>" class="sv-area-item">
+            <?php echo esc_html( $area ); ?>
+          </a>
         <?php endforeach; ?>
       </nav>
     </div>
@@ -263,16 +324,23 @@ $header_bg = '/wp-content/uploads/2026/04/HardScrapeConcrete-scaled.jpg';
   <!-- ══ BOTTOM CTA ══ -->
   <section class="sv-cta-section">
     <div class="sv-cta-inner sv-reveal">
-      <h2 class="sv-cta-title">Ready to Build<br><span>Something That Lasts?</span></h2>
+      <span class="sv-cta-label">Need Something Cleared Out?</span>
+      <h2 class="sv-cta-title">Tell Us What You Have.<br><span>We'll Get It Done.</span></h2>
       <div class="sv-cta-actions">
         <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="sv-cta-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           Request a Free Estimate
         </a>
-        <a href="tel:+19199518341" class="sv-cta-phone">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          (919) 951-8341
-        </a>
+        <div class="sv-cta-contact">
+          <a href="tel:+19199518341" class="sv-cta-phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.006 1.22 2 2 0 012 .002h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (919) 951-8341
+          </a>
+          <a href="mailto:navaslandscapenc1@gmail.com" class="sv-cta-email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@truelinesolutionsus.com
+          </a>
+        </div>
       </div>
     </div>
   </section>

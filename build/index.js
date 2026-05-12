@@ -1467,17 +1467,14 @@ function FooterCRE() {
                 })
               }), company.location]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "tl-footer-badges",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
               className: "tl-footer-badge",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                 className: "tl-footer-badge-dot"
               }), "Licensed & Insured"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: "tl-footer-badge-bbb",
-              children: "BBB Badge \u2014 Placeholder"
-            })]
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "tl-footer-socials",
             children: socials.map(s => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
@@ -2062,6 +2059,9 @@ function Navbar() {
       }, {
         name: "Property Preparation",
         link: "/services/property-preparation"
+      }, {
+        name: "Hauling & Debris Removal",
+        link: "/services/hauling-debris-removal"
       }]
     }]
   }, {
@@ -2669,7 +2669,7 @@ function Navbar() {
           className: "tl-logo",
           href: "/",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            src: "/wp-content/uploads/2026/03/Imagotipo_Principal-scaled.png",
+            src: "/wp-content/uploads/2026/05/Imagotipo_Principal.png",
             alt: "TrueLine Property Solutions",
             style: {
               height: "36px",

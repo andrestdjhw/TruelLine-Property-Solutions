@@ -9,9 +9,8 @@
 get_header(); ?>
 
 <?php
-$theme_uri = get_template_directory_uri();
-// DEV NOTE: Replace with real photo — clean, prepared property ready for sale, strong curb appeal, fresh exterior
-$img_hero = $theme_uri . '/assets/images/property-preparation-hero.jpg';
+// DEV NOTE: Actualizar con la URL final de WordPress Media
+$img_hero = '/wp-content/uploads/2026/05/PropertyPreparationHouse-scaled.jpg';
 ?>
 
 <style>
@@ -55,7 +54,14 @@ $img_hero = $theme_uri . '/assets/images/property-preparation-hero.jpg';
 
   /* ══ PAGE HEADER ══ */
   .sv-header {
-    background: linear-gradient(160deg, #091914 0%, #0f2015 60%, #133429 100%);
+    /* ── BG IMAGE — actualizar URL con imagen final de WordPress Media ── */
+    background-image:
+      linear-gradient(160deg, rgba(9,25,20,0.90) 0%, rgba(15,32,21,0.85) 60%, rgba(19,52,41,0.82) 100%),
+      var(--sv-header-bg, none);
+    background-color: #091914;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     padding: 80px 32px 88px; text-align: center;
     position: relative; overflow: hidden;
   }
@@ -89,7 +95,7 @@ $img_hero = $theme_uri . '/assets/images/property-preparation-hero.jpg';
     color: #e8e0d5; margin-bottom: 20px;
   }
   .sv-header h1 em { color: var(--accent); font-style: normal; }
-  .sv-header-sub { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.75; max-width: 660px; margin: 0 auto 36px; }
+  .sv-header-sub { color: rgba(247, 250, 255,0.5); font-size: 16px; line-height: 1.75; max-width: 660px; margin: 0 auto 36px; text-shadow: 0 0 10px #27a139; }
   .sv-header-cta {
     display: inline-flex; align-items: center; gap: 9px;
     padding: 14px 32px; background: var(--accent); color: #FCF7EC;
@@ -300,7 +306,11 @@ $img_hero = $theme_uri . '/assets/images/property-preparation-hero.jpg';
 <div class="sv-page">
 
   <!-- ══ PAGE HEADER ══ -->
-  <div class="sv-header">
+  <?php
+// ── BG IMAGE DEL HEADER — actualizar con URL final de WordPress Media ──
+$header_bg = '/wp-content/uploads/2026/05/PropertyPreparationHouse-scaled.jpg';
+?>
+<div class="sv-header" style="--sv-header-bg: url('<?php echo esc_url( $header_bg ); ?>');">
     <div class="sv-header-wm" aria-hidden="true">
       <svg viewBox="0 0 40 40" fill="white">
         <polygon points="20,2 38,11 38,29 20,38 2,29 2,11"/>
@@ -319,7 +329,7 @@ $img_hero = $theme_uri . '/assets/images/property-preparation-hero.jpg';
         TrueLine Property Solutions · Property Preparation
       </div>
       <h1>Property<br><em>Preparation</em></h1>
-      <p class="sv-header-sub">Complete interior and exterior property preparation for homeowners, investors, and real estate professionals who need a property market-ready — on time and to a standard that moves listings.</p>
+      <p class="sv-header-sub">Complete interior and exterior property preparation for homeowners, investors, and real estate professionals who need a property market ready on time and to a standard that moves listings.</p>
       <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="sv-header-cta">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -344,10 +354,10 @@ $img_hero = $theme_uri . '/assets/images/property-preparation-hero.jpg';
         <!-- Imagen -->
         <div class="sv-reveal sv-intro-img-wrap">
           <?php
-          // DEV NOTE: Actualizar $img_hero con la URL final del recurso en WordPress Media
+          // DEV NOTE: Actualizar con la URL final de WordPress Media
           $img_hero = '/wp-content/uploads/2026/05/PropertyPreparationHouse-scaled.jpg';
           ?>
-          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Landscaping — NC residential landscape" loading="lazy" />
+          <img src="<?php echo esc_url( $img_hero ); ?>" alt="TrueLine Property Preparation — NC property prep for sale" loading="lazy" />
         </div>
 
         <!-- Texto -->
