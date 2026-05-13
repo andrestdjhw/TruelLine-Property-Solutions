@@ -61,6 +61,13 @@ $services = [
     'img'   => '/wp-content/uploads/2026/05/PropertyPreparationHouse-scaled.jpg',
     'icon'  => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>',
   ],
+  [
+    'title' => 'Hauling & Debris Removal',
+    'desc'  => 'Quick and professional removal of yard waste, construction debris, and unwanted materials to clear your space.',
+    'href'  => '/services/hauling-debris-removal',
+    'img'   => '/wp-content/uploads/2026/05/HaulingHeroTrueline-scaled.jpg', // Asegúrarse de que esta imagen exista
+    'icon'  => '<path d="M5 10V6a2 2 0 012-2h10a2 2 0 012 2v4"/><path d="m3 10 9 2 9-2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10z"/><path d="M12 12V22"/>',
+  ],
 ];
 
 $why_items = [
@@ -118,6 +125,49 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
 ?>
 
 <style>
+  /* Swiper Core (Cargar vía CDN en el header es mejor, pero aquí para rápido) */
+@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+
+.tl-services-section { overflow: hidden; } /* Evita scroll horizontal indeseado */
+
+.tl-services-slider {
+  padding: 20px 10px 60px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--accent) !important;
+}
+
+.tl-slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tl-nav-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--accent-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--accent);
+  transition: all 0.3s;
+  background: #fff;
+}
+
+.tl-nav-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.tl-nav-btn.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
   /* ── BASE ── */
@@ -253,7 +303,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px;
     letter-spacing: 0.05em; text-transform: uppercase; color: #e8ddd0; margin-bottom: 8px;
   }
-  .tl-why-card-desc { color: rgba(200,215,240,0.45); font-size: 14px; line-height: 1.65; }
+  .tl-why-card-desc { color: rgba(240, 242, 245,0.45); font-size: 14px; line-height: 1.65; }
 
   /* ══ HOW WE WORK ══ */
   .tl-how-section { padding: 88px 0; background: #FCF7EC; }
@@ -333,7 +383,7 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
   }
   .tl-testimonial-quote {
     font-family: 'Barlow', sans-serif; font-size: 15px; font-style: italic;
-    color: rgba(200,215,240,0.75); line-height: 1.75; flex: 1;
+    color: rgba(240, 242, 245,0.75); line-height: 1.75; flex: 1;
   }
   .tl-testimonial-quote::before { content: '\201C'; }
   .tl-testimonial-quote::after  { content: '\201D'; }
@@ -481,48 +531,60 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
 
   <!-- ══ SERVICES ══ -->
   <section id="services" class="tl-services-section">
-    <div class="tl-container">
+  <div class="tl-container">
 
-      <div class="tl-section-head tl-reveal">
-        <span class="tl-label">What We Do</span>
-        <h2 class="tl-title">Our <span>Services</span></h2>
-        <p class="tl-desc">Everything Your Property Needs — One Team You Can Trust.</p>
-        <div class="tl-rule"></div>
-      </div>
+    <div class="tl-section-head tl-reveal">
+      <span class="tl-label">What We Do</span>
+      <h2 class="tl-title">Our <span>Services</span></h2>
+      <p class="tl-desc">Everything Your Property Needs — One Team You Can Trust.</p>
+      <div class="tl-rule"></div>
+    </div>
 
-      <div class="tl-services-grid">
-        <?php foreach ( $services as $i => $service ) : ?>
-          <div class="tl-service-card tl-reveal" data-delay="<?php echo ( $i % 3 ) + 1; ?>">
-            <div class="tl-service-card-top">
-              <?php if ( ! empty( $service['img'] ) ) : ?>
-                <img src="<?php echo esc_url( $service['img'] ); ?>"
-                     alt="<?php echo esc_attr( $service['title'] ); ?>"
-                     loading="lazy" />
-                <div class="tl-service-card-top-overlay"></div>
-              <?php else : ?>
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
-                     stroke="rgba(42,160,90,0.85)" stroke-width="1.6"
-                     stroke-linecap="round" stroke-linejoin="round">
-                  <?php echo $service['icon']; ?>
-                </svg>
-              <?php endif; ?>
-            </div>
-            <div class="tl-service-card-body">
-              <div class="tl-service-card-title"><?php echo esc_html( $service['title'] ); ?></div>
-              <p class="tl-service-card-desc"><?php echo esc_html( $service['desc'] ); ?></p>
-              <a href="<?php echo esc_url( $service['href'] ); ?>" class="tl-service-link">
-                Learn More
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
-              </a>
+    <!-- Swiper Container -->
+    <div class="swiper tl-services-slider tl-reveal">
+      <div class="swiper-wrapper">
+        <?php foreach ( $services as $service ) : ?>
+          <div class="swiper-slide">
+            <div class="tl-service-card" style="height: 100%;">
+              <div class="tl-service-card-top">
+                <?php if ( ! empty( $service['img'] ) ) : ?>
+                  <img src="<?php echo esc_url( $service['img'] ); ?>" alt="<?php echo esc_attr( $service['title'] ); ?>" loading="lazy" />
+                  <div class="tl-service-card-top-overlay"></div>
+                <?php else : ?>
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(42,160,90,0.85)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <?php echo $service['icon']; ?>
+                  </svg>
+                <?php endif; ?>
+              </div>
+              <div class="tl-service-card-body">
+                <div class="tl-service-card-title"><?php echo esc_html( $service['title'] ); ?></div>
+                <p class="tl-service-card-desc"><?php echo esc_html( $service['desc'] ); ?></p>
+                <a href="<?php echo esc_url( $service['href'] ); ?>" class="tl-service-link">
+                  Learn More
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         <?php endforeach; ?>
       </div>
 
+      <!-- Navigation & Pagination -->
+      <div class="tl-slider-nav">
+        <div class="tl-nav-btn swiper-prev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </div>
+        <div class="tl-nav-btn swiper-next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      <div class="swiper-pagination" style="bottom: 0;"></div>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- ══ WHY TRUE LINE ══ -->
   <section class="tl-why-section">
@@ -739,6 +801,40 @@ $map_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207747.27!2d-7
     observer.observe(el);
   });
 })();
+</script>
+
+<!-- Cargar Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceSwiper = new Swiper('.tl-services-slider', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    grabCursor: true,
+    loop: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-next',
+      prevEl: '.swiper-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1600: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+      }
+    }
+  });
+});
 </script>
 
 <?php get_footer(); ?>
