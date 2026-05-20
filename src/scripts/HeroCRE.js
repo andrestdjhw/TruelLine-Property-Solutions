@@ -104,7 +104,7 @@ function HeroCRE() {
           background-size: 60px 60px;
         }
 
-        /* ── CONTENT — two column layout ── */
+        /* ── CONTENT WRAPPER ── */
         .tl-hero-content {
           position: relative; z-index: 10; flex: 1;
           display: flex; align-items: center; justify-content: center;
@@ -112,24 +112,42 @@ function HeroCRE() {
           max-width: 1600px; margin: 0 auto; width: 100%;
           opacity: 0; transform: translateY(30px);
           transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-          gap: 64px;
         }
         .tl-hero-content.visible { opacity: 1; transform: translateY(0); }
 
-        /* Left column */
-        .tl-hero-left {
-          flex: 1; min-width: 0; max-width: 680px;
-          display: flex; flex-direction: column; gap: 0;
-          background: rgba(252,247,236,0.82);
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-          border-radius: 8px;
-          padding: 48px 44px;
+        /* ── UNIFIED SPLIT CARD ── */
+        .tl-hero-card {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 420px;
+          background: rgba(252,247,236,0.65);
+          backdrop-filter: blur(10px) saturate(115%);
+          -webkit-backdrop-filter: blur(10px) saturate(115%);
+          border: 1px solid rgba(252,247,236,0.25);
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(0,0,0,0.4);
         }
 
-        /* Right column */
+        /* Left half */
+        .tl-hero-left {
+          display: flex; flex-direction: column;
+          padding: 56px 52px;
+          position: relative;
+        }
+        /* Vertical divider — solo desktop */
+        .tl-hero-left::after {
+          content: '';
+          position: absolute;
+          top: 56px; bottom: 56px; right: 0;
+          width: 1px;
+          background: linear-gradient(180deg, transparent 0%, rgba(42,90,73,0.18) 20%, rgba(42,90,73,0.18) 80%, transparent 100%);
+        }
+
+        /* Right half */
         .tl-hero-right {
-          width: 420px; flex-shrink: 0;
+          display: flex; align-items: center;
+          padding: 40px 40px;
         }
 
         .tl-hero-badge {
@@ -157,8 +175,8 @@ function HeroCRE() {
         }
 
         .tl-hero-sub {
-          font-size: clamp(24px, 1.4vw, 16px); line-height: 1.75;
-          color: rgba(9,25,20,0.6); max-width: 520px;
+          font-size: clamp(14px, 1.4vw, 16px); line-height: 1.75;
+          color: rgba(9,25,20,0.65); max-width: 520px;
           margin-bottom: 36px;
         }
 
@@ -177,7 +195,8 @@ function HeroCRE() {
         .tl-hero-stats {
           display: grid; grid-template-columns: repeat(4, 1fr);
           border: 1px solid rgba(42,90,73,0.18); border-radius: 6px; overflow: hidden;
-          background: rgba(42,90,73,0.06);
+          background: rgba(42,90,73,0.05);
+          margin-top: auto;
         }
         .tl-hero-stat {
           padding: 16px 14px; text-align: center;
@@ -191,13 +210,20 @@ function HeroCRE() {
         .tl-hero-stat-label {
           font-family: 'Barlow Condensed', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-          text-transform: uppercase; color: rgba(9,25,20,0.55);
+          text-transform: uppercase; color: rgba(9,25,20,0.6);
           line-height: 1.3;
         }
 
-        /* Form wrapper — color claro, sombra para destacar sobre el fondo oscuro */
+        /* Form wrapper — sin background propio para integrarse a la card */
+        .tl-hero-form-wrap {
+          width: 100%;
+          display: flex;
+        }
         .tl-hero-form-wrap .cf-wrap {
-          box-shadow: 0 24px 60px rgba(0,0,0,0.35) !important;
+          width: 100%;
+          background: transparent !important;
+          box-shadow: none !important;
+          padding: 0 !important;
         }
 
         /* Wave */
@@ -206,33 +232,42 @@ function HeroCRE() {
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1100px) {
-          .tl-hero-right { width: 360px; }
+          .tl-hero-card { grid-template-columns: 1fr 380px; }
+          .tl-hero-left { padding: 48px 40px; }
+          .tl-hero-right { padding: 36px 32px; }
           .tl-hero h1 { font-size: clamp(44px, 6vw, 84px); }
         }
         @media (max-width: 900px) {
           .tl-hero-content {
-            flex-direction: column; align-items: stretch;
-            padding: 80px 24px 56px; gap: 40px;
+            padding: 80px 24px 56px;
           }
-          .tl-hero-right { width: 100%; }
-          .tl-hero-left { padding: 32px 24px; }
+          .tl-hero-card { grid-template-columns: 1fr; }
+          .tl-hero-left { padding: 36px 28px; }
+          /* En mobile, el divider pasa a horizontal */
+          .tl-hero-left::after {
+            top: auto; bottom: 0; right: 28px; left: 28px;
+            width: auto; height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(42,90,73,0.18) 20%, rgba(42,90,73,0.18) 80%, transparent 100%);
+          }
+          .tl-hero-right { padding: 32px 28px; }
           .tl-hero h1 { font-size: clamp(44px, 10vw, 72px); }
           .tl-hero-sub { max-width: 100%; }
           .tl-hero-badge { margin-bottom: 20px; }
           .tl-hero-ghost-btn { margin-bottom: 32px; }
+          .tl-hero-stats { margin-top: 0; }
         }
         @media (max-width: 540px) {
           .tl-hero-stats { grid-template-columns: repeat(2, 1fr); }
           .tl-hero-stat:nth-child(2) { border-right: none; }
-          .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.06); }
-          .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.06); }
+          .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(42,90,73,0.15); }
+          .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(42,90,73,0.15); }
         }
-       @media (min-width: 1600px) {
+        @media (min-width: 1600px) {
           .tl-hero-content { padding: 100px 6% 72px; max-width: 1800px; }
-          .tl-hero-left { max-width: 780px; }
-          .tl-hero-right { width: 480px; }
-        } 
-        
+          .tl-hero-card { grid-template-columns: 1fr 480px; }
+          .tl-hero-left { padding: 64px 56px; }
+          .tl-hero-right { padding: 48px 44px; }
+        }
       `}</style>
 
       <section className="tl-hero">
@@ -270,51 +305,56 @@ function HeroCRE() {
 
         <div className={`tl-hero-content ${visible ? "visible" : ""}`}>
 
-          {/* ── LEFT — headline + trust stats ── */}
-          <div className="tl-hero-left">
+          {/* ── UNIFIED SPLIT CARD ── */}
+          <div className="tl-hero-card">
 
-            <div className="tl-hero-badge">
-              <div className="tl-badge-dot" />
-              {heroData.eyebrow}
+            {/* LEFT — headline + trust stats */}
+            <div className="tl-hero-left">
+
+              <div className="tl-hero-badge">
+                <div className="tl-badge-dot" />
+                {heroData.eyebrow}
+              </div>
+
+              <h1>
+                {heroData.headline.map((line, i) => (
+                  <span key={i} className={i === heroData.headlineAccent ? "accent" : ""}>
+                    {line}{i < heroData.headline.length - 1 && <br />}
+                  </span>
+                ))}
+              </h1>
+
+              <p className="tl-hero-sub">{heroData.subheadline}</p>
+
+              <a href={heroData.cta2.href} className="tl-hero-ghost-btn">
+                {heroData.cta2.label}
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </a>
+
+              {/* Trust stats */}
+              <div className="tl-hero-stats">
+                {[
+                  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: "Licensed &\nInsured" },
+                  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>, label: "BBB\nAccredited" },
+                  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, label: "Serving Holly Springs,\nCary & Beyond" },
+                  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>, label: "Continuous\nTraining" },
+                ].map((s, i) => (
+                  <div key={i} className="tl-hero-stat">
+                    <div className="tl-hero-stat-icon">{s.icon}</div>
+                    <div className="tl-hero-stat-label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+
             </div>
 
-            <h1>
-              {heroData.headline.map((line, i) => (
-                <span key={i} className={i === heroData.headlineAccent ? "accent" : ""}>
-                  {line}{i < heroData.headline.length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
-
-            <p className="tl-hero-sub">{heroData.subheadline}</p>
-
-            <a href={heroData.cta2.href} className="tl-hero-ghost-btn">
-              {heroData.cta2.label}
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="9 18 15 12 9 6"/>
-              </svg>
-            </a>
-
-            {/* Trust stats */}
-            <div className="tl-hero-stats">
-              {[
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: "Licensed &\nInsured" },
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>, label: "BBB\nAccredited" },
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, label: "Serving Holly Springs,\nCary & Beyond" },
-                { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>, label: "Continuous\nTraining" },
-              ].map((s, i) => (
-                <div key={i} className="tl-hero-stat">
-                  <div className="tl-hero-stat-icon">{s.icon}</div>
-                  <div className="tl-hero-stat-label">{s.label}</div>
-                </div>
-              ))}
+            {/* RIGHT — Contact Form */}
+            <div className="tl-hero-right tl-hero-form-wrap">
+              <ContactForm compact={true} />
             </div>
 
-          </div>
-
-          {/* ── RIGHT — Contact Form ── */}
-          <div className="tl-hero-right tl-hero-form-wrap">
-            <ContactForm compact={true} />
           </div>
 
         </div>

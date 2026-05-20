@@ -1061,6 +1061,14 @@ function FooterCRE() {
     href: "https://www.facebook.com/profile.php?id=100084989864880&rdid=VlAsIHcPapOvNQSx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1XcvxTFnsn%2F#",
     icon: "facebook"
   }, {
+    name: "Instagram",
+    href: "https://www.instagram.com/trueline_property_solutions",
+    icon: "instagram"
+  }, {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/trueline-property-solutions-88481b309/",
+    icon: "linkedin"
+  }, {
     name: "Jobber",
     href: "https://navaslandscapeservicesandmore.jobbersites.com/",
     icon: "jobber"
@@ -1120,6 +1128,40 @@ function FooterCRE() {
       fill: "currentColor",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
         d: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+      })
+    });
+    if (icon === "instagram") return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+        x: "2",
+        y: "2",
+        width: "20",
+        height: "20",
+        rx: "5",
+        ry: "5"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        x1: "17.5",
+        y1: "6.5",
+        x2: "17.51",
+        y2: "6.5"
+      })]
+    });
+    if (icon === "linkedin") return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "currentColor",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 11-.01-4.13 2.07 2.07 0 01.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
       })
     });
     if (icon === "jobber") return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
@@ -1280,7 +1322,7 @@ function FooterCRE() {
         }
 
         /* Socials */
-        .tl-footer-socials { display: flex; gap: 8px; }
+        .tl-footer-socials { display: flex; gap: 8px; flex-wrap: wrap; }
         .tl-footer-social {
           width: 34px; height: 34px;
           background: var(--f-accent-soft); border: 1px solid var(--f-accent-border);
@@ -1672,7 +1714,7 @@ function HeroCRE() {
           background-size: 60px 60px;
         }
 
-        /* ── CONTENT — two column layout ── */
+        /* ── CONTENT WRAPPER ── */
         .tl-hero-content {
           position: relative; z-index: 10; flex: 1;
           display: flex; align-items: center; justify-content: center;
@@ -1680,24 +1722,42 @@ function HeroCRE() {
           max-width: 1600px; margin: 0 auto; width: 100%;
           opacity: 0; transform: translateY(30px);
           transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-          gap: 64px;
         }
         .tl-hero-content.visible { opacity: 1; transform: translateY(0); }
 
-        /* Left column */
-        .tl-hero-left {
-          flex: 1; min-width: 0; max-width: 680px;
-          display: flex; flex-direction: column; gap: 0;
-          background: rgba(252,247,236,0.82);
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-          border-radius: 8px;
-          padding: 48px 44px;
+        /* ── UNIFIED SPLIT CARD ── */
+        .tl-hero-card {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 420px;
+          background: rgba(252,247,236,0.65);
+          backdrop-filter: blur(10px) saturate(115%);
+          -webkit-backdrop-filter: blur(10px) saturate(115%);
+          border: 1px solid rgba(252,247,236,0.25);
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(0,0,0,0.4);
         }
 
-        /* Right column */
+        /* Left half */
+        .tl-hero-left {
+          display: flex; flex-direction: column;
+          padding: 56px 52px;
+          position: relative;
+        }
+        /* Vertical divider — solo desktop */
+        .tl-hero-left::after {
+          content: '';
+          position: absolute;
+          top: 56px; bottom: 56px; right: 0;
+          width: 1px;
+          background: linear-gradient(180deg, transparent 0%, rgba(42,90,73,0.18) 20%, rgba(42,90,73,0.18) 80%, transparent 100%);
+        }
+
+        /* Right half */
         .tl-hero-right {
-          width: 420px; flex-shrink: 0;
+          display: flex; align-items: center;
+          padding: 40px 40px;
         }
 
         .tl-hero-badge {
@@ -1725,8 +1785,8 @@ function HeroCRE() {
         }
 
         .tl-hero-sub {
-          font-size: clamp(24px, 1.4vw, 16px); line-height: 1.75;
-          color: rgba(9,25,20,0.6); max-width: 520px;
+          font-size: clamp(14px, 1.4vw, 16px); line-height: 1.75;
+          color: rgba(9,25,20,0.65); max-width: 520px;
           margin-bottom: 36px;
         }
 
@@ -1745,7 +1805,8 @@ function HeroCRE() {
         .tl-hero-stats {
           display: grid; grid-template-columns: repeat(4, 1fr);
           border: 1px solid rgba(42,90,73,0.18); border-radius: 6px; overflow: hidden;
-          background: rgba(42,90,73,0.06);
+          background: rgba(42,90,73,0.05);
+          margin-top: auto;
         }
         .tl-hero-stat {
           padding: 16px 14px; text-align: center;
@@ -1759,13 +1820,20 @@ function HeroCRE() {
         .tl-hero-stat-label {
           font-family: 'Barlow Condensed', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-          text-transform: uppercase; color: rgba(9,25,20,0.55);
+          text-transform: uppercase; color: rgba(9,25,20,0.6);
           line-height: 1.3;
         }
 
-        /* Form wrapper — color claro, sombra para destacar sobre el fondo oscuro */
+        /* Form wrapper — sin background propio para integrarse a la card */
+        .tl-hero-form-wrap {
+          width: 100%;
+          display: flex;
+        }
         .tl-hero-form-wrap .cf-wrap {
-          box-shadow: 0 24px 60px rgba(0,0,0,0.35) !important;
+          width: 100%;
+          background: transparent !important;
+          box-shadow: none !important;
+          padding: 0 !important;
         }
 
         /* Wave */
@@ -1774,33 +1842,42 @@ function HeroCRE() {
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1100px) {
-          .tl-hero-right { width: 360px; }
+          .tl-hero-card { grid-template-columns: 1fr 380px; }
+          .tl-hero-left { padding: 48px 40px; }
+          .tl-hero-right { padding: 36px 32px; }
           .tl-hero h1 { font-size: clamp(44px, 6vw, 84px); }
         }
         @media (max-width: 900px) {
           .tl-hero-content {
-            flex-direction: column; align-items: stretch;
-            padding: 80px 24px 56px; gap: 40px;
+            padding: 80px 24px 56px;
           }
-          .tl-hero-right { width: 100%; }
-          .tl-hero-left { padding: 32px 24px; }
+          .tl-hero-card { grid-template-columns: 1fr; }
+          .tl-hero-left { padding: 36px 28px; }
+          /* En mobile, el divider pasa a horizontal */
+          .tl-hero-left::after {
+            top: auto; bottom: 0; right: 28px; left: 28px;
+            width: auto; height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(42,90,73,0.18) 20%, rgba(42,90,73,0.18) 80%, transparent 100%);
+          }
+          .tl-hero-right { padding: 32px 28px; }
           .tl-hero h1 { font-size: clamp(44px, 10vw, 72px); }
           .tl-hero-sub { max-width: 100%; }
           .tl-hero-badge { margin-bottom: 20px; }
           .tl-hero-ghost-btn { margin-bottom: 32px; }
+          .tl-hero-stats { margin-top: 0; }
         }
         @media (max-width: 540px) {
           .tl-hero-stats { grid-template-columns: repeat(2, 1fr); }
           .tl-hero-stat:nth-child(2) { border-right: none; }
-          .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.06); }
-          .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.06); }
+          .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(42,90,73,0.15); }
+          .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(42,90,73,0.15); }
         }
-       @media (min-width: 1600px) {
+        @media (min-width: 1600px) {
           .tl-hero-content { padding: 100px 6% 72px; max-width: 1800px; }
-          .tl-hero-left { max-width: 780px; }
-          .tl-hero-right { width: 480px; }
-        } 
-        
+          .tl-hero-card { grid-template-columns: 1fr 480px; }
+          .tl-hero-left { padding: 64px 56px; }
+          .tl-hero-right { padding: 48px 44px; }
+        }
       `
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
       className: "tl-hero",
@@ -1867,118 +1944,121 @@ function HeroCRE() {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "tl-hero-grid"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: `tl-hero-content ${visible ? "visible" : ""}`,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "tl-hero-left",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "tl-hero-card",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "tl-hero-badge",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "tl-badge-dot"
-            }), heroData.eyebrow]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-            children: heroData.headline.map((line, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-              className: i === heroData.headlineAccent ? "accent" : "",
-              children: [line, i < heroData.headline.length - 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
-            }, i))
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "tl-hero-sub",
-            children: heroData.subheadline
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-            href: heroData.cta2.href,
-            className: "tl-hero-ghost-btn",
-            children: [heroData.cta2.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
-              width: "13",
-              height: "13",
-              viewBox: "0 0 24 24",
-              fill: "none",
-              stroke: "currentColor",
-              strokeWidth: "2",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
-                points: "9 18 15 12 9 6"
-              })
+            className: "tl-hero-left",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "tl-hero-badge",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                className: "tl-badge-dot"
+              }), heroData.eyebrow]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+              children: heroData.headline.map((line, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                className: i === heroData.headlineAccent ? "accent" : "",
+                children: [line, i < heroData.headline.length - 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
+              }, i))
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              className: "tl-hero-sub",
+              children: heroData.subheadline
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+              href: heroData.cta2.href,
+              className: "tl-hero-ghost-btn",
+              children: [heroData.cta2.label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                width: "13",
+                height: "13",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
+                  points: "9 18 15 12 9 6"
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "tl-hero-stats",
+              children: [{
+                icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                  width: "18",
+                  height: "18",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "#2A5A49",
+                  strokeWidth: "2",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                    d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                  })
+                }),
+                label: "Licensed &\nInsured"
+              }, {
+                icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                  width: "18",
+                  height: "18",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "#2A5A49",
+                  strokeWidth: "2",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                    cx: "12",
+                    cy: "8",
+                    r: "6"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                    d: "M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"
+                  })]
+                }),
+                label: "BBB\nAccredited"
+              }, {
+                icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                  width: "18",
+                  height: "18",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "#2A5A49",
+                  strokeWidth: "2",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                    d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
+                    cx: "12",
+                    cy: "10",
+                    r: "3"
+                  })]
+                }),
+                label: "Serving Holly Springs,\nCary & Beyond"
+              }, {
+                icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                  width: "18",
+                  height: "18",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "#2A5A49",
+                  strokeWidth: "2",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                    d: "M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                    d: "M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"
+                  })]
+                }),
+                label: "Continuous\nTraining"
+              }].map((s, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "tl-hero-stat",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "tl-hero-stat-icon",
+                  children: s.icon
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "tl-hero-stat-label",
+                  children: s.label
+                })]
+              }, i))
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "tl-hero-stats",
-            children: [{
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
-                width: "18",
-                height: "18",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "#2A5A49",
-                strokeWidth: "2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-                  d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                })
-              }),
-              label: "Licensed &\nInsured"
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
-                width: "18",
-                height: "18",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "#2A5A49",
-                strokeWidth: "2",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
-                  cx: "12",
-                  cy: "8",
-                  r: "6"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-                  d: "M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"
-                })]
-              }),
-              label: "BBB\nAccredited"
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
-                width: "18",
-                height: "18",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "#2A5A49",
-                strokeWidth: "2",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-                  d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
-                  cx: "12",
-                  cy: "10",
-                  r: "3"
-                })]
-              }),
-              label: "Serving Holly Springs,\nCary & Beyond"
-            }, {
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
-                width: "18",
-                height: "18",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "#2A5A49",
-                strokeWidth: "2",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-                  d: "M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-                  d: "M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"
-                })]
-              }),
-              label: "Continuous\nTraining"
-            }].map((s, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "tl-hero-stat",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "tl-hero-stat-icon",
-                children: s.icon
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "tl-hero-stat-label",
-                children: s.label
-              })]
-            }, i))
+            className: "tl-hero-right tl-hero-form-wrap",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ContactForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+              compact: true
+            })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "tl-hero-right tl-hero-form-wrap",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ContactForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            compact: true
-          })
-        })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "tl-hero-wave",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
@@ -2454,7 +2534,7 @@ function Navbar() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "tl-top-social",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-          href: "https://facebook.com/truelinepropertysolutions",
+          href: "https://www.facebook.com/profile.php?id=100084989864880&rdid=VlAsIHcPapOvNQSx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1XcvxTFnsn%2F#",
           target: "_blank",
           rel: "noopener noreferrer",
           className: "tl-top-social-icon",
@@ -2469,7 +2549,7 @@ function Navbar() {
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-          href: "https://instagram.com/truelinepropertysolutions",
+          href: "https://www.instagram.com/trueline_property_solutions",
           target: "_blank",
           rel: "noopener noreferrer",
           className: "tl-top-social-icon",
@@ -2500,7 +2580,7 @@ function Navbar() {
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-          href: "https://linkedin.com/company/truelinepropertysolutions",
+          href: "https://www.linkedin.com/in/trueline-property-solutions-88481b309/",
           target: "_blank",
           rel: "noopener noreferrer",
           className: "tl-top-social-icon",

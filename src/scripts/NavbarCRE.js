@@ -378,15 +378,15 @@ function Navbar() {
         {/* Right — social icons */}
         <div className="tl-top-social">
           {/* Facebook */}
-          <a href="https://facebook.com/truelinepropertysolutions" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=100084989864880&rdid=VlAsIHcPapOvNQSx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1XcvxTFnsn%2F#" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="Facebook">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           </a>
           {/* Instagram */}
-          <a href="https://instagram.com/truelinepropertysolutions" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="Instagram">
+          <a href="https://www.instagram.com/trueline_property_solutions" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="Instagram">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
           </a>
           {/* LinkedIn */}
-          <a href="https://linkedin.com/company/truelinepropertysolutions" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/trueline-property-solutions-88481b309/" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="LinkedIn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
           <div className="tl-top-sep" />

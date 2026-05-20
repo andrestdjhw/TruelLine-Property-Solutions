@@ -19,6 +19,8 @@ function FooterCRE() {
 
   const socials = [
     { name: "Facebook",  href: "https://www.facebook.com/profile.php?id=100084989864880&rdid=VlAsIHcPapOvNQSx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1XcvxTFnsn%2F#",  icon: "facebook"  },
+    { name: "Instagram", href: "https://www.instagram.com/trueline_property_solutions", icon: "instagram" },
+    { name: "LinkedIn",  href: "https://www.linkedin.com/in/trueline-property-solutions-88481b309/", icon: "linkedin" },
     { name: "Jobber", href: "https://navaslandscapeservicesandmore.jobbersites.com/", icon: "jobber" },
   ]
 
@@ -52,6 +54,18 @@ function FooterCRE() {
     if (icon === "facebook") return (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+      </svg>
+    )
+    if (icon === "instagram") return (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    )
+    if (icon === "linkedin") return (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 11-.01-4.13 2.07 2.07 0 01.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
       </svg>
     )
     if (icon === "jobber") return (
@@ -202,7 +216,7 @@ function FooterCRE() {
         }
 
         /* Socials */
-        .tl-footer-socials { display: flex; gap: 8px; }
+        .tl-footer-socials { display: flex; gap: 8px; flex-wrap: wrap; }
         .tl-footer-social {
           width: 34px; height: 34px;
           background: var(--f-accent-soft); border: 1px solid var(--f-accent-border);
