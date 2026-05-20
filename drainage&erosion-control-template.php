@@ -94,7 +94,7 @@ $img_hero = '/wp-content/uploads/2026/05/DrainageServiceHeroTrueline-scaled.jpg'
     color: #e8e0d5; margin-bottom: 20px;
   }
   .sv-header h1 em { color: var(--accent); font-style: normal; }
-  .sv-header-sub { color: rgba(245, 247, 250,0.5); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto 36px; text-shadow: 0 0 10px #27a139;}
+  .sv-header-sub { color: rgba(200,215,240,0.5); font-size: 16px; line-height: 1.75; max-width: 620px; margin: 0 auto 36px; }
   .sv-header-cta {
     display: inline-flex; align-items: center; gap: 9px;
     padding: 14px 32px; background: var(--accent); color: #FCF7EC;
@@ -159,6 +159,42 @@ $img_hero = '/wp-content/uploads/2026/05/DrainageServiceHeroTrueline-scaled.jpg'
     text-transform: uppercase; color: var(--dark); margin-bottom: 8px; letter-spacing: 0.04em;
   }
   .sv-service-desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+  /* ══ VETERAN DISCOUNT ══ */
+  .sv-veteran-section { background: #FCF7EC; padding: 0; }
+  .sv-veteran-banner { max-width: 1200px; margin: 0 auto; padding: 0 32px 56px; }
+  .sv-veteran-inner {
+    display: flex; align-items: center; gap: 24px;
+    background: linear-gradient(135deg, #091914 0%, #133429 100%);
+    border: 1px solid rgba(42,90,73,0.3); border-left: 5px solid #2A5A49;
+    border-radius: 8px; padding: 28px 32px;
+    box-shadow: 0 8px 32px rgba(9,25,20,0.15); flex-wrap: wrap;
+  }
+  .sv-veteran-icon {
+    width: 52px; height: 52px; flex-shrink: 0;
+    background: rgba(42,90,73,0.15); border: 1px solid rgba(42,90,73,0.35);
+    border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  }
+  .sv-veteran-content { flex: 1; min-width: 0; }
+  .sv-veteran-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(42,160,90,0.85); margin-bottom: 4px; display: block; }
+  .sv-veteran-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(18px, 2.5vw, 24px); text-transform: uppercase; color: #e8e0d5; letter-spacing: 0.04em; line-height: 1.1; margin-bottom: 6px; }
+  .sv-veteran-title span { color: #ECEBC3; }
+  .sv-veteran-desc { font-size: 13.5px; color: rgba(200,215,240,0.55); line-height: 1.6; }
+  .sv-veteran-cta {
+    display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
+    padding: 11px 24px; background: var(--accent); color: #FCF7EC;
+    border: none; border-radius: 4px; cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 14px rgba(42,90,73,0.35); white-space: nowrap;
+  }
+  .sv-veteran-cta:hover { background: #133429; transform: translateY(-2px); }
+  @media (max-width: 640px) {
+    .sv-veteran-banner { padding: 0 20px 48px; }
+    .sv-veteran-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .sv-veteran-cta { width: 100%; justify-content: center; }
+  }
 
   /* ══ WHO WE SERVE ══ */
   .sv-who-section {
@@ -394,6 +430,25 @@ $header_bg = '/wp-content/uploads/2026/05/DrainageServiceHeroTrueline-scaled.jpg
     </div>
   </section>
 
+  <!-- ══ VETERAN DISCOUNT ══ -->
+  <div class="sv-veteran-section">
+    <div class="sv-veteran-banner">
+      <div class="sv-veteran-inner sv-reveal">
+        <div class="sv-veteran-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="sv-veteran-content">
+          <span class="sv-veteran-label">Military Appreciation</span>
+          <div class="sv-veteran-title">10% Discount for <span>Veterans &amp; Active Military</span></div>
+          <p class="sv-veteran-desc">TrueLine Property Solutions proudly honors those who have served. Active military members and veterans receive a 10% discount on all services. Thank you for your service — mention this when you request your estimate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ WHO WE SERVE ══ -->
   <section class="sv-who-section">
     <div class="sv-container">
@@ -430,7 +485,7 @@ $header_bg = '/wp-content/uploads/2026/05/DrainageServiceHeroTrueline-scaled.jpg
   </div>
 
   <!-- ══ BOTTOM CTA ══ -->
-  <section class="sv-cta-section">
+  <!-- <section class="sv-cta-section">
     <div class="sv-cta-inner sv-reveal">
       <span class="sv-cta-label">Let's Fix It for Good</span>
       <h2 class="sv-cta-title">Concerned About Water<br><span>on Your Property?</span></h2>
@@ -449,7 +504,7 @@ $header_bg = '/wp-content/uploads/2026/05/DrainageServiceHeroTrueline-scaled.jpg
         </a>
       </div>
     </div>
-  </section>
+  </section> -->
 
 </div><!-- .sv-page -->
 

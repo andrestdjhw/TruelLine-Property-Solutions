@@ -1085,6 +1085,9 @@ function FooterCRE() {
     }, {
       name: "Property Preparation",
       href: "/services/property-preparation"
+    }, {
+      name: "Hauling & Debris Removal",
+      href: "/services/hauling-debris-removal/"
     }]
   }, {
     title: "Quick Links",
@@ -1636,7 +1639,7 @@ function HeroCRE() {
         .tl-slide.active { opacity: 1; }
         .tl-slide-overlay {
           position: absolute; inset: 0; z-index: 1; pointer-events: none;
-          background: linear-gradient(160deg, rgba(9,25,20,0.88) 0%, rgba(15,32,21,0.82) 55%, rgba(19,52,41,0.80) 100%);
+          background: linear-gradient(160deg, rgba(9,25,20,0.45) 0%, rgba(15,32,21,0.38) 55%, rgba(19,52,41,0.35) 100%);
         }
 
         /* Watermark */
@@ -1685,6 +1688,11 @@ function HeroCRE() {
         .tl-hero-left {
           flex: 1; min-width: 0; max-width: 680px;
           display: flex; flex-direction: column; gap: 0;
+          background: rgba(252,247,236,0.82);
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+          border-radius: 8px;
+          padding: 48px 44px;
         }
 
         /* Right column */
@@ -1695,7 +1703,7 @@ function HeroCRE() {
         .tl-hero-badge {
           display: inline-flex; align-items: center; gap: 8px;
           background: rgba(42,90,73,0.1); border: 1px solid rgba(42,90,73,0.3);
-          color: rgba(255, 255, 255, 0.9); font-family: 'Barlow', sans-serif;
+          color: #2A5A49; font-family: 'Barlow', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
           text-transform: uppercase; padding: 6px 16px; border-radius: 3px;
           margin-bottom: 28px; width: fit-content;
@@ -1709,39 +1717,39 @@ function HeroCRE() {
           font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
           font-size: clamp(52px, 7vw, 108px); line-height: 0.92;
           letter-spacing: 0.01em; text-transform: uppercase;
-          color: #e8e0d5; margin-bottom: 24px;
+          color: #091914; margin-bottom: 24px;
         }
         .tl-hero h1 .accent {
-          color: #ECEBC3;
-          text-shadow: 0 0 60px rgba(42,90,73,0.4);
+          color: #2A5A49;
+          text-shadow: none;
         }
 
         .tl-hero-sub {
           font-size: clamp(24px, 1.4vw, 16px); line-height: 1.75;
-          color: rgba(255,255,255,0.88); max-width: 520px;
+          color: rgba(9,25,20,0.6); max-width: 520px;
           margin-bottom: 36px;
         }
 
         .tl-hero-ghost-btn {
           display: inline-flex; align-items: center; gap: 8px;
-          padding: 12px 24px; background: transparent; color: rgba(210,220,240,0.65);
-          border: 1px solid rgba(42,90,73,0.35); border-radius: 4px; cursor: pointer;
-          font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+          padding: 12px 24px; background: #2A5A49; color: #FCF7EC;
+          border: 1px solid #2A5A49; border-radius: 4px; cursor: pointer;
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
           font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
           transition: all 0.2s; text-decoration: none; width: fit-content;
-          margin-bottom: 48px;
+          margin-bottom: 48px; box-shadow: 0 4px 14px rgba(42,90,73,0.3);
         }
-        .tl-hero-ghost-btn:hover { border-color: #ECEBC3; color: #FCF7EC; background: rgba(42,90,73,0.1); }
+        .tl-hero-ghost-btn:hover { background: #133429; border-color: #133429; color: #FCF7EC; transform: translateY(-2px); }
 
         /* Trust stats row */
         .tl-hero-stats {
           display: grid; grid-template-columns: repeat(4, 1fr);
-          border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden;
-          background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
+          border: 1px solid rgba(42,90,73,0.18); border-radius: 6px; overflow: hidden;
+          background: rgba(42,90,73,0.06);
         }
         .tl-hero-stat {
           padding: 16px 14px; text-align: center;
-          border-right: 1px solid rgba(255,255,255,0.06);
+          border-right: 1px solid rgba(42,90,73,0.15);
         }
         .tl-hero-stat:last-child { border-right: none; }
         .tl-hero-stat-icon {
@@ -1751,7 +1759,7 @@ function HeroCRE() {
         .tl-hero-stat-label {
           font-family: 'Barlow Condensed', sans-serif;
           font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-          text-transform: uppercase; color: rgba(255,255,255,0.75);
+          text-transform: uppercase; color: rgba(9,25,20,0.55);
           line-height: 1.3;
         }
 
@@ -1775,6 +1783,7 @@ function HeroCRE() {
             padding: 80px 24px 56px; gap: 40px;
           }
           .tl-hero-right { width: 100%; }
+          .tl-hero-left { padding: 32px 24px; }
           .tl-hero h1 { font-size: clamp(44px, 10vw, 72px); }
           .tl-hero-sub { max-width: 100%; }
           .tl-hero-badge { margin-bottom: 20px; }

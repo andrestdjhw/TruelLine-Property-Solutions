@@ -32,6 +32,7 @@ function FooterCRE() {
         { name: "Tree Services",             href: "/services/tree-services"            },
         { name: "Exterior Cleaning",         href: "/services/exterior-cleaning"        },
         { name: "Property Preparation",      href: "/services/property-preparation"     },
+        { name: "Hauling & Debris Removal",  href: "/services/hauling-debris-removal/"  },
       ],
     },
     {
