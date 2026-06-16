@@ -1803,7 +1803,7 @@ function HeroCRE() {
 
         /* Trust stats row */
         .tl-hero-stats {
-          display: grid; grid-template-columns: repeat(4, 1fr);
+          display: grid; grid-template-columns: repeat(5, 1fr);
           border: 1px solid rgba(42,90,73,0.18); border-radius: 6px; overflow: hidden;
           background: rgba(42,90,73,0.05);
           margin-top: auto;
@@ -1823,6 +1823,11 @@ function HeroCRE() {
           text-transform: uppercase; color: rgba(9,25,20,0.6);
           line-height: 1.3;
         }
+
+        /* Financing — item clickeable */
+        .tl-hero-stat-link { text-decoration: none; cursor: pointer; transition: background 0.2s; }
+        .tl-hero-stat-link:hover { background: rgba(42,90,73,0.1); }
+        .tl-hero-stat-link .tl-hero-stat-label { color: #2A5A49; text-decoration: underline; text-underline-offset: 2px; }
 
         /* Form wrapper — sin background propio para integrarse a la card */
         .tl-hero-form-wrap {
@@ -1868,9 +1873,9 @@ function HeroCRE() {
         }
         @media (max-width: 540px) {
           .tl-hero-stats { grid-template-columns: repeat(2, 1fr); }
-          .tl-hero-stat:nth-child(2) { border-right: none; }
-          .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(42,90,73,0.15); }
-          .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(42,90,73,0.15); }
+          .tl-hero-stat:nth-child(even) { border-right: none; }
+          .tl-hero-stat:nth-child(n+3) { border-top: 1px solid rgba(42,90,73,0.15); }
+          .tl-hero-stat:last-child { grid-column: 1 / -1; border-right: none; }
         }
         @media (min-width: 1600px) {
           .tl-hero-content { padding: 100px 6% 72px; max-width: 1800px; }
@@ -2041,16 +2046,46 @@ function HeroCRE() {
                   })]
                 }),
                 label: "Continuous\nTraining"
-              }].map((s, i) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                className: "tl-hero-stat",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                  className: "tl-hero-stat-icon",
-                  children: s.icon
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                  className: "tl-hero-stat-label",
-                  children: s.label
-                })]
-              }, i))
+              }, {
+                icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+                  width: "18",
+                  height: "18",
+                  viewBox: "0 0 24 24",
+                  fill: "none",
+                  stroke: "#2A5A49",
+                  strokeWidth: "2",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
+                    x1: "12",
+                    y1: "2",
+                    x2: "12",
+                    y2: "22"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                    d: "M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"
+                  })]
+                }),
+                label: "Financing\nAvailable",
+                href: "https://app.gethearth.com/financing/58289/102991/prequalify?utm_campaign=58289&utm_content=general&utm_medium=custom-lp&utm_source=contractor&utm_term=102991"
+              }].map((s, i) => {
+                const inner = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    className: "tl-hero-stat-icon",
+                    children: s.icon
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    className: "tl-hero-stat-label",
+                    children: s.label
+                  })]
+                });
+                return s.href ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                  href: s.href,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className: "tl-hero-stat tl-hero-stat-link",
+                  children: inner
+                }, i) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "tl-hero-stat",
+                  children: inner
+                }, i);
+              })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "tl-hero-right tl-hero-form-wrap",

@@ -193,7 +193,7 @@ function HeroCRE() {
 
         /* Trust stats row */
         .tl-hero-stats {
-          display: grid; grid-template-columns: repeat(4, 1fr);
+          display: grid; grid-template-columns: repeat(5, 1fr);
           border: 1px solid rgba(42,90,73,0.18); border-radius: 6px; overflow: hidden;
           background: rgba(42,90,73,0.05);
           margin-top: auto;
@@ -213,6 +213,11 @@ function HeroCRE() {
           text-transform: uppercase; color: rgba(9,25,20,0.6);
           line-height: 1.3;
         }
+
+        /* Financing — item clickeable */
+        .tl-hero-stat-link { text-decoration: none; cursor: pointer; transition: background 0.2s; }
+        .tl-hero-stat-link:hover { background: rgba(42,90,73,0.1); }
+        .tl-hero-stat-link .tl-hero-stat-label { color: #2A5A49; text-decoration: underline; text-underline-offset: 2px; }
 
         /* Form wrapper — sin background propio para integrarse a la card */
         .tl-hero-form-wrap {
@@ -258,9 +263,9 @@ function HeroCRE() {
         }
         @media (max-width: 540px) {
           .tl-hero-stats { grid-template-columns: repeat(2, 1fr); }
-          .tl-hero-stat:nth-child(2) { border-right: none; }
-          .tl-hero-stat:nth-child(3) { border-top: 1px solid rgba(42,90,73,0.15); }
-          .tl-hero-stat:nth-child(4) { border-top: 1px solid rgba(42,90,73,0.15); }
+          .tl-hero-stat:nth-child(even) { border-right: none; }
+          .tl-hero-stat:nth-child(n+3) { border-top: 1px solid rgba(42,90,73,0.15); }
+          .tl-hero-stat:last-child { grid-column: 1 / -1; border-right: none; }
         }
         @media (min-width: 1600px) {
           .tl-hero-content { padding: 100px 6% 72px; max-width: 1800px; }
@@ -340,12 +345,20 @@ function HeroCRE() {
                   { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>, label: "BBB\nAccredited" },
                   { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, label: "Serving Holly Springs,\nCary & Beyond" },
                   { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>, label: "Continuous\nTraining" },
-                ].map((s, i) => (
-                  <div key={i} className="tl-hero-stat">
-                    <div className="tl-hero-stat-icon">{s.icon}</div>
-                    <div className="tl-hero-stat-label">{s.label}</div>
-                  </div>
-                ))}
+                  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>, label: "Financing\nAvailable", href: "https://app.gethearth.com/financing/58289/102991/prequalify?utm_campaign=58289&utm_content=general&utm_medium=custom-lp&utm_source=contractor&utm_term=102991" },
+                ].map((s, i) => {
+                  const inner = (
+                    <>
+                      <div className="tl-hero-stat-icon">{s.icon}</div>
+                      <div className="tl-hero-stat-label">{s.label}</div>
+                    </>
+                  )
+                  return s.href ? (
+                    <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="tl-hero-stat tl-hero-stat-link">{inner}</a>
+                  ) : (
+                    <div key={i} className="tl-hero-stat">{inner}</div>
+                  )
+                })}
               </div>
 
             </div>

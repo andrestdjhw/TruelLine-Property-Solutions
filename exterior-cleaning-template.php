@@ -417,6 +417,11 @@ $header_bg = '/wp-content/uploads/2026/05/ExteriorCleaningHouse-scaled.jpg';
           'desc' => 'Pressure washing and cleaning for wood, vinyl, and metal fencing to restore color, remove staining, and extend the life of your fence.',
           'icon' => '<line x1="3" y1="3" x2="3" y2="21"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="21" y1="3" x2="21" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>',
         ],
+        [
+          'name' => 'Trash Can & Bin Cleaning',
+          'desc' => 'Pressure washing and sanitizing of trash cans, recycling bins, and waste containers — removing built-up grime, odor, and residue to keep them clean and hygienic.',
+          'icon' => '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>',
+        ],
       ];
       ?>
 
