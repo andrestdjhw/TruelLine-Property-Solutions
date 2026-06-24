@@ -1051,7 +1051,7 @@ function FooterCRE() {
     phoneHref: "tel:+19199518341",
     email: "info@truelinesolutionsus.com",
     emailHref: "mailto:info@truelinesolutionsus.com",
-    location: "The Triangle & Triad — North Carolina",
+    location: "2121 Guess Rd, Durham, NC 27705, USA",
     license: "Licensed & Insured",
     copyright: `© ${new Date().getFullYear()} TrueLine Property Solutions. All Rights Reserved.`
     // DEV NOTE: Update year as needed. Add BBB badge and Licensed & Insured badge in footer.
@@ -1489,7 +1489,7 @@ function FooterCRE() {
                 })
               }), company.email]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-              href: "https://www.google.com/maps/place/Holly+Springs,+Carolina+del+Norte,+EE.+UU./@35.644151,-78.848793,13z/data=!3m1!4b1!4m6!3m5!1s0x89acf53e203c208f:0x5f9f54184597aa40!8m2!3d35.6512655!4d-78.8336218!16zL20vMHlsdGg?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+              href: "https://www.google.com/maps/search/?api=1&query=2121+Guess+Rd+Durham+NC+27705+USA",
               target: "_blank",
               rel: "noopener noreferrer",
               className: "tl-footer-contact-item",
@@ -2229,6 +2229,7 @@ function Navbar() {
 
         /* ── TOP BAR ── */
         .tl-top {
+          position: relative;
           background: var(--tl-dark-bg);
           border-bottom: 1px solid rgba(42,90,73,0.3);
           height: 36px; padding: 0 32px;
@@ -2236,7 +2237,11 @@ function Navbar() {
           gap: 16px;
         }
         .tl-top-left { display: flex; align-items: center; gap: 18px; flex: 1; }
-        .tl-top-center { flex-shrink: 0; }
+        .tl-top-center {
+          position: absolute; left: 50%; top: 50%;
+          transform: translate(-50%, -50%);
+          flex-shrink: 0; white-space: nowrap;
+        }
         .tl-top-item {
           display: flex; align-items: center; gap: 5px;
           color: rgba(236,235,195,0.6); font-family: 'Barlow', sans-serif;
@@ -2523,7 +2528,7 @@ function Navbar() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "tl-top-sep"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-          href: "mailto:navaslandscapenc1@gmail.com",
+          href: "mailto:info@truelinesolutionsus.com",
           className: "tl-top-item",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
             width: "12",
@@ -2547,7 +2552,7 @@ function Navbar() {
           }), "Licensed & Insured"]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-        href: "https://www.google.com/maps/place/Holly+Springs,+Carolina+del+Norte,+EE.+UU./@35.644151,-78.848793,13z/data=!3m1!4b1!4m6!3m5!1s0x89acf53e203c208f:0x5f9f54184597aa40!8m2!3d35.6512655!4d-78.8336218!16zL20vMHlsdGg?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+        href: "https://www.google.com/maps/search/?api=1&query=2121+Guess+Rd+Durham+NC+27705+USA",
         target: "_blank",
         rel: "noopener noreferrer",
         className: "tl-top-item tl-top-center",
@@ -2565,7 +2570,7 @@ function Navbar() {
             cy: "10",
             r: "3"
           })]
-        }), "Serving North Carolina"]
+        }), "2121 Guess Rd, Durham, NC 27705, USA"]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "tl-top-social",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
@@ -2879,6 +2884,26 @@ function Navbar() {
               points: "22,6 12,13 2,6"
             })]
           }), "info@truelinesolutionsus.com"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+          href: "https://www.google.com/maps/search/?api=1&query=2121+Guess+Rd+Durham+NC+27705+USA",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: "tl-mob-contact-item",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+            width: "14",
+            height: "14",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+              cx: "12",
+              cy: "10",
+              r: "3"
+            })]
+          }), "2121 Guess Rd, Durham, NC 27705, USA"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "tl-mob-social-row",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {

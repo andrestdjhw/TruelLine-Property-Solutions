@@ -11,7 +11,7 @@ function FooterCRE() {
     phoneHref: "tel:+19199518341",
     email: "info@truelinesolutionsus.com",
     emailHref: "mailto:info@truelinesolutionsus.com",
-    location: "The Triangle & Triad — North Carolina",
+    location: "2121 Guess Rd, Durham, NC 27705, USA",
     license: "Licensed & Insured",
     copyright: `© ${new Date().getFullYear()} TrueLine Property Solutions. All Rights Reserved.`,
     // DEV NOTE: Update year as needed. Add BBB badge and Licensed & Insured badge in footer.
@@ -343,7 +343,7 @@ function FooterCRE() {
                 </div>
                 {company.email}
               </a>
-              <a href="https://www.google.com/maps/place/Holly+Springs,+Carolina+del+Norte,+EE.+UU./@35.644151,-78.848793,13z/data=!3m1!4b1!4m6!3m5!1s0x89acf53e203c208f:0x5f9f54184597aa40!8m2!3d35.6512655!4d-78.8336218!16zL20vMHlsdGg?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D"
+              <a href="https://www.google.com/maps/search/?api=1&query=2121+Guess+Rd+Durham+NC+27705+USA"
                  target="_blank" rel="noopener noreferrer" className="tl-footer-contact-item">
                 <div className="tl-footer-contact-icon">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" strokeWidth="2">

@@ -78,6 +78,7 @@ function Navbar() {
 
         /* ── TOP BAR ── */
         .tl-top {
+          position: relative;
           background: var(--tl-dark-bg);
           border-bottom: 1px solid rgba(42,90,73,0.3);
           height: 36px; padding: 0 32px;
@@ -85,7 +86,11 @@ function Navbar() {
           gap: 16px;
         }
         .tl-top-left { display: flex; align-items: center; gap: 18px; flex: 1; }
-        .tl-top-center { flex-shrink: 0; }
+        .tl-top-center {
+          position: absolute; left: 50%; top: 50%;
+          transform: translate(-50%, -50%);
+          flex-shrink: 0; white-space: nowrap;
+        }
         .tl-top-item {
           display: flex; align-items: center; gap: 5px;
           color: rgba(236,235,195,0.6); font-family: 'Barlow', sans-serif;
@@ -361,7 +366,7 @@ function Navbar() {
             (919) 951-8341
           </a>
           <div className="tl-top-sep" />
-          <a href="mailto:navaslandscapenc1@gmail.com" className="tl-top-item">
+          <a href="mailto:info@truelinesolutionsus.com" className="tl-top-item">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             info@truelinesolutionsus.com
           </a>
@@ -369,10 +374,10 @@ function Navbar() {
           <div className="tl-top-badge"><div className="tl-dot" />Licensed &amp; Insured</div>
         </div>
 
-        {/* Center — service area */}
-        <a href="https://www.google.com/maps/place/Holly+Springs,+Carolina+del+Norte,+EE.+UU./@35.644151,-78.848793,13z/data=!3m1!4b1!4m6!3m5!1s0x89acf53e203c208f:0x5f9f54184597aa40!8m2!3d35.6512655!4d-78.8336218!16zL20vMHlsdGg?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="tl-top-item tl-top-center">
+        {/* Center — dirección */}
+        <a href="https://www.google.com/maps/search/?api=1&query=2121+Guess+Rd+Durham+NC+27705+USA" target="_blank" rel="noopener noreferrer" className="tl-top-item tl-top-center">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Serving North Carolina
+          2121 Guess Rd, Durham, NC 27705, USA
         </a>
 
         {/* Right — social icons */}
@@ -561,6 +566,11 @@ function Navbar() {
           <a href="mailto:info@truelinesolutionsus.com" className="tl-mob-contact-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             info@truelinesolutionsus.com
+          </a>
+          {/* Dirección — visible también en móvil */}
+          <a href="https://www.google.com/maps/search/?api=1&query=2121+Guess+Rd+Durham+NC+27705+USA" target="_blank" rel="noopener noreferrer" className="tl-mob-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            2121 Guess Rd, Durham, NC 27705, USA
           </a>
           <div className="tl-mob-social-row">
             <a href="https://facebook.com/truelinepropertysolutions" target="_blank" rel="noopener noreferrer" className="tl-mob-social-icon" aria-label="Facebook">
