@@ -2545,11 +2545,6 @@ function Navbar() {
           }), "info@truelinesolutionsus.com"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "tl-top-sep"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "tl-top-badge",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "tl-dot"
-          }), "Licensed & Insured"]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
         href: "https://www.google.com/maps/search/?api=1&query=2121+Guess+Rd+Durham+NC+27705+USA",

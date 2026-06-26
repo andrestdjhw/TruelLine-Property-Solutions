@@ -371,7 +371,7 @@ function Navbar() {
             info@truelinesolutionsus.com
           </a>
           <div className="tl-top-sep" />
-          <div className="tl-top-badge"><div className="tl-dot" />Licensed &amp; Insured</div>
+          {/* <div className="tl-top-badge"><div className="tl-dot" />Licensed &amp; Insured</div> */}
         </div>
 
         {/* Center — dirección */}
