@@ -1069,9 +1069,9 @@ function FooterCRE() {
     href: "https://www.linkedin.com/in/trueline-property-solutions-88481b309/",
     icon: "linkedin"
   }, {
-    name: "Jobber",
-    href: "https://navaslandscapeservicesandmore.jobbersites.com/",
-    icon: "jobber"
+    name: "Google Business Profile",
+    href: "https://www.google.com/search?kgmid=/g/11zh8_k4qc&q=Trueline+Property+Solutions",
+    icon: "google"
   }];
   const footerLinks = [{
     title: "Services",
@@ -1164,23 +1164,14 @@ function FooterCRE() {
         d: "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 11-.01-4.13 2.07 2.07 0 01.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
       })
     });
-    if (icon === "jobber") return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    if (icon === "google") return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
       width: "16",
       height: "16",
       viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
-        points: "15 3 21 3 21 9"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
-        x1: "10",
-        y1: "14",
-        x2: "21",
-        y2: "3"
-      })]
+      fill: "currentColor",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M21.35 11.1h-9.17v2.73h5.51c-.56 2.37-2.67 3.98-5.51 3.98-3.36 0-6.08-2.72-6.08-6.08s2.72-6.08 6.08-6.08c1.56 0 2.97.59 4.04 1.55l2.06-2.06C16.56 3.67 14.41 2.75 12 2.75 6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25c5.56 0 9.25-3.91 9.25-9.41 0-.63-.07-1.24-.15-1.74z"
+      })
     });
     return null;
   };
@@ -2648,7 +2639,7 @@ function Navbar() {
           "aria-label": "BBB",
           children: "BBB"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-          href: "https://www.google.com/search?kgmid=/g/11s4gclddv&q=Nava%27s+Landscape+Services+and+More",
+          href: "https://www.google.com/search?kgmid=/g/11zh8_k4qc&q=Trueline+Property+Solutions",
           target: "_blank",
           rel: "noopener noreferrer",
           className: "tl-top-social-icon",
@@ -2979,7 +2970,7 @@ function Navbar() {
             "aria-label": "BBB",
             children: "BBB"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: "https://www.google.com/search?kgmid=/g/11s4gclddv&q=Nava%27s+Landscape+Services+and+More",
+            href: "https://www.google.com/search?kgmid=/g/11zh8_k4qc&q=Trueline+Property+Solutions",
             target: "_blank",
             rel: "noopener noreferrer",
             className: "tl-mob-social-icon",

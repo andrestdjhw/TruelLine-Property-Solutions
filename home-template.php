@@ -366,6 +366,7 @@ $map_src = 'https://maps.google.com/maps?q=2121+Guess+Rd+Durham+NC+27705+USA&out
   }
   .tl-testimonials-section .tl-title { color: #e8e0d5; }
   .tl-testimonials-section .tl-label { color: rgba(42,160,90,0.85); }
+
   .tl-testimonials-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
     position: relative; z-index: 1;
