@@ -682,65 +682,13 @@ $map_src = 'https://maps.google.com/maps?q=2121+Guess+Rd+Durham+NC+27705+USA&out
         <div class="tl-rule"></div>
       </div>
 
-      <?php
-      // DEV NOTE: Replace these placeholders with real Google Reviews.
-      // Recommended: use a Google Reviews plugin (e.g. Widgets for Google Reviews)
-      // or pull via Google Places API and render dynamically.
-      $testimonials = [
-        [
-          'quote'  => 'Our real estate agent recommended we hire Nava\'s Landscaping Service to refresh our yard before putting our house on the market. They did a fantastic job. We\'re amazed at how good it looks. Miriam has an exceptional eye for landscape design and the crew was extremely hard working. I can\'t recommend them highly enough!',
-          'name'   => 'Lisa Kahan',
-          'city'   => 'Chapel Hill, NC',
-          'stars'  => 5,
-        ],
-        [
-          'quote'  => 'We have used Nava\'s Landscape Service for our regular yard maintenance as well as special clean up projects. They are fast, efficient and friendly!',
-          'name'   => 'Cat Moleski',
-          'city'   => 'Cary, NC',
-          'stars'  => 5,
-        ],
-        [
-          'quote'  => 'Professional, reliable, and detail-oriented. TrueLine transformed our outdoor space completely — from the drainage solution to the landscaping. Every visit leaves our property looking better than before.',
-          'name'   => 'Verified Client',
-          'city'   => 'Holly Springs, NC',
-          'stars'  => 5,
-        ],
-      ];
-      ?>
-
-      <div class="tl-testimonials-grid">
-        <?php foreach ( $testimonials as $i => $t ) : ?>
-          <div class="tl-testimonial-card tl-reveal" data-delay="<?php echo $i + 1; ?>">
-
-            <div class="tl-stars">
-              <?php for ( $s = 0; $s < $t['stars']; $s++ ) : ?>
-                <svg class="tl-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              <?php endfor; ?>
-            </div>
-
-            <p class="tl-testimonial-quote"><?php echo esc_html( $t['quote'] ); ?></p>
-
-            <div class="tl-testimonial-author">
-              <div class="tl-testimonial-avatar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A5A49" stroke-width="2">
-                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                </svg>
-              </div>
-              <div>
-                <div class="tl-testimonial-name"><?php echo esc_html( $t['name'] ); ?></div>
-                <div class="tl-testimonial-city"><?php echo esc_html( $t['city'] ); ?></div>
-              </div>
-            </div>
-
-          </div>
-        <?php endforeach; ?>
+      <!-- Google Reviews — powered by Trustindex -->
+      <div class="tl-trustindex-widget tl-reveal">
+        <?php echo do_shortcode( '[trustindex no-registration=google]' ); ?>
       </div>
 
-      <!-- DEV NOTE: Replace with actual Google rating when live reviews are connected -->
       <div class="tl-reviews-badge">
-        <a href="https://www.google.com/search?kgmid=/g/11s4gclddv&q=Nava%27s+Landscape+Services+and+More" target="_blank" rel="noopener noreferrer" class="tl-reviews-badge-inner" style="text-decoration:none">
+        <a href="https://www.google.com/maps/place/Trueline+Property+Solutions/@35.879242,-79.3199126,246962m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8bf09039f7cd30ab:0x56fff4ba1a7aba0e!8m2!3d35.879242!4d-79.3199126!16s%2Fg%2F11zxj6hw25?hl=en-HN&entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="tl-reviews-badge-inner" style="text-decoration:none">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#2A5A49"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <strong>5.0</strong> rated on Google · <strong>See all reviews →</strong>
         </a>

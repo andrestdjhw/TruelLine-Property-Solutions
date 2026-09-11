@@ -400,7 +400,7 @@ function Navbar() {
             BBB
           </a>
           {/* Google My Business */}
-          <a href="https://www.google.com/search?kgmid=/g/11zh8_k4qc&q=Trueline+Property+Solutions" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="Google Reviews">
+          <a href="https://www.google.com/maps/place/Trueline+Property+Solutions/@35.879242,-79.3199126,246962m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8bf09039f7cd30ab:0x56fff4ba1a7aba0e!8m2!3d35.879242!4d-79.3199126!16s%2Fg%2F11zxj6hw25?hl=en-HN&entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="tl-top-social-icon" aria-label="Google Reviews">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" opacity="0"/><path d="M21.35 11.1h-9.17v2.73h5.51c-.56 2.37-2.67 3.98-5.51 3.98-3.36 0-6.08-2.72-6.08-6.08s2.72-6.08 6.08-6.08c1.56 0 2.97.59 4.04 1.55l2.06-2.06C16.56 3.67 14.41 2.75 12 2.75 6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25c5.56 0 9.25-3.91 9.25-9.41 0-.63-.07-1.24-.15-1.74z"/></svg>
           </a>
         </div>
@@ -585,7 +585,7 @@ function Navbar() {
             <a href="https://www.bbb.org/us/nc/chapel-hill/profile/landscape-contractors/navas-landscape-services-llc-0593-90339816" target="_blank" rel="noopener noreferrer" className="tl-mob-social-icon tl-mob-social-text" aria-label="BBB">
               BBB
             </a>
-            <a href="https://www.google.com/search?kgmid=/g/11zh8_k4qc&q=Trueline+Property+Solutions" target="_blank" rel="noopener noreferrer" className="tl-mob-social-icon" aria-label="Google Reviews">
+            <a href="https://www.google.com/maps/place/Trueline+Property+Solutions/@35.879242,-79.3199126,246962m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8bf09039f7cd30ab:0x56fff4ba1a7aba0e!8m2!3d35.879242!4d-79.3199126!16s%2Fg%2F11zxj6hw25?hl=en-HN&entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="tl-mob-social-icon" aria-label="Google Reviews">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1h-9.17v2.73h5.51c-.56 2.37-2.67 3.98-5.51 3.98-3.36 0-6.08-2.72-6.08-6.08s2.72-6.08 6.08-6.08c1.56 0 2.97.59 4.04 1.55l2.06-2.06C16.56 3.67 14.41 2.75 12 2.75 6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25c5.56 0 9.25-3.91 9.25-9.41 0-.63-.07-1.24-.15-1.74z"/></svg>
             </a>
           </div>

@@ -21,7 +21,7 @@ function FooterCRE() {
     { name: "Facebook",  href: "https://www.facebook.com/profile.php?id=100084989864880&rdid=VlAsIHcPapOvNQSx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1XcvxTFnsn%2F#",  icon: "facebook"  },
     { name: "Instagram", href: "https://www.instagram.com/trueline_property_solutions", icon: "instagram" },
     { name: "LinkedIn",  href: "https://www.linkedin.com/in/trueline-property-solutions-88481b309/", icon: "linkedin" },
-    { name: "Google Business Profile", href: "https://www.google.com/search?kgmid=/g/11zh8_k4qc&q=Trueline+Property+Solutions", icon: "google" },
+    { name: "Google Business Profile", href: "https://www.google.com/maps/place/Trueline+Property+Solutions/@35.879242,-79.3199126,246962m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8bf09039f7cd30ab:0x56fff4ba1a7aba0e!8m2!3d35.879242!4d-79.3199126!16s%2Fg%2F11zxj6hw25?hl=en-HN&entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D", icon: "google" },
   ]
 
   const footerLinks = [
