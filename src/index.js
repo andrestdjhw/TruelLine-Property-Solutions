@@ -4,6 +4,7 @@ import Navbar from "./scripts/NavbarCRE"
 import FooterCRE from "./scripts/FooterCRE"
 import HeroCRE from "./scripts/HeroCRE"
 import ContactForm from "./scripts/ContactForm"
+import CookieConsentCRE from "./scripts/CookieConsentCRE"
 
 // ─── NAVBAR — aparece en TODAS las páginas ───────────────────────────────
 if (document.querySelector("#cre-navbar")) {
@@ -28,4 +29,9 @@ if (document.querySelector("#cre-contact-form")) {
 // ─── CONTACT FORM — services-template.php ────────────────────────────────
 if (document.querySelector("#cre-contact-form-services")) {
   ReactDOM.createRoot(document.querySelector("#cre-contact-form-services")).render(<ContactForm compact={true} />)
+}
+
+// ─── COOKIE CONSENT — aparece en TODAS las páginas ───────────────────────
+if (document.querySelector("#cre-cookie")) {
+  ReactDOM.createRoot(document.querySelector("#cre-cookie")).render(<CookieConsentCRE />)
 }
